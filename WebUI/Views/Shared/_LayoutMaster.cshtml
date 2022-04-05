@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Dashboard - Ace Admin</title>
+
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="~/Content/customassets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/customassets/font-awesome/4.2.0/css/font-awesome.min.css" />
+
+    <!-- page specific plugin styles -->
+    <!-- text fonts -->
+    <link rel="stylesheet" href="~/Content/customassets/fonts/fonts.googleapis.com.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="~/Content/customassets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="~/Content/customassets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="~/Content/customassets/css/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    <script src="~/Content/customassets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+    <!--[if lte IE 8]>
+    <script src="~/Content/customassets/js/html5shiv.min.js"></script>
+    <script src="~/Content/customassets/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- basic scripts -->
+    <!--[if !IE]> -->
+    <script src="~/Content/customassets/js/jquery.2.1.1.min.js"></script>
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script src="~/Content/customassets/js/jquery.1.11.1.min.js"></script>
+    <![endif]-->
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='~/Content/customassets/js/jquery.min.js'>" + "<" + "/script>");
+    </script>
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script type="text/javascript">
+     window.jQuery || document.write("<script src='~/Content/customassets/js/jquery1x.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='~/Content/customassets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    <!-- page specific plugin scripts -->
+    <!--[if lte IE 8]>
+      <script src="~/Content/customassets/js/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="~/Scripts/jquery-2.2.3.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/knockout-3.4.0.js" type="text/javascript"></script>
+    <script src="~/Scripts/knockout.mapping-latest.js" type="text/javascript"></script>
+    <script src="~/Scripts/knockout.validation.js" type="text/javascript"></script>
+
+    <!-- ace scripts -->
+    <script src="~/Content/customassets/js/ace-elements.min.js"></script>
+    <script src="~/Content/customassets/js/ace.min.js"></script>
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            function ViewModel(model) {
+                var self = this;
+                self.UserName = model.UserName;
+                self.UserImage = model.UserImage;
+                self.ProfilePicture = model.Profilepicture;
+                self.moduleSubModuleList = ko.mapping.fromJS(model.moduleSubModuleList);
+                //self.setUrl = function (subModule) {
+                //    var url = '/Auth/Home/Menu?smId=' + subModule.Id();
+                //    $('#ifrm').attr('src', url);
+                //    return false;
+                //};
+                self.logout = function () {
+                    location.href = '/Auth/Login/Login';
+                };
+            }
+            function ChangePasswordViewModel() {
+                var self = this;
+                self.OldPassword = ko.observable('');
+                self.Password = ko.observable('');
+                self.ConfirmPassword = ko.observable('');
+                self.ProfilePicture = ko.observable('');
+                self.IsSave = ko.pureComputed(function () {
+                    if (self.Password().length > 5 && self.Password() === self.ConfirmPassword())
+                        return true;
+                    else
+                        return false;
+                });
+
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $('#blah').attr('src', e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+                $("#imgInp").change(function () {
+                    readURL(this);
+                });
+
+
+                self.Upload = function () {
+                    var file_data = $('#imgInp').prop('files')[0];
+                    var formData = new FormData();
+                    formData.append('Photo', file_data);
+                    $.ajax({
+                        type: "POST",
+                        url: '/Auth/Login/UploadPicture',
+                        data: formData,
+                        contentType: false,//"application/json",
+                        processData: false,
+                        cache: false,
+                        success: function (data) {
+                            $('#SuccessModal').modal('show');
+                            $('#SuccessModalText').text(data.Message);
+                        },
+                        error: function () {
+                            alert(error.status + "<--and--> " + error.statusText);
+                        }
+                    });
+                }
+                self.Submit = function () {
+                    var postData = {
+                        OldPassword: self.OldPassword(),
+                        NewPassword: self.Password(),
+                        ConfirmPassword: self.ConfirmPassword()
+                    };
+                    $.ajax({
+                        type: "POST",
+                        url: '/Auth/Login/ChangePassword',
+                        data: ko.toJSON(postData),
+                        contentType: "application/json",
+                        success: function (data) {
+                            //alert(data.Message);
+                            $('#userSuccessModal').modal('show');
+                            $('#userSuccessModalText').text(data.Message);
+                            self.OldPassword('');
+                            self.Password('');
+                            self.ConfirmPassword('');
+                        },
+                        error: function () {
+                            alert(error.status + "<--and--> " + error.statusText);
+                        }
+                    });
+                }
+            }
+            $.getJSON("/Auth/Home/GetModuleSubModules", function (data) {
+                var vm = new ViewModel(data);
+                ko.applyBindings(vm, $("#bs-example-navbar-collapse-1")[0]);
+
+                $('#link a').on('click', function () {
+                    var $this = $(this),
+                        $bc = $('<div class="item"></div>');
+                    $this.parents('li').each(function (n, li) {
+                        var $a = $(li).children('a').clone();
+                        $bc.prepend(' > ', $a.children('span').clone());
+                    });
+                    $('.breadcrumbs').html($bc.prepend('<a id="blink" href="/Auth/Information/Dashboard" target="myIf"><i class="ace-icon fa fa-home home-icon"></i> Dashboard</a>'));
+                    $('#blink').click(function () {
+                        $('.item').html('<a href="/Auth/Information/Dashboard" target="myIf"><i class="ace-icon fa fa-folder-open"></i> Dashboard</a>');
+                    });
+                    $('#hLogo').click(function () {
+                        $('.item').html('<a href="/Auth/Information/Dashboard" target="myIf"><i class="ace-icon fa fa-folder-open"></i> Dashboard</a>');
+                    });
+                    //return false;
+                });
+                //$('#content').append('<iframe id="myIf" name="myIf" width="100%" height="100%" src=' + href + '></iframe>');
+            });
+        });
+    </script>
+</head>
+
+<body class="no-skin">
+    <div id="navbar" class="navbar navbar-default">
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a id="hLogo" href="/Auth/Home/Welcome" style=" width: 1000px;" class="navbar-brand" target="myIf">
+                    
+                    <small>
+                        <img id="I" style="height: 50px; width: 50px;" src="~/Content/Images/favicon.png" />
+                        
+                    </small>
+                    
+                    Dengue Prevention Management Monitoring System
+                        
+                </a>
+            </div>            
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="~/Content/customassets/avatars/user.jpg" alt="Jason's Photo" />
+                            <span class="user-info">
+                                <small>Welcome,</small>
+                                <span data-bind="text:UserName"></span>
+                            </span>
+
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="#" data-bind="click:logout">
+                                    <i class="ace-icon fa fa-power-off"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /.navbar-container -->
+    </div>
+
+    <div class="main-container" id="main-container">
+
+        @RenderBody()
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <span class="bigger-120">
+                        <a style="font-size: 14px;color: black" href="#">&copy;2021 All Right Reserved By PWD</a>
+                    </span>                    
+                </div>
+            </div>
+        </div>
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+        </a>
+    </div>
+
+</body>
+</html>

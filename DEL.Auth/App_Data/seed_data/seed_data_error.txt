@@ -1,0 +1,6 @@
+Error Occured while inserting seed data
+processing for: E:\Projects\PWD\Dengue_App\Dengue_App_1\Dengue_App_1\DEL_BACH_Sln_PWD\DEL_BACH_Sln\WebUI\App_Data\..\..\DEL.Auth\App_Data\seed_data\0
+processing for: E:\Projects\PWD\Dengue_App\Dengue_App_1\Dengue_App_1\DEL_BACH_Sln_PWD\DEL_BACH_Sln\WebUI\App_Data\..\..\DEL.Auth\App_Data\seed_data\0\seed_data.sql
+Failed!....
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.UserOfficeApplication_dbo.HrOffice_OfficeId". The conflict occurred in database "PWD.Auth", table "dbo.HrOffice", column 'Id'.
+The statement has been terminated.

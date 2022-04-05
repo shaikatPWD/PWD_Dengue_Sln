@@ -1,0 +1,90 @@
+﻿<link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<script src="~/Scripts/moment.js"></script>
+<script src="~/Scripts/knockout-date-bindings.js"></script>
+<link href="~/Content/layout-modifications.css" rel="stylesheet" />
+<script src="~/Areas/Auth/Scripts/WorkRecord/WorkRecordEntry.js"></script>
+
+@{
+    ViewBag.Title = "WorkrecordEntry";
+    Layout = "~/Views/Shared/_LayoutContentPage.cshtml";
+}
+
+<div id="wrEntry">
+    <section class="rm">
+        <div class="container-fluid ">
+            <fieldset>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="table-header">
+                                    Dengue Protection Monitoring System
+                                </div>
+                                <div id="dynamic-table_wrapper" class="dataTables_wrapper form-inline no-footer">
+
+                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" frame="box">
+                                        <tbody data-bind="foreach:AssetList">
+                                            <tr>
+                                                <td style="display:none"><input type="hidden" id="assId" data-bind="value:Id" /></td>
+                                                <td style="text-align:left;color:black;font-size:medium;font-weight:bolder">
+                                                    <span data-bind="text: AssetTypeFull"></span>
+                                                </td>
+                                                <td>
+                                                    <a data-bind="attr: {href: '@Url.Action("WorkrecordDetailsEntry", "Workrecord")?assetId=' + $data.Id}" class="btn btn-xs btn-warning">
+                                                        Add New
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="display:none"></td>
+                                                <td colspan="2">
+                                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" frame="box">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="font-weight:bolder">Name of Structure</th>
+                                                                <th>Completion Date</th>
+                                                                <th>Image1</th>
+                                                                <th>Image2</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody data-bind="foreach:WorkRecordDetails">
+                                                            <tr>
+                                                                <td style="display:none"><input type="hidden" data-bind="value:Id" /></td>
+                                                                <td style="text-align:left;" data-bind="text: AssetBuildingName"></td>
+                                                                <td style="text-align:left;" data-bind="text: moment(CompletionDate).format('DD/MM/YYYY')"></td>
+                                                                <td style="text-align:left;">
+                                                                    <a data-bind="attr: {href:'/UploadImages/InfoImages/'+ Image1 +'.jpg'}">
+                                                                        <span data-bind="text: Image1"></span>
+                                                                    </a>
+                                                                </td>
+                                                                <td style="text-align:left;">
+                                                                    <a data-bind="attr: {href:'/UploadImages/InfoImages/'+ Image2 +'.jpg'}">
+                                                                        <span data-bind="text: Image2"></span>
+                                                                    </a>
+                                                                    @*<a onclick="clickyClick1()" id="img2" href="" data-bind="text: Image2"></a>*@
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                @*<td></td>*@
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </section>
+
+</div>
+
+

@@ -1,0 +1,161 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutContentPage.cshtml";
+    ViewBag.Title = "User Entry";
+}
+
+<link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="~/Scripts/KoCustomDateTimePicker.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<script src="~/Scripts/moment.js"></script>
+<script src="~/Scripts/knockout-date-bindings.js"></script>
+<link href="~/Content/layout-modifications.css" rel="stylesheet" />
+<script src="~/Areas/Auth/Scripts/WorkRecord/WorkRecordDetailsEntry.js"></script>
+
+<script type="text/javascript">
+    var img1, img2;
+    function encodeImageFileAsURL() {
+
+        var filesSelected = document.getElementById("image1").files;
+        var srcData, newImage;
+        
+        if (filesSelected.length > 0) {
+            var fileToLoad = filesSelected[0];
+            var fileReader = new FileReader();
+
+            fileReader.onload = function (fileLoadedEvent) {
+                srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+                newImage = document.createElement('img');
+                newImage.setAttribute("id", "img1");
+                newImage.src = srcData;
+
+                document.getElementById("myImg").innerHTML = newImage.outerHTML;
+                img1 = document.getElementById("img1").src;;
+                //alert("Converted Base64 version is " + document.getElementById("myImg").innerHTML);
+                //console.log("Converted Base64 version is " + document.getElementById("myImg").innerHTML);
+            }
+            fileReader.readAsDataURL(fileToLoad);
+        }
+    }
+    function encodeImageFileAsURL2() {
+
+        var filesSelected = document.getElementById("image2").files;
+        var srcData2, newImage2;
+        if (filesSelected.length > 0) {
+            var fileToLoad = filesSelected[0];
+            var fileReader = new FileReader();
+
+            fileReader.onload = function (fileLoadedEvent) {
+                srcData2 = fileLoadedEvent.target.result; // <--- data: base64
+
+                newImage2 = document.createElement('img');
+                newImage2.setAttribute("id", "img2");
+                newImage2.src = srcData2;
+
+                document.getElementById("myImg2").innerHTML = newImage2.outerHTML;
+                img2 = document.getElementById("img2").src; //document.getElementById("myImg2").innerHTML;
+                //lert("Converted Base64 version is " + document.getElementById("myImg2").innerHTML);
+                //console.log("Converted Base64 version is " + document.getElementById("myImg2").innerHTML);
+            }
+            fileReader.readAsDataURL(fileToLoad);
+        }
+    }
+
+</script>
+
+<div class="page-content" id="wrdEntry">
+    <div class="page-header">
+        <h1>
+            Work Record Entry
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                Update work record for <span data-bind="text:AssetName"></span>
+            </small>
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form class="form-horizontal" role="form">
+                @*<div class="form-group">*@
+                @*<label class="col-sm-10 control-label no-padding-right" for="form-field-1" data-bind="value:AssetName"> </label>*@
+                @*<input type="text" data-bind="value:AssetName" id="fullname" name="FullName" class="col-xs-10 col-sm-5" />*@
+                @*<div class="col-sm-9">
+            <input type="text" data-bind="value:FullName" id="fullname" name="FullName" class="col-xs-10 col-sm-5" />
+        </div>*@
+                @*</div>*@
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Name of Structure :</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" data-bind="value:AssetBuildingName" id="assetBuildingName" name="assetBuildingName" class="col-xs-10 col-sm-5" />
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Completion Date :</label>
+
+                    <div class="col-sm-9">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control hasDatepicker" id="completeDate" data-bind="datepicker:CompletionDate, datepickerOptions: {format: 'DD/MM/YYYY HH:mm'}, valueUpdate:'keyup'">
+                            <span class="help-block" style="display: none;"></span>
+                            <div class="input-group-addon">
+                                <span class="ace-icon fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
+
+                    <div class="col-sm-9">
+                        <input type="file" id="image1" name="image1" class="col-xs-10 col-sm-5" onchange="encodeImageFileAsURL();" />
+                        <div id="myImg" hidden></div>
+                        <p id="b64_1" hidden></p>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 2 :</label>
+
+                    <div class="col-sm-9">
+                        <input type="file" id="image2" name="image2" class="col-xs-10 col-sm-5" onchange="encodeImageFileAsURL2();"/>
+                        <div id="myImg2" hidden></div>
+                        <p id="b64_2" hidden></p>
+                    </div>
+                </div>
+
+                <div class="space-6"></div>
+
+                <div class="clearfix form-actions">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" data-togle="modal" data-target="#successModal" data-bind="click:Submit" class="btn btn-info">
+                            <i class="ace-icon fa fa-check bigger-110"></i>
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="successModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Response</h4>
+                </div>
+                <div class="modal-body" align="center">
+                    <p id="successModalText"></p>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

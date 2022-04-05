@@ -1,0 +1,39 @@
+﻿<!-- basic scripts -->
+<!--[if !IE]> -->
+<script src="~/Content/customassets/js/jquery.2.1.1.min.js"></script>
+
+<!-- <![endif]-->
+<!--[if IE]>
+<script src="~/Content/customassets/js/jquery.1.11.1.min.js"></script>
+<![endif]-->
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='~/Content/customassets/js/jquery.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='~/Content/customassets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='~/Content/customassets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="~/Content/customassets/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+<script src="~/Content/customassets/js/bootstrap-datepicker.min.js"></script>
+<script src="~/Content/customassets/js/jquery.jqGrid.min.js"></script>
+<script src="~/Content/customassets/js/grid.locale-en.js"></script>
+
+<script src="~/Areas/Auth/Scripts/menu.js"></script>
+<script src="~/Areas/Auth/Scripts/validate.js"></script>
+@{
+    ViewBag.Title = "Menu information";
+    Layout = "~/Views/Shared/_LayoutJQueryPages.cshtml";
+}
+
+<table id="jqGrid"></table>
+<div id="jqGridPager"></div>
+@*<div id="jqControls"></div>*@

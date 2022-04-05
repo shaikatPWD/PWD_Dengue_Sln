@@ -1,0 +1,97 @@
+@{
+    /**/
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+@*frameborder="0" scrolling="no" onload="this.width = '100%'; this.height = screen.height;"*@
+@*<iframe id="ifrm" src='' frameborder="0" scrolling="no" onload="this.width = '100%'; this.height = screen.height;"></iframe>*@
+<style type="text/css">
+    .item {
+        /*font-weight:bold;*/
+        padding-left: 10px;
+    }
+</style>
+<div id="sidebar" class="sidebar responsive">
+    <div class="sidebar-shortcuts" id="sidebar-shortcuts" style="background-color: #579EC8 !important">
+        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+            <a class="navbar-brand" style="line-height:10px !important; color:#ffffff" href="home.php">Public Works Department (PWD)</a>
+        </div>
+
+        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+            <span class="btn btn-success"></span>
+
+            <span class="btn btn-info"></span>
+
+            <span class="btn btn-warning"></span>
+
+            <span class="btn btn-danger"></span>
+        </div>
+    </div>
+    <!-- /.sidebar-shortcuts -->
+    <ul class="nav nav-list">
+        <li class="active">
+            <a href="/Auth/Information/Dashboard" target="myIf">
+                <i class="menu-icon fa fa-tachometer"></i>
+                <span class="menu-text"> Dashboard </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
+    </ul>
+    <ul class="nav nav-list" data-bind="foreach: moduleSubModuleList">
+
+        @*<li class="">*@
+            @*<a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-tag"></i>
+                <span data-bind="text: $data.DisplayName"></span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>*@
+
+            @*<ul class="submenu" data-bind="foreach: $data.ChildMenus">
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-plus"></i>
+                        <span data-bind="text:$data.DisplayName"></span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>*@
+                    @*<ul class="submenu" data-bind="foreach: $data.ChildMenusM">*@
+                        <li class="" id="link">
+                            <a data-bind="attr: { href: $data.Url}" class="link1" target="myIf">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                <span data-bind="text:$data.DisplayName"></span>
+                            </a>
+                            <b class="arrow"></b>
+                        @*</li>
+                    </ul>*@
+                @*</li>
+            </ul>*@
+        </li>
+    </ul><!-- /.nav-list -->
+
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+        <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div>
+</div>
+
+@*<div class="main-content-inner main-container-inner-mod">
+        <div class="breadcrumbs" id="breadcrumbs"></div>
+        <div id="content" class="page-content">
+            <div id="welcomecontent">
+                @Html.Action("Welcome", "Home")
+            </div>
+        </div>
+    </div>*@
+<div class="main-content">
+    <div class="breadcrumbs" id="breadcrumbs"><a href="/Auth/Information/Dashboard" class="item" target="myIf"><i class="ace-icon fa fa-folder-open"></i> Dashboard</a></div>
+    <div id="content" class="page-content">
+        @*<div id="welcomecontent">
+                @Html.Action("Welcome", "Home")  class="page-content"
+            </div>*@
+        @*<iframe id="myIf" name="myIf" width="100%" frameborder="0" src="/Auth/Home/Welcome"></iframe>*@
+        <iframe id="myIf" name="myIf" width="100%" height="768px" src="/Auth/Information/Dashboard" frameborder="0"></iframe>
+    </div>
+</div>
+
+<!-- /.main-content -->

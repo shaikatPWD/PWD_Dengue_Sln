@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Day Closing";
+    Layout = "~/Views/Shared/_LayoutContentPage.cshtml";
+    var CompanyId = ViewBag.CompanyId;
+    var jss = new System.Web.Script.Serialization.JavaScriptSerializer();
+    var Companies = jss.Serialize(ViewBag.Companies);
+    var count = ViewBag.CompanyCount;
+}
+<script>
+    var userCompanyId = parseInt(@CompanyId);
+    //var Companies = JSON.parse('@Html.Raw(Companies)');
+</script>
+@*<link href="~/Content/customassets/css/CardiacStyle.css" rel="stylesheet" />*@
+<style>
+    /*.Id {
+        display: none !important;
+    }*/
+    .form-control {
+        width: 100% !important;
+    }
+
+    .btnLarge {
+        width: 140px !important;
+    }
+
+    .input-group-addon {
+        padding: 0 5px;
+    }
+
+    .rm {
+        background-color: #F8F8F8;
+        border-radius: 0px 0px 0px 0px !important;
+    }
+</style>
+
+<section class="rm">
+    <div class="panel-body">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="container">
+                        <div id="dayOpeningDiv">
+                            <div class="form-group row row_design">
+                                <label class="alert-success">@ViewBag.Message</label>
+                            </div>
+                            <br />
+                            
+                            <div class="form-group row row_design">
+
+                                <label class="control-label col-sm-2 col-sm-offset-3">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Close Date</button>
+                                </label>
+                                <label class="control-label col-sm-2">
+                                    <button type="button" class="btn btn-success" id="takeBackup">Take DB Backup</button>
+                                </label>
+                                <div class="form-group row row_design">
+                                    <!-- Modal -->
+                                    <div id="myModal" class="modal fade" role="dialog">
+                                        <div class="modal-dialog modal-sm">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Confirmation</h4>
+                                                </div>
+                                                <div class="modal-body" align="center">
+                                                    <p>Do you want to close current date?</p>
+                                                    <button id="switchOn" class="btn btn-success" data-dismiss="modal">Yes</button>
+                                                    <button type="button" class="btn btn-warning" data-dismiss="modal">No</button>
+                                                </div>
+                                                <div class="modal-footer">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+
+                                        $(document).ready(function () {
+                                            $('#switchOn').click(function () {
+
+                                                $.ajax({
+                                                    type: "GET",
+                                                    url: '/Auth/CompanyProfile/UpdateClosingDate?CompanyProfileId=' + userCompanyId,
+                                                    contentType: "application/json",
+                                                    dataType: "json",
+                                                    success: function (data) {
+                                                        alert(data.Message);
+                                                        window.location.href = "/Auth/CompanyProfile/DayClosing";
+                                                    },
+                                                    error: function () {
+                                                        alert(error.status + "<--and--> " + error.statusText);
+                                                    }
+                                                });
+                                            });
+                                            $('#takeBackup').click(function () {
+                                                $.ajax({
+                                                    type: "GET",
+                                                    url: '/Auth/CompanyProfile/TakeDBBackup',
+                                                    contentType: "application/json",
+                                                    dataType: "json",
+                                                    success: function (data) {
+                                                        alert(data.Message);
+                                                        window.location.href = "/Auth/CompanyProfile/DayClosing";
+                                                    },
+                                                    error: function () {
+                                                        alert(error.status + "<--and--> " + error.statusText);
+                                                    }
+                                                });
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
