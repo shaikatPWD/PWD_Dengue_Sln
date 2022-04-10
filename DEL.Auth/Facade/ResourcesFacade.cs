@@ -16,9 +16,9 @@ namespace DEL.Auth.Facade
 {
     public class ResourcesFacade : BaseFacade
     {
-        public List<ResourcesDto> GetResources()//(List<long?> ApplicationId)
+        public List<ResourcesDto> GetResources(long? officeid)//(List<long?> ApplicationId)
         {
-            var districts = GenService.GetAll<Resources>().OrderBy(a=>a.OrderID).ToList();
+            var districts = GenService.GetAll<Resources>().Where(r => r.HrOfficeId == officeid).OrderBy(a => a.OrderID).ToList();
 
             var data = districts.Select(x => new ResourcesDto
             {
@@ -30,7 +30,7 @@ namespace DEL.Auth.Facade
             return data;
         }
 
-        public void SaveResources(ResourcesDto resourcesDto)
+        public void SaveResources(ResourcesDto resourcesDto, long? officeid)
         {
             if (resourcesDto.Id > 0)
             {
@@ -38,7 +38,7 @@ namespace DEL.Auth.Facade
                 resources.ResourceName = resourcesDto.ResourceName;
                 resources.Quantity = resourcesDto.Quantity;
                 resources.OrderID = (int)resourcesDto.OrderID;
-                resources.HrOfficeId = (int)resourcesDto.HrOfficeId;
+                resources.HrOfficeId = (long)officeid;//(int)resourcesDto.HrOfficeId;
                 GenService.Save(resources);
             }
             else
@@ -48,8 +48,8 @@ namespace DEL.Auth.Facade
                     ResourceName = resourcesDto.ResourceName,
                     Quantity = resourcesDto.Quantity,
                     OrderID = (int)resourcesDto.OrderID,
-                    HrOfficeId = (int)resourcesDto.HrOfficeId
-            });
+                    HrOfficeId = (long)officeid//(int)resourcesDto.HrOfficeId
+                });
             }
             GenService.SaveChanges();
         }
@@ -61,7 +61,7 @@ namespace DEL.Auth.Facade
         }
         public List<HrOfficeDto> GetAllCompanyProfiles()
         {
-            return Mapper.Map<List<HrOfficeDto>>(GenService.GetAll<HrOffice>().Where(c=>c.Status==EntityStatus.Active).ToList());
+            return Mapper.Map<List<HrOfficeDto>>(GenService.GetAll<HrOffice>().Where(c => c.Status == EntityStatus.Active).ToList());
         }
     }
 }

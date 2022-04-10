@@ -17,17 +17,18 @@
             url: "/Resources/GetResources",
             datatype: 'json',
             mtype: 'Get',
-            colNames: ['Id', 'Name', 'Quantity', 'Serial', 'Office', 'OfficeName'],
+            colNames: ['Id', 'Name', 'Quantity', 'Serial'], //'Office', 'OfficeName'],
             colModel: [
                 { key: true, hidden: true, name: 'Id', index: 'Id', editable: false },
                 { key: false, name: 'ResourceName', index: 'ResourceName', label: 'Name', editable: true, editrules: { custom_func: validateText, custom: true, required: true }, searchoptions: { sopt: ['eq', 'ne', 'cn'] } },
                 { key: false, name: 'Quantity', index: 'Quantity', label: 'Bangla Name', editable: true,  searchoptions: { sopt: ['eq', 'ne', 'cn'] } },
-                { key: false, name: 'OrderID', index: 'OrderID', editable: true, editrules: { custom_func: validatePositive, custom: true, required: true } },
-                {
-                    key: false, hidden: true, name: 'HrOfficeId', width: 140, index: 'HrOfficeId', editable: true, edittype: "select", editoptions: { dataUrl: '/HrOffice/GetAllCompanyListForGrid', cacheUrlData: true }, editrules: { edithidden: true, required: true },
-                    formoptions: { colpos: 1, rowpos: 4, label: "Office" }
-                },
-                { key: false, name: 'OfficeName', index: 'OfficeName', label: 'Office Name', editable: false, searchoptions: { sopt: ['eq', 'ne', 'cn'] }, classes: "grid-col" }
+                { key: false, name: 'OrderID', index: 'OrderID', editable: true, editrules: { custom_func: validatePositive, custom: true, required: true } }
+                //,
+                //{
+                //    key: false, hidden: true, name: 'HrOfficeId', width: 140, index: 'HrOfficeId', editable: true, edittype: "select", editoptions: { dataUrl: '/HrOffice/GetAllCompanyListForGrid', cacheUrlData: true }, editrules: { edithidden: true, required: true },
+                //    formoptions: { colpos: 1, rowpos: 4, label: "Office" }
+                //},
+                //{ key: false, name: 'OfficeName', index: 'OfficeName', label: 'Office Name', editable: false, searchoptions: { sopt: ['eq', 'ne', 'cn'] }, classes: "grid-col" }
 
             ],
             ondblClickRow: function (rowid) {

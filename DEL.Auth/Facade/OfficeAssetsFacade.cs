@@ -16,9 +16,9 @@ namespace DEL.Auth.Facade
 {
     public class OfficeAssetsFacade : BaseFacade
     {
-        public List<OfficeAssetsDto> GetOfficeAssets()//(List<long?> ApplicationId) long officeId
+        public List<OfficeAssetsDto> GetOfficeAssets(long? officeId)//(List<long?> ApplicationId) long officeId
         {
-            var districts = GenService.GetAll<OfficeAssets>().ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+            var districts = GenService.GetAll<OfficeAssets>().Where(o => o.HrOfficeId == officeId).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
 
             var data = districts.Select(x => new OfficeAssetsDto
             {
@@ -30,7 +30,7 @@ namespace DEL.Auth.Facade
             return data;
         }
 
-        public void SaveOfficeAssets(OfficeAssetsDto officeAssetsDto)
+        public void SaveOfficeAssets(OfficeAssetsDto officeAssetsDto, long? officeid)
         {
             if (officeAssetsDto.Id > 0)
             {
@@ -38,7 +38,7 @@ namespace DEL.Auth.Facade
                 officeAssets.AssetName = officeAssetsDto.AssetName;
                 officeAssets.Description = officeAssetsDto.Description;
                 officeAssets.Note = officeAssetsDto.Note;
-                officeAssets.HrOfficeId = (int)officeAssetsDto.HrOfficeId;
+                officeAssets.HrOfficeId = (long)officeid;//officeAssetsDto.HrOfficeId;
                 GenService.Save(officeAssets);
             }
             else
@@ -48,12 +48,11 @@ namespace DEL.Auth.Facade
                     AssetName = officeAssetsDto.AssetName,
                     Description = officeAssetsDto.Description,
                     Note = officeAssetsDto.Note,
-                    HrOfficeId = (int)officeAssetsDto.HrOfficeId
-            });
+                    HrOfficeId = (long)officeid//(int)officeAssetsDto.HrOfficeId
+                });
             }
             GenService.SaveChanges();
         }
-
         public void DeleteOfficeAssets(long id)
         {
             GenService.Delete<OfficeAssets>(id);
@@ -61,7 +60,7 @@ namespace DEL.Auth.Facade
         }
         public List<HrOfficeDto> GetAllCompanyProfiles()
         {
-            return Mapper.Map<List<HrOfficeDto>>(GenService.GetAll<HrOffice>().Where(c=>c.Status==EntityStatus.Active).ToList());
+            return Mapper.Map<List<HrOfficeDto>>(GenService.GetAll<HrOffice>().Where(c => c.Status == EntityStatus.Active).ToList());
         }
     }
 }

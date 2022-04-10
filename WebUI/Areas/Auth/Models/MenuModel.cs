@@ -130,7 +130,7 @@ namespace WebUI.Areas.Auth.Models
                         DisplayName = t.DisplayName,
                         Description = t.Description,
                         Sl = t.Sl,
-                        Url=t.Url
+                        Url = t.Url
                     }).ToList()
                 }).ToList()
             }).ToList();
@@ -147,7 +147,9 @@ namespace WebUI.Areas.Auth.Models
             var moduleList = SessionHelper.UserProfile.Modules;//menuFacade.GetModules(AppList);
             var subModuleList = SessionHelper.UserProfile.SubModules;//menuFacade.GetSubModules();
             var menuList = SessionHelper.UserProfile.Menus;//menuFacade.GetSubModules();
-            var retVal = menuList.Where(y => y.SubModuleId == 10054).ToList().Select(t => new MenuStructure
+                                                           //var retVal =  List<null>;
+
+            var retVal = menuList.Where(y => y.SubModuleId == 4).ToList().Select(t => new MenuStructure
             {
                 Id = t.Id,
                 ParentId = t.SubModuleId,
@@ -176,8 +178,40 @@ namespace WebUI.Areas.Auth.Models
                 //    }).ToList()
                 //}).ToList()
             }).ToList();
+            var retValAdmin = menuList.ToList().Select(t => new MenuStructure
+            {
+                Id = t.Id,
+                ParentId = t.SubModuleId,
+                Name = t.Name,
+                DisplayName = t.DisplayName,
+                Description = t.Description,
+                Sl = t.Sl,
+                Url = t.Url
+                ////ChildMenus = subModuleList.Where(x => x.ModuleId == m.Id).ToList().Select(s => new MenuStructure
+                ////{
+                ////    Id = s.Id,
+                ////    ParentId = s.ModuleId,
+                ////    Name = s.Name,
+                ////    DisplayName = s.DisplayName,
+                ////    Description = s.Description,
+                ////    Sl = s.Sl,
+                //    ChildMenusM = menuList.Where(y => y.SubModuleId == 10054).ToList().Select(t => new MenuStructure
+                //    {
+                //        Id = t.Id,
+                //        ParentId = t.SubModuleId,
+                //        Name = t.Name,
+                //        DisplayName = t.DisplayName,
+                //        Description = t.Description,
+                //        Sl = t.Sl,
+                //        Url = t.Url
+                //    }).ToList()
+                //}).ToList()
+            }).ToList();
+            if (SessionHelper.UserProfile.UserName.ToLower() == "admin")
+            {
 
-            return retVal;
+            }
+            return (SessionHelper.UserProfile.UserName.ToLower() != "admin" ? retVal : retValAdmin);
         }
     }
 

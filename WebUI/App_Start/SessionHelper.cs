@@ -19,6 +19,7 @@ namespace WebUI
        {
             //return true;
             //skip login 
+            areaName = "auth";
             if (new List<string> { "login", "home", "dpmshome"}.Contains(controllerName.ToLower()))
                 return true;
             

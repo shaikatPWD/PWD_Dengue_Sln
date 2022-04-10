@@ -14,20 +14,21 @@
             }
         });
         $("#jqGrid").jqGrid({
-            url: "/OfficeAssets/GetOfficeAssets",
+            url: "Auth/OfficeAssets/GetOfficeAssets",
             datatype: 'json',
             mtype: 'Get',
-            colNames: ['Id', 'Building Name', 'Description', 'Note', 'Office', 'OfficeName'],
+            colNames: ['Id', 'Building Name', 'Description', 'Note'],// 'Office', 'OfficeName'],
             colModel: [
                 { key: true, hidden: true, name: 'Id', index: 'Id', editable: false },
                 { key: false, name: 'AssetName', index: 'AssetName', label: 'Building Name', editable: true, editrules: { custom_func: validateText, custom: true, required: true }, searchoptions: { sopt: ['eq', 'ne', 'cn'] } },
                 { key: false, name: 'Description', index: 'Description', label: 'Description', editable: true,  searchoptions: { sopt: ['eq', 'ne', 'cn'] } },
-                { key: false, name: 'Note', index: 'Note', label: 'Note', editable: true, searchoptions: { sopt: ['eq', 'ne', 'cn'] } },
-                {
-                    key: false, hidden: true, name: 'HrOfficeId', width: 140, index: 'HrOfficeId', editable: true, edittype: "select", editoptions: { dataUrl: '/HrOffice/GetAllCompanyListForGrid', cacheUrlData: true }, editrules: { edithidden: true, required: true },
-                    formoptions: { colpos: 1, rowpos: 4, label: "Office" }
-                },
-                { key: false, name: 'OfficeName', index: 'OfficeName', label: 'Office Name', editable: false, searchoptions: { sopt: ['eq', 'ne', 'cn'] }, classes: "grid-col" }
+                { key: false, name: 'Note', index: 'Note', label: 'Note', editable: true, searchoptions: { sopt: ['eq', 'ne', 'cn'] } }
+                //,
+                //{
+                //    key: false, hidden: true, name: 'HrOfficeId', width: 140, index: 'HrOfficeId', editable: true, edittype: "select", editoptions: { dataUrl: '/HrOffice/GetAllCompanyListForGrid', cacheUrlData: true }, editrules: { edithidden: true, required: true },
+                //    formoptions: { colpos: 1, rowpos: 4, label: "Office" }
+                //},
+                //{ key: false, name: 'OfficeName', index: 'OfficeName', label: 'Office Name', editable: false, searchoptions: { sopt: ['eq', 'ne', 'cn'] }, classes: "grid-col" }
 
             ],
             ondblClickRow: function (rowid) {
@@ -125,7 +126,7 @@
             //},            
             {
                 zIndex: 100,
-                url: '/OfficeAssets/SaveOfficeAssets',
+                url: 'Auth/OfficeAssets/SaveOfficeAssets',
                 closeOnEscape: true,
                 width: 'auto',
                 height: 'auto',
@@ -148,7 +149,7 @@
             },
             {
                 zIndex: 100,
-                url: "/OfficeAssets/DeleteOfficeAssets",
+                url: "Auth/OfficeAssets/DeleteOfficeAssets",
                 closeOnEscape: true,
                 closeAfterDelete: true,
                 recreateForm: true,

@@ -28,7 +28,7 @@ namespace WebUI.Areas.Auth.Controllers
         [HttpGet]
         public JsonResult GetResources()
         {
-            var ModuleList = _resources.GetResources();
+            var ModuleList = _resources.GetResources(SessionHelper.UserProfile.SelectedOfficeId);
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
 
@@ -37,7 +37,7 @@ namespace WebUI.Areas.Auth.Controllers
         {
             try
             {
-                _resources.SaveResources(resourcesDto);
+                _resources.SaveResources(resourcesDto, SessionHelper.UserProfile.SelectedOfficeId);
                 return Json(new { Result = "OK", Record = "", Message = "Resource/Equipment saved successfully" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

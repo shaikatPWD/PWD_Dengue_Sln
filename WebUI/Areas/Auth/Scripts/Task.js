@@ -20,7 +20,7 @@
             colNames: ['Id', 'Name', 'Description'],
             colModel: [
                 { key: true, hidden: true, name: 'Id', index: 'Id', editable: false },
-                { key: false, name: 'Name', index: 'Name', editable: true, editrules: { custom_func: validateText, custom: true, required: true }, searchoptions: { sopt: ['eq', 'ne', 'cn'] }, classes: "grid-col" },
+                { key: false, name: 'Name', index: 'Name', editable: true,  searchoptions: { sopt: ['eq', 'ne', 'cn'] }, classes: "grid-col" },
                 { key: false, name: 'Description', index: 'Description', editable: true, editrules: { custom_func: validateText, custom: true, required: true }, searchoptions: { sopt: ['eq', 'ne', 'cn'] }, classes: "grid-col" }
             ],
             ondblClickRow: function (rowid) {
@@ -36,7 +36,7 @@
             sortable: true,
             //width: '70%',
             caption: 'Task Records',
-            emptyrecords: 'No Module Records are Available to Display',
+            emptyrecords: 'No Task Records are Available to Display',
             jsonReader: {
                 root: "rows",
                 page: "page",

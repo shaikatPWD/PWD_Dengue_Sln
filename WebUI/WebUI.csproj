@@ -969,6 +969,17 @@
     <Content Include="Content\Images\ZoomIn.png" />
     <Content Include="Content\Images\ZoomOut.png" />
     <Content Include="Content\ionicons.min.css" />
+    <Content Include="Content\jsTree\docs.css" />
+    <Content Include="Content\jsTree\themes\default-dark\32px.png" />
+    <Content Include="Content\jsTree\themes\default-dark\40px.png" />
+    <Content Include="Content\jsTree\themes\default-dark\style.css" />
+    <Content Include="Content\jsTree\themes\default-dark\style.min.css" />
+    <Content Include="Content\jsTree\themes\default-dark\throbber.gif" />
+    <Content Include="Content\jsTree\themes\default\32px.png" />
+    <Content Include="Content\jsTree\themes\default\40px.png" />
+    <Content Include="Content\jsTree\themes\default\style.css" />
+    <Content Include="Content\jsTree\themes\default\style.min.css" />
+    <Content Include="Content\jsTree\themes\default\throbber.gif" />
     <Content Include="Content\layout-modifications.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />

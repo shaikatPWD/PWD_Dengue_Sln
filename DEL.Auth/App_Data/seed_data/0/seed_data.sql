@@ -656,38 +656,38 @@ SET IDENTITY_INSERT [dbo].[HrOffice] OFF
 --INSERT [dbo].[Area] ([Id], [Name], [BnName], [OrderID], [HrOfficeId], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (22, N'Segunbagicha', N'সেগুনবাগিচা', 1, 0, 1, CAST(N'2022-03-22T13:25:28.203' AS DateTime), NULL, NULL, NULL, 1)
 --SET IDENTITY_INSERT [dbo].[Area] OFF
 
---SET IDENTITY_INSERT [dbo].[District] ON 
+SET IDENTITY_INSERT [dbo].[District] ON 
 
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Borguna', N'বরগুনা', 1, 1, CAST(N'2022-03-21T14:15:01.267' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Borishal', N'বরিশাল', 2, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, N'Bhola', N'ভোলা', 3, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'Jhalokathi', N'ঝালকাঠি', 4, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Potuakhali', N'পটুয়াখালী', 5, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'Pirojpur', N'পিরোজপুর', 6, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Bandorban', N'বান্দরবান', 7, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Brammanbaria', N'ব্রাহ্মণবাড়িয়া', 8, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (9, N'Chandpur', N'চাঁদপুর', 9, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10, N'Chattogram', N'চট্টগ্রাম', 10, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (11, N'Comilla', N'কুমিল্লা', 11, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (12, N'Coxsbazar', N'কক্সবাজার', 12, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (13, N'Feni', N'ফেনী', 13, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (14, N'Khagrachori', N'খাগড়াছরি', 14, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (15, N'Laxmipur', N'লক্ষ্মীপুর', 15, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (16, N'Noakhali', N'নোয়াখালী', 16, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (17, N'Rangamati', N'রাঙ্গামাটি', 17, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (18, N'Dhaka', N'ঢাকা', 18, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (19, N'Faridpur', N'ফরিদপুর', 19, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20, N'Gazipur', N'গাজীপুর', 20, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (21, N'Gopalganj', N'গোপালগঞ্জ', 21, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (22, N'Kishoreganj', N'কিশোরগঞ্জ', 22, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (23, N'Madaripur', N'মাদারীপুর', 23, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (24, N'Manikganj', N'মানিকগঞ্জ', 24, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (25, N'Munhiganj', N'মুন্সিগঞ্জ', 25, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (26, N'Narayanganj', N'নারায়ণগঞ্জ', 26, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (27, N'Norshingdi', N'নরসিংদী', 27, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (28, N'Shariatpur', N'শরীয়তপুর', 28, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (29, N'Tangail', N'টাঙ্গাইল', 29, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
---SET IDENTITY_INSERT [dbo].[District] OFF
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Borguna', N'বরগুনা', 1, 1, CAST(N'2022-03-21T14:15:01.267' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Borishal', N'বরিশাল', 2, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, N'Bhola', N'ভোলা', 3, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'Jhalokathi', N'ঝালকাঠি', 4, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Potuakhali', N'পটুয়াখালী', 5, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'Pirojpur', N'পিরোজপুর', 6, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Bandorban', N'বান্দরবান', 7, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Brammanbaria', N'ব্রাহ্মণবাড়িয়া', 8, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (9, N'Chandpur', N'চাঁদপুর', 9, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10, N'Chattogram', N'চট্টগ্রাম', 10, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (11, N'Comilla', N'কুমিল্লা', 11, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (12, N'Coxsbazar', N'কক্সবাজার', 12, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (13, N'Feni', N'ফেনী', 13, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (14, N'Khagrachori', N'খাগড়াছরি', 14, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (15, N'Laxmipur', N'লক্ষ্মীপুর', 15, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (16, N'Noakhali', N'নোয়াখালী', 16, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (17, N'Rangamati', N'রাঙ্গামাটি', 17, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (18, N'Dhaka', N'ঢাকা', 18, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (19, N'Faridpur', N'ফরিদপুর', 19, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20, N'Gazipur', N'গাজীপুর', 20, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (21, N'Gopalganj', N'গোপালগঞ্জ', 21, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (22, N'Kishoreganj', N'কিশোরগঞ্জ', 22, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (23, N'Madaripur', N'মাদারীপুর', 23, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (24, N'Manikganj', N'মানিকগঞ্জ', 24, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (25, N'Munhiganj', N'মুন্সিগঞ্জ', 25, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (26, N'Narayanganj', N'নারায়ণগঞ্জ', 26, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (27, N'Norshingdi', N'নরসিংদী', 27, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (28, N'Shariatpur', N'শরীয়তপুর', 28, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (29, N'Tangail', N'টাঙ্গাইল', 29, 1, CAST(N'2022-03-21T14:18:28.667' AS DateTime), NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[District] OFF
 
 --SET IDENTITY_INSERT [dbo].[Information] ON 
 
@@ -760,83 +760,92 @@ SET IDENTITY_INSERT [dbo].[HrOffice] OFF
 --INSERT [dbo].[Resources] ([Id], [ResourceName], [Quantity], [OrderID], [HrOfficeId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (50, N'Fogger machine', N'2', 1, 89, NULL, NULL, NULL, NULL, 1)
 --SET IDENTITY_INSERT [dbo].[Resources] OFF
 
-SET IDENTITY_INSERT [dbo].[OfficeProfile] ON 
+--SET IDENTITY_INSERT [dbo].[Assets] ON 
 
-INSERT [dbo].[OfficeProfile] ([Id], [Code], [Name], [RoutingNo], [Address], [Logo], [PhoneNo], [Email], [Fax], [ContactPerson], [SystemDate], [VoucherNo], [JvNo], [CDvNo], [BDvNo], [CCvNo], [BCvNo], [VoucherName], [BillNo], [ChallanNo], [InvoiceNo], [PreProdNo], [ProdNo], [RequisitionNo], [OrderNo], [EmployeeNo], [PurchaseDate], [SalesDate], [AccountsDate], [FiscalYear], [ParentId], [CompanyType], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'123', N'Go Bangladesh', NULL, NULL, NULL, NULL, NULL, NULL, NULL, CAST(N'2018-02-20T00:00:00.000' AS DateTime), NULL, N'157', N'8', N'8', N'00000000', N'00000000', NULL, N'00000000', N'00000000', N'56', N'00000000', N'00000000', NULL, NULL, 0, NULL, NULL, NULL, CAST(N'2017-11-07T00:00:00.000' AS DateTime), NULL, 1, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[OfficeProfile] OFF
+--INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Pond', N'গণপূর্ত অধিদপ্তরের আওতাধীন সকল পুকুর/জলাশয়/লেক/খাল কচুরীপানা মুক্ত ও পরিষ্কার পরিচ্ছন্ন করা হয়েছে।', 1, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Waste', N'গণপূর্ত অধিদপ্তরের আওতাধীন সকল স্থাপনার বর্জ অপসারণের বিষয়ে প্রয়োজনীয় ব্যবস্থা গ্রহণ করা হয়েছে।', 2, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'Hospitals', N'গণপূর্ত অধিদপ্তরের আওতায় সকল সরকারি হাসপাতালের ড্রেইন এবং তৎসংলগ্ন এলাকা পরিষ্কার পরিচ্ছন্ন রাখার ব্যবস্থা গ্রহণ করা হয়েছে।''', 3, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Office', N'সকল অফিস আদালত ও বাসা বাড়ির আঙ্গিনার ঝোঁপ-ঝাড় ও আগাছা মুক্ত রাখা, সংলগ্ন রাস্তা, ড্রেইন নিয়মিত পরিষ্কার করা হচ্ছে।', 4, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'Stagnant_water', N'জমানো পানির সকল উৎস যথাসম্ভব অপসারণ পূর্বক নিয়মিতভাবে জীবানু-নাশক ছিটানোর ব্যবস্থা ও পানিতে ভাসমান লার্ভা বিনষ্ট করা হচ্ছে।', 5, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Larvae', N'ভবনের ঢালাইয়ের কিউরিং কাজে জমানো পানিতে মশার লার্ভা ধ্বংসকারী ওষধ নিয়মিতভাবে ছিটানোর ব্যবস্থা গ্রহণ করা হয়েছে।', 6, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Construction', N'সকল গণপূর্ত বিভাগের আওতাধীন নির্মাণ সাইটগুলোতে অপ্রয়োজনীয় আবদ্ধ পানি অপসারণ করা হয়েছে। ', 7, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+--SET IDENTITY_INSERT [dbo].[Assets] OFF
 
-SET IDENTITY_INSERT [dbo].[Designation] ON 
+--SET IDENTITY_INSERT [dbo].[WorkRecordDetails] ON 
 
-INSERT [dbo].[Designation] ([Id], [Name], [Details], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Admin', N'Administrator', NULL, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[Designation] OFF
-
-SET IDENTITY_INSERT [dbo].[OwnOffice] ON 
-
-INSERT [dbo].[OwnOffice] ([Id], [Code], [Name], [RoutingNo], [Address], [PhoneNo], [Email], [Fax], [ContactPerson], [Logo], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'001', N'Data Edge Ltd.', N'001234567', N'Motijheel', N'01458987454', N'de@data-edge.com', N'41526352145', N'Balaram Aich', NULL, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[OwnOffice] OFF
-
-SET IDENTITY_INSERT [dbo].[OwnOfficeBranch] ON 
-
-INSERT [dbo].[OwnOfficeBranch] ([Id], [OwnOfficeId], [BranchType], [Code], [Name], [RoutingNo], [Address], [PhoneNo], [Email], [Fax], [ContactPerson], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, N'0011', N'Motijheel', N'001234566', N'Motijheel', N'12541452563', N'hode@data-edge.com', N'45698745214', N'SB', NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[OwnOfficeBranch] OFF
-
-SET IDENTITY_INSERT [dbo].[Employee] ON 
-
-INSERT [dbo].[Employee] ([Id], [OwnOfficeId], [OwnOfficeBranchId], [EmployeeId], [EmployeeCode], [EmployeeName], [DesignationId], [PerPhone], [OfficePhone], [Email], [Address], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, 1, 1, N'de190668', N'desb668', N'Shaikat Barua', 2, N'14525487454', N'415256365214', N'admin@de.com', N'Motijheel', NULL, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[Employee] OFF
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, N'adfadf', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, 1, 2, N'adsfadsf', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, 1, 2, N'24234234', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, 1, 4, N'fghdfghdfgh', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, 1, 1, N'Shaikat', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-03-31T13:17:49.293' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10, 1, 8, N'Salman', CAST(N'2022-03-31T13:19:19.533' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-03-31T13:19:41.340' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (11, 1, 1, N'Mojidul', CAST(N'2022-03-31T14:42:35.980' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-03-31T14:42:47.953' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (12, 1, 1, N'Faruk', CAST(N'2022-04-03T12:12:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:15:23.213' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (13, 1, 1, N'Mojidul', CAST(N'2022-04-03T12:17:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:18:28.557' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (14, 1, 1, N'ahasan', CAST(N'2022-04-03T12:18:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:21:09.637' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (15, 1, 1, N'Mojidul', CAST(N'2022-04-03T12:57:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:58:16.497' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (17, 1, 1, N'Mojidul', CAST(N'2022-04-03T14:00:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T14:01:05.980' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (18, 1, 1, N'Mojidul', CAST(N'2022-04-03T14:00:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T14:01:08.330' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (19, 1, 2, N'hdfghd', CAST(N'2022-04-03T14:18:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T14:19:21.480' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (24, 1, 5, N'Shaikat', CAST(N'2022-04-05T12:55:00.000' AS DateTime), N'20220405125603064366Image_1_5', N'20220405125617543867Image_1_5', 0, 0, CAST(N'2022-04-05T12:56:22.203' AS DateTime), 1, NULL, NULL, 1)
+--SET IDENTITY_INSERT [dbo].[WorkRecordDetails] OFF
 
 SET IDENTITY_INSERT [dbo].[Application] ON 
 
 INSERT [dbo].[Application] ([Id], [Name], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Dengue Monitoring', CAST(N'2016-10-26T00:00:00.000' AS DateTime), 1, NULL, NULL, 1)
 SET IDENTITY_INSERT [dbo].[Application] OFF
 
+SET IDENTITY_INSERT [dbo].[OfficeProfile] ON 
+
+INSERT [dbo].[OfficeProfile] ([Id], [Code], [Name], [RoutingNo], [Address], [Logo], [PhoneNo], [Email], [Fax], [ContactPerson], [SystemDate], [VoucherNo], [JvNo], [CDvNo], [BDvNo], [CCvNo], [BCvNo], [VoucherName], [BillNo], [ChallanNo], [InvoiceNo], [PreProdNo], [ProdNo], [RequisitionNo], [OrderNo], [EmployeeNo], [PurchaseDate], [SalesDate], [AccountsDate], [FiscalYear], [ParentId], [CompanyType], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'123', N'Go Bangladesh', NULL, NULL, NULL, NULL, NULL, NULL, NULL, CAST(N'2018-02-20T00:00:00.000' AS DateTime), NULL, N'157', N'8', N'8', N'00000000', N'00000000', NULL, N'00000000', N'00000000', N'56', N'00000000', N'00000000', NULL, NULL, 0, NULL, NULL, NULL, CAST(N'2017-11-07T00:00:00.000' AS DateTime), NULL, 1, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[OfficeProfile] OFF
+
 SET IDENTITY_INSERT [dbo].[User] ON 
 
-INSERT [dbo].[User] ([Id], [UserName], [Password], [EmployeeId], [IsActive], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status], [Application_Id], [OfficeProfile_Id]) VALUES (10048, N'Admin', N'E10ADC3949BA59ABBE56E057F20F883E', 2, 1, NULL, NULL, NULL, NULL, 1, NULL, NULL)
+INSERT [dbo].[User] ([Id], [UserName], [Password], [EmployeeId], [IsActive], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status], [Application_Id], [HrOffice_Id], [OfficeProfile_Id]) VALUES (1, N'Admin', N'E10ADC3949BA59ABBE56E057F20F883E', 2, 1, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL)
 SET IDENTITY_INSERT [dbo].[User] OFF
 
 SET IDENTITY_INSERT [dbo].[UserOfficeApplication] ON 
 
-INSERT [dbo].[UserOfficeApplication] ([Id], [UserId], [OfficeId], [ApplicationId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, 10048, 1, 1, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[UserOfficeApplication] ([Id], [UserId], [OfficeId], [ApplicationId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, 1, NULL, NULL, NULL, NULL, 1)
 SET IDENTITY_INSERT [dbo].[UserOfficeApplication] OFF
 
 SET IDENTITY_INSERT [dbo].[Module] ON 
 
-INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Auth', N'Auth', N'Authentication & Authorization Configuration', 5, NULL, 1, NULL, NULL, 1)
-INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (18, N'Data Management', N'Data Management', N'Data Management', 8, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20, N'PWD', N'PWD', N'PWD', 6, CAST(N'2019-01-16T17:15:05.727' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Auth', N'Auth', N'Authentication & Authorization Configuration', 1, NULL, 1, NULL, NULL, 1)
+INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Data Management', N'Data Management', N'Data Management', 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, N'PWD', N'PWD', N'PWD', 3, CAST(N'2019-01-16T17:15:05.727' AS DateTime), NULL, NULL, NULL, 1)
 SET IDENTITY_INSERT [dbo].[Module] OFF
 
 SET IDENTITY_INSERT [dbo].[SubModule] ON 
 
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (11, N'MenuStructure', N'Menu Structure', N'Menu Structure', 1, 5, NULL, 1, NULL, NULL, 1)
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (12, N'Authorization', N'Authorization', N'Authorization', 2, 5, NULL, 1, NULL, NULL, 1)
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (46, N'Many2Many Assignment', N'Many to Many Assignment', N'Many to Many Assignment', 1, 18, NULL, 1, NULL, NULL, 1)
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (47, N'Basic Data', N'Setup', N'Basic Data', 0, 18, NULL, 1, NULL, NULL, 1)
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10051, N'Administritive Basic Data', N'Setup', N'Basic Data', 1, 20, CAST(N'2019-01-16T17:16:29.067' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10054, N'PWD', N'PWD', N'PWD', 1, 20, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'MenuStructure', N'Menu Structure', N'Menu Structure', 1, 1, NULL, 1, NULL, NULL, 1)
+INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Authorization', N'Authorization', N'Authorization', 2, 1, NULL, 1, NULL, NULL, 1)
+INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, N'Many2Many Assignment', N'Many to Many Assignment', N'Many to Many Assignment', 1, 2, NULL, 1, NULL, NULL, 1)
+INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'PWD', N'PWD', N'PWD', 1, 3, NULL, NULL, NULL, NULL, 1)
 SET IDENTITY_INSERT [dbo].[SubModule] OFF
 
 SET IDENTITY_INSERT [dbo].[Menu] ON 
 
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Module', N'Module Maintenance', N'Module Maintenance', 1, N'/Auth/module/index', NULL, NULL, 11, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'SubModule', N'Sub Module Maintenance', N'Sub Module Maintenance', 2, N'/Auth/submodule/index', NULL, NULL, 11, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Menu', N'Menu Maintenance', N'Menu Maintenance', 3, N'/Auth/Menu/Index', NULL, NULL, 11, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Role', N'Role Maintenance', N'Role Maintenance', 1, N'/Auth/Role/Index', NULL, NULL, 12, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (9, N'Task', N'Task Maintenance', N'Task Maintenance', 2, N'/Auth/task/index', NULL, NULL, 12, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (65, N'User Entry', N'User Entry', N'User Entry', 1, N'/Auth/User/UserEntry', NULL, NULL, 12, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (66, N'Role Permissions', N'Role Permissions', N'Role Permissions', 2, N'/Auth/Role/RolePermissions', NULL, NULL, 12, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (67, N'Proxy Role Permission', N'Proxy Role Permission', N'Proxy Role Permission', 5, N'/Auth/Role/ProxyRolePermissions', NULL, NULL, 12, CAST(N'2016-11-26T17:15:29.663' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (242, N'ManyToMany Assignment', N'ManyToMany Assignment', N'ManyToMany Assignment', 1, N'/Auth/Assignments/ManyToManyAssignment', NULL, NULL, 46, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (282, N'Dashboard', N'Dashboard', N'Dashboard', 1, N'/Auth/Information/Dashboard', NULL, NULL, 10054, NULL, NULL, NULL, NULL, 0)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (284, N'District', N'District', N'District', 2, N'/Auth/District/Index', NULL, NULL, 10054, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (285, N'Thana', N'Thana', N'Thana', 3, NULL, NULL, NULL, 10054, NULL, NULL, NULL, NULL, 0)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (288, N'Area', N'Area', N'Area', 4, N'/Auth/Area/Index', NULL, NULL, 10054, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (289, N'Office Setup', N'Office Setup', N'Office Setup', 5, N'/Auth/HrOffice/Index', NULL, NULL, 10054, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (290, N'Action Entry', N'Action Update', N'Action Update', 6, N'/Auth/Information/ActionEntry', NULL, NULL, 10054, NULL, NULL, NULL, NULL, 0)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (295, N'Equipment/Resource', N'Equipment/Resource', N'Equipment/Resource', 7, N'/Auth/Resources/Index', NULL, NULL, 10054, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (296, N'Building', N'Building', N'Building', 8, N'/Auth/OfficeAssets/Index', NULL, NULL, 10054, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (297, N'Assets', N'Assets', N'Assets', 9, N'/Auth/Assets/Index', NULL, NULL, 10054, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Module', N'Module Maintenance', N'Module Maintenance', 1, N'/Auth/module/index', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'SubModule', N'Sub Module Maintenance', N'Sub Module Maintenance', 2, N'/Auth/submodule/index', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Menu', N'Menu Maintenance', N'Menu Maintenance', 3, N'/Auth/Menu/Index', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Role', N'Role Maintenance', N'Role Maintenance', 1, N'/Auth/Role/Index', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (9, N'Task', N'Task Maintenance', N'Task Maintenance', 2, N'/Auth/task/index', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (65, N'User Entry', N'User Entry', N'User Entry', 1, N'/Auth/User/UserEntry', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (66, N'Role Permissions', N'Role Permissions', N'Role Permissions', 2, N'/Auth/Role/RolePermissions', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (67, N'Proxy Role Permission', N'Proxy Role Permission', N'Proxy Role Permission', 5, N'/Auth/Role/ProxyRolePermissions', NULL, NULL, 2, CAST(N'2016-11-26T17:15:29.663' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (242, N'ManyToMany Assignment', N'ManyToMany Assignment', N'ManyToMany Assignment', 1, N'/Auth/Assignments/ManyToManyAssignment', NULL, NULL, 3, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (282, N'Dashboard', N'Dashboard', N'Dashboard', 1, N'/Auth/Information/Dashboard', NULL, NULL, 4, NULL, NULL, NULL, NULL, 0)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (284, N'District', N'District', N'District', 2, N'/Auth/District/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (285, N'Thana', N'Thana', N'Thana', 3, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, 0)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (288, N'Area', N'Area', N'Area', 4, N'/Auth/Area/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (289, N'Office Setup', N'Office Setup', N'Office Setup', 5, N'/Auth/HrOffice/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (290, N'Action Entry', N'Action Update', N'Action Update', 6, N'/Auth/Information/ActionEntry', NULL, NULL, 4, NULL, NULL, NULL, NULL, 0)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (295, N'Equipment/Resource', N'Equipment/Resource', N'Equipment/Resource', 7, N'/Auth/Resources/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (296, N'Building', N'Building', N'Building', 8, N'/Auth/OfficeAssets/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (297, N'Assets', N'Assets', N'Assets', 9, N'/Auth/Assets/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (299, N'Work Record Entry', N'Work Record Entry', N'Work Record Entry', 10, N'/Auth/Workrecord/WorkrecordEntry', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
 SET IDENTITY_INSERT [dbo].[Menu] OFF
 
 SET IDENTITY_INSERT [dbo].[Role] ON 
@@ -860,7 +869,7 @@ INSERT [dbo].[Role] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [Ed
 INSERT [dbo].[Role] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (51, N'Report Viewer', N'Can see the reports', NULL, NULL, NULL, NULL, 1)
 SET IDENTITY_INSERT [dbo].[Role] OFF
 
-INSERT [dbo].[UserRole] ([UserId], [RoleId]) VALUES (10048, 3)
+INSERT [dbo].[UserRole] ([UserId], [RoleId]) VALUES (1, 3)
 
 SET IDENTITY_INSERT [dbo].[Task] ON 
 
@@ -1430,17 +1439,26 @@ INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [Ed
 INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20914, N'bangla_route_getstartlocationpoint', NULL, NULL, NULL, NULL, NULL, 1)
 SET IDENTITY_INSERT [dbo].[Task] OFF
 
-INSERT [dbo].[ApplicationModule] ([ApplicationId], [ModuleId]) VALUES (1, 5)
-INSERT [dbo].[ApplicationModule] ([ApplicationId], [ModuleId]) VALUES (1, 18)
+INSERT [dbo].[ApplicationModule] ([ApplicationId], [ModuleId]) VALUES (1, 1)
+INSERT [dbo].[ApplicationModule] ([ApplicationId], [ModuleId]) VALUES (1, 2)
+INSERT [dbo].[ApplicationModule] ([ApplicationId], [ModuleId]) VALUES (1, 3)
 
-SET IDENTITY_INSERT [dbo].[Assets] ON 
+SET IDENTITY_INSERT [dbo].[Designation] ON 
 
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Pond', N'গণপূর্ত অধিদপ্তরের আওতাধীন সকল পুকুর/জলাশয়/লেক/খাল কচুরীপানা মুক্ত ও পরিষ্কার পরিচ্ছন্ন করা হয়েছে।', 1, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Waste', N'গণপূর্ত অধিদপ্তরের আওতাধীন সকল স্থাপনার বর্জ অপসারণের বিষয়ে প্রয়োজনীয় ব্যবস্থা গ্রহণ করা হয়েছে।', 2, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'Hospitals', N'গণপূর্ত অধিদপ্তরের আওতায় সকল সরকারি হাসপাতালের ড্রেইন এবং তৎসংলগ্ন এলাকা পরিষ্কার পরিচ্ছন্ন রাখার ব্যবস্থা গ্রহণ করা হয়েছে।''', 3, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Office', N'সকল অফিস আদালত ও বাসা বাড়ির আঙ্গিনার ঝোঁপ-ঝাড় ও আগাছা মুক্ত রাখা, সংলগ্ন রাস্তা, ড্রেইন নিয়মিত পরিষ্কার করা হচ্ছে।', 4, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'Stagnant_water', N'জমানো পানির সকল উৎস যথাসম্ভব অপসারণ পূর্বক নিয়মিতভাবে জীবানু-নাশক ছিটানোর ব্যবস্থা ও পানিতে ভাসমান লার্ভা বিনষ্ট করা হচ্ছে।', 5, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Larvae', N'ভবনের ঢালাইয়ের কিউরিং কাজে জমানো পানিতে মশার লার্ভা ধ্বংসকারী ওষধ নিয়মিতভাবে ছিটানোর ব্যবস্থা গ্রহণ করা হয়েছে।', 6, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Construction', N'সকল গণপূর্ত বিভাগের আওতাধীন নির্মাণ সাইটগুলোতে অপ্রয়োজনীয় আবদ্ধ পানি অপসারণ করা হয়েছে। ', 7, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[Assets] OFF
+INSERT [dbo].[Designation] ([Id], [Name], [Details], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Admin', N'Administrator', NULL, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[Designation] OFF
 
+SET IDENTITY_INSERT [dbo].[Employee] ON 
+
+INSERT [dbo].[Employee] ([Id],[OfficeId], [EmployeeCode], [EmployeeName], [DesignationId], [PerPhone], [OfficePhone], [Email], [Address], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1,1, N'desb668', N'Shaikat Barua', 2, N'14525487454', N'415256365214', N'admin@de.com', N'Motijheel', NULL, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[Employee] OFF
+
+SET IDENTITY_INSERT [dbo].[OwnOffice] ON 
+
+INSERT [dbo].[OwnOffice] ([Id], [Code], [Name], [RoutingNo], [Address], [PhoneNo], [Email], [Fax], [ContactPerson], [Logo], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'001', N'Data Edge Ltd.', N'001234567', N'Motijheel', N'01458987454', N'de@data-edge.com', N'41526352145', N'Balaram Aich', NULL, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[OwnOffice] OFF
+
+SET IDENTITY_INSERT [dbo].[OwnOfficeBranch] ON 
+
+INSERT [dbo].[OwnOfficeBranch] ([Id], [OwnOfficeId], [BranchType], [Code], [Name], [RoutingNo], [Address], [PhoneNo], [Email], [Fax], [ContactPerson], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, N'0011', N'Motijheel', N'001234566', N'Motijheel', N'12541452563', N'hode@data-edge.com', N'45698745214', N'SB', NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[OwnOfficeBranch] OFF

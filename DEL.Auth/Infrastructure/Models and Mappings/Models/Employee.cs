@@ -10,13 +10,11 @@ namespace DEL.Auth.Infrastructure
     [Table("Employee")]
     public class Employee : Entity
     {
-        public long OwnOfficeId { get; set; }
-        [ForeignKey("OwnOfficeId")]
-        public virtual OwnOffice OwnOffice { get; set; }
-        public long OwnOfficeBranchId { get; set; }
-        [ForeignKey("OwnOfficeBranchId")]
-        public virtual OwnOfficeBranch OwnOfficeBranch { get; set; }
-        public string EmployeeId { get; set; }
+        public long OfficeId { get; set; }        
+        //public long OwnOfficeBranchId { get; set; }
+        //[ForeignKey("OwnOfficeBranchId")]
+        //public virtual OwnOfficeBranch OwnOfficeBranch { get; set; }
+        //public string EmployeeId { get; set; }
         public string EmployeeCode { get; set; }
         public string EmployeeName { get; set; }
         public long DesignationId { get; set; }
@@ -27,5 +25,7 @@ namespace DEL.Auth.Infrastructure
         public string Email { get; set; }
         public string Address { get; set; }
         public string Remarks { get; set; }
+        [ForeignKey("OfficeId")]
+        public virtual HrOffice Office { get; set; }
     }
 }

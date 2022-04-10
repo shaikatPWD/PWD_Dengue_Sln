@@ -30,8 +30,8 @@ namespace DEL.Auth.Facade.AutoMaps
             CreateMap<DesignationDto, Designation>();
 
             CreateMap<Employee, EmployeeDto>()
-                .ForMember(d => d.OwnOfficeName, o => o.MapFrom(m => m.OwnOffice.Name))
-                .ForMember(d => d.OwnOfficeBranchName, o => o.MapFrom(m => m.OwnOfficeBranch.Name))
+                //.ForMember(d => d.OwnOfficeName, o => o.MapFrom(m => m.OwnOffice.Name))
+                //.ForMember(d => d.OwnOfficeBranchName, o => o.MapFrom(m => m.OwnOfficeBranch.Name))
                 .ForMember(d => d.DesignationName, o => o.MapFrom(m => m.Designation.Name));
             CreateMap<EmployeeDto, Employee>();
 
