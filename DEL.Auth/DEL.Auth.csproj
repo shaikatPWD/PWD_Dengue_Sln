@@ -140,6 +140,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Dto\ApplicationDto.cs" />
+    <Compile Include="Dto\MonthlyMonitoringInfoDto.cs" />
     <Compile Include="Dto\WorkRecordDetailsDto.cs" />
     <Compile Include="Dto\WorkRecordDto.cs" />
     <Compile Include="Dto\AssetsDto.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="Dto\UserResourceDto.cs" />
     <Compile Include="Facade\ApplicationFacade.cs" />
     <Compile Include="Facade\AssetsFacade.cs" />
+    <Compile Include="Facade\MonthlyMonitoringInfoFacade.cs" />
     <Compile Include="Facade\WorkRecordFacade.cs" />
     <Compile Include="Facade\OfficeAssetsFacade.cs" />
     <Compile Include="Facade\ResourcesFacade.cs" />
@@ -192,6 +194,7 @@
     <Compile Include="Facade\UserFacade.cs" />
     <Compile Include="Infrastructure\BaseEfUnitOfWork.cs" />
     <Compile Include="Infrastructure\Entity.cs" />
+    <Compile Include="Infrastructure\Models and Mappings\Models\MonthlyMonitoringInfo.cs" />
     <Compile Include="Infrastructure\Models and Mappings\Models\WorkRecordDetails.cs" />
     <Compile Include="Infrastructure\Models and Mappings\Models\Assets.cs" />
     <Compile Include="Infrastructure\Models and Mappings\Models\OfficeAssets.cs" />

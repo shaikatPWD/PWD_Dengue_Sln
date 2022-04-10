@@ -282,6 +282,7 @@
     <Compile Include="Areas\Auth\Controllers\ApplicationController.cs" />
     <Compile Include="Areas\Auth\Controllers\DpmsHomeController.cs" />
     <Compile Include="Areas\Auth\Controllers\AssetsController.cs" />
+    <Compile Include="Areas\Auth\Controllers\MonthlyMonitoringController.cs" />
     <Compile Include="Areas\Auth\Controllers\WorkrecordController.cs" />
     <Compile Include="Areas\Auth\Controllers\OfficeAssetsController.cs" />
     <Compile Include="Areas\Auth\Controllers\ResourcesController.cs" />
@@ -353,6 +354,7 @@
     <Content Include="Areas\Auth\Scripts\District.js" />
     <Content Include="Areas\Auth\Scripts\module.js" />
     <Content Include="Areas\Auth\Scripts\Assets\Assets.js" />
+    <Content Include="Areas\Auth\Scripts\MonthlyMonitoring\MonthlyMonitoringEntry.js" />
     <Content Include="Areas\Auth\Scripts\OfficeAssets\OfficeAssets.js" />
     <Content Include="Areas\Auth\Scripts\Resources\Resources.js" />
     <Content Include="Areas\Auth\Scripts\Role\proxy-role.js" />
@@ -1099,6 +1101,7 @@
     <Content Include="Areas\Auth\Views\Assets\Index.cshtml" />
     <Content Include="Areas\Auth\Views\Workrecord\WorkrecordEntry.cshtml" />
     <Content Include="Areas\Auth\Views\Workrecord\WorkrecordDetailsEntry.cshtml" />
+    <Content Include="Areas\Auth\Views\MonthlyMonitoring\MonthlyMonitoringInfoEntry.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrapValidator.min.js" />
     <Content Include="Scripts\CryptoJS\aes.js" />

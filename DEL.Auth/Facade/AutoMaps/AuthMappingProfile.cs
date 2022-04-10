@@ -115,28 +115,24 @@ namespace DEL.Auth.Facade.AutoMaps
             CreateMap<AssetsDto, Assets>()
                 .ForMember(d => d.WorkRecordDetails, o => o.Ignore());
 
-            //CreateMap<WorkRecord, WorkRecordDto>()
-            //    .ForMember(d => d.WorkRecordDetails, o => o.MapFrom(s => s.WorkRecordDetails.Where(c => c.Status == EntityStatus.Active)));
-            //CreateMap<WorkRecordDto, WorkRecord>()
-            //    .ForMember(d => d.Assets, o => o.Ignore())
-            //    .ForMember(d => d.WorkRecordDetails, o => o.Ignore());
-
             CreateMap<WorkRecordDetails, WorkRecordDetailsDto>()
                 .ForMember(d => d.OfficeId, o => o.MapFrom(m => m.OfficeId))
                 .ForMember(d => d.AssetId, o => o.MapFrom(m => m.AssetId))
                 .ForMember(d => d.IsCompleteName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsComplete)));
             CreateMap<WorkRecordDetailsDto, WorkRecordDetails>();
 
-            //CreateMap<MenuReport, MenuReportDto>();                
-            //CreateMap<MenuReportDto, MenuReport>();
-
-            //CreateMap<Form, FormDto>()
-            //    .ForMember(d => d.FormFieldsDetails, o => o.MapFrom(s => s.FormFieldsDetails.Where(c => c.Status == EntityStatus.Active)));
-            //CreateMap<FormDto, Form>()
-            //    .ForMember(d => d.FormFieldsDetails, o => o.Ignore());
-
-            //CreateMap<FormFieldsDetails, FormFieldsDetailsDto>();
-            //CreateMap<FormFieldsDetailsDto, FormFieldsDetails>();
+            CreateMap<MonthlyMonitoringInfo, MonthlyMonitoringInfoDto>()
+                .ForMember(d => d.OfficeId, o => o.MapFrom(m => m.OfficeId))
+                .ForMember(d => d.OfficeAssetId, o => o.MapFrom(m => m.OfficeAssetId))
+                .ForMember(d => d.OfficeAssetName, o => o.MapFrom(m => m.OfficeAssetId != 0 ? m.OfficeAssets.AssetName : "N/A"))
+                .ForMember(d => d.IsPondCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsPondsCleanUp)))
+                .ForMember(d => d.IsWastageCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsWastageCleanUp)))
+                .ForMember(d => d.IsMedicalCollegeCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsMedicalCollegeCleanUp)))
+                .ForMember(d => d.IsOfficeAndHouseholdCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsOfficeAndHouseholdCleanUp)))
+                .ForMember(d => d.IsStillWaterCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsStillWaterCleanUp)))
+                .ForMember(d => d.IsUnderConstructionBuildingCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsUnderConstructionBuildingCleanUp)))
+                .ForMember(d => d.IsPondCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsPondsCleanUp)));
+            CreateMap<MonthlyMonitoringInfoDto, MonthlyMonitoringInfo>();
         }
     }
 }
