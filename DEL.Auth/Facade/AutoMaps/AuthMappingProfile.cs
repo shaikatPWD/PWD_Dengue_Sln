@@ -107,7 +107,8 @@ namespace DEL.Auth.Facade.AutoMaps
 
             CreateMap<OfficeAssets, OfficeAssetsDto>()
                 .ForMember(d => d.HrOfficeId, o => o.MapFrom(m => m.HrOfficeId))
-                .ForMember(d => d.OfficeName, o => o.MapFrom(m => m.HrOfficeId != 0 ? m.HrOffice.BnName : "N/A"));
+                .ForMember(d => d.OfficeName, o => o.MapFrom(m => m.HrOfficeId != 0 ? m.HrOffice.BnName : "N/A"))
+                .ForMember(d => d.Activities, o => o.MapFrom(m => m.Activities.Where(c => c.Status == EntityStatus.Active)));
             CreateMap<OfficeAssetsDto, OfficeAssets>();
 
             CreateMap<Assets, AssetsDto>()
@@ -121,18 +122,18 @@ namespace DEL.Auth.Facade.AutoMaps
                 .ForMember(d => d.IsCompleteName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsComplete)));
             CreateMap<WorkRecordDetailsDto, WorkRecordDetails>();
 
-            CreateMap<MonthlyMonitoringInfo, MonthlyMonitoringInfoDto>()
-                .ForMember(d => d.OfficeId, o => o.MapFrom(m => m.OfficeId))
+            CreateMap<WorkActivity, WorkActivityDto>()
+                //.ForMember(d => d.OfficeId, o => o.MapFrom(m => m.OfficeId))
                 .ForMember(d => d.OfficeAssetId, o => o.MapFrom(m => m.OfficeAssetId))
                 .ForMember(d => d.OfficeAssetName, o => o.MapFrom(m => m.OfficeAssetId != 0 ? m.OfficeAssets.AssetName : "N/A"))
-                .ForMember(d => d.IsPondCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsPondsCleanUp)))
+                .ForMember(d => d.IsPondsCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsPondsCleanUp)))
                 .ForMember(d => d.IsWastageCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsWastageCleanUp)))
                 .ForMember(d => d.IsMedicalCollegeCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsMedicalCollegeCleanUp)))
                 .ForMember(d => d.IsOfficeAndHouseholdCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsOfficeAndHouseholdCleanUp)))
                 .ForMember(d => d.IsStillWaterCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsStillWaterCleanUp)))
                 .ForMember(d => d.IsUnderConstructionBuildingCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsUnderConstructionBuildingCleanUp)))
-                .ForMember(d => d.IsPondCleanUpName, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsPondsCleanUp)));
-            CreateMap<MonthlyMonitoringInfoDto, MonthlyMonitoringInfo>();
+                .ForMember(d => d.IsCuringWaterCleanUp, o => o.MapFrom(m => Enum.GetName(typeof(IsComplete), m.IsCuringWaterCleanUp)));
+            CreateMap<WorkActivityDto, WorkActivity>();
         }
     }
 }

@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "ActivitiesEntry";
+    Layout = "~/Views/Shared/_LayoutContentPage.cshtml";
+}
+<link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="~/Scripts/KoCustomDateTimePicker.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<script src="~/Scripts/moment.js"></script>
+<script src="~/Scripts/knockout-date-bindings.js"></script>
+<link href="~/Content/layout-modifications.css" rel="stylesheet" />
+<script src="~/Areas/Auth/Scripts/Activity/ActivitiesEntry.js"></script>
+
+<div class="page-content" id="wrdEntry">
+    <div class="page-header">
+        <h1>
+            Work Record Entry
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                Update work Activities for 
+            </small>
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form class="form-horizontal" role="form">
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Period :</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" data-bind="value:Period" readonly id="period" name="period" class="col-xs-10 col-sm-5" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Name of Structure :</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" data-bind="value:OfficeAssetName" readonly id="assetBuildingName" name="assetBuildingName" class="col-xs-10 col-sm-5" />
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Date :</label>
+
+                    <div class="col-sm-9">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control hasDatepicker" id="date" data-bind="datepicker:Date, datepickerOptions: {format: 'DD/MM/YYYY'}, valueUpdate:'keyup'">
+                            <span class="help-block" style="display: none;"></span>
+                            <div class="input-group-addon">
+                                <span class="ace-icon fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
+
+                    <div class="col-sm-9">
+                        <select class="form-control" id="form-field-select-1" data-bind="options:IsPondsCleanUpList,optionsValue: 'Id',optionsText:'Name',optionsCaption:'--Select--', value:IsPondsCleanUp "></select>
+                    </div>
+                </div>
+
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
+
+                    <div class="col-sm-9">
+                        <select class="form-control" id="form-field-select-1" data-bind="options:IsWastageCleanUpList,optionsValue: 'Id',optionsText:'Name',optionsCaption:'--Select--', value:IsWastageCleanUp "></select>
+                    </div>
+                </div>
+
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
+
+                    <div class="col-sm-9">
+                        <select class="form-control" id="form-field-select-1" data-bind="options:IsMedicalCollegeCleanUpList,optionsValue: 'Id',optionsText:'Name',optionsCaption:'--Select--', value:IsMedicalCollegeCleanUp "></select>
+                    </div>
+                </div>
+
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
+
+                    <div class="col-sm-9">
+                        <select class="form-control" id="form-field-select-1" data-bind="options:IsOfficeAndHouseholdCleanUpList,optionsValue: 'Id',optionsText:'Name',optionsCaption:'--Select--', value:IsOfficeAndHouseholdCleanUp "></select>
+                    </div>
+                </div>
+
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
+
+                    <div class="col-sm-9">
+                        <select class="form-control" id="form-field-select-1" data-bind="options:IsStillWaterCleanUpList,optionsValue: 'Id',optionsText:'Name',optionsCaption:'--Select--', value:IsStillWaterCleanUp "></select>
+                    </div>
+                </div>
+
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
+
+                    <div class="col-sm-9">
+                        <select class="form-control" id="form-field-select-1" data-bind="options:IsCuringWaterCleanUpList,optionsValue: 'Id',optionsText:'Name',optionsCaption:'--Select--', value:IsCuringWaterCleanUp "></select>
+                    </div>
+                </div>
+
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
+
+                    <div class="col-sm-9">
+                        <select class="form-control" id="form-field-select-1" data-bind="options:IsUnderConstructionBuildingCleanUpList,optionsValue: 'Id',optionsText:'Name',optionsCaption:'--Select--', value:IsUnderConstructionBuildingCleanUp "></select>
+                    </div>
+                </div>
+
+
+
+                <div class="space-6"></div>
+
+                <div class="clearfix form-actions">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" data-togle="modal" data-target="#successModal" data-bind="click:Submit" class="btn btn-info">
+                            <i class="ace-icon fa fa-check bigger-110"></i>
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="successModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Response</h4>
+                </div>
+                <div class="modal-body" align="center">
+                    <p id="successModalText"></p>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

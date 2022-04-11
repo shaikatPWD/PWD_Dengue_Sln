@@ -23,12 +23,12 @@ namespace WebUI.Areas.Auth.Controllers
         //{
         //    return View();
         //}
-        [HttpPost]
-        public JsonResult SaveMonthlyMonitoringInfo(List<MonthlyMonitoringInfoDto> dto)
-        {
-            var result = _monthlyMonitoring.SaveMonthlyMonitoringInfo(dto, SessionHelper.UserProfile.UserId, SessionHelper.UserProfile.SelectedOfficeId);
-            return Json(result, JsonRequestBehavior.DenyGet);
-        }
+        //[HttpPost]
+        //public JsonResult SaveMonthlyMonitoringInfo(List<MonthlyMonitoringInfoDto> dto)
+        //{
+        //    var result = _monthlyMonitoring.SaveMonthlyMonitoringInfo(dto, SessionHelper.UserProfile.UserId, SessionHelper.UserProfile.SelectedOfficeId);
+        //    return Json(result, JsonRequestBehavior.DenyGet);
+        //}
         [HttpGet]        
         public JsonResult LoadMonthlyMonitorinInfoByOffice()
         {

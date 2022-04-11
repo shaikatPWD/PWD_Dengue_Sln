@@ -29,26 +29,26 @@
                                         <thead>
                                             <tr>
                                                 <th style="font-weight:bolder">Name of Structure</th>
-                                                <th>Pond</th>
-                                                <th>Wastage</th>
-                                                <th>Medical</th>
-                                                <th>Office</th>
-                                                <th>Strill</th>
-                                                <th>Curing</th>
-                                                <th>Construction</th>
+                                                <th>Period</th>
+                                                <th>Entry Activities</th>
+                                                <th>Details</th>
                                             </tr>
                                         </thead>
                                         <tbody data-bind="foreach:AssetList">
                                             <tr>
-                                                <td style="display:none"><input type="hidden" data-bind="value:Id" /></td>
-                                                <td style="text-align:left;" data-bind="text: OfficeAssetName"></td>
-                                                <td style="text-align:left;" data-bind="text: IsPondCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind="text: IsWastageCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind="text: IsMedicalCollegeCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind="text: IsOfficeAndHouseholdCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind="text: IsStillWaterCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind="text: IsCuringWaterCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind="text: IsUnderConstructionBuildingCleanUpName"></td>
+                                                <td style="display:none"><input type="hidden" data-bind="value:OfficeAssetId" /></td>
+                                                <td style="text-align:left;" data-bind="text:OfficeAssetName"></td>
+                                                <td style="text-align:left;" data-bind=" text:Period"></td>
+                                                <td>
+                                                    <a data-bind="attr: {href: '@Url.Action("ActivitiesEntry", "Activity")?officeassetId=' + $data.OfficeAssetId + '&period=' + $data.Period}" class="btn btn-xs btn-warning">
+                                                        Entry Activities
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a data-bind="attr: {href: '@Url.Action("ActivitiesDetails", "Activity")?officeassetId=' + $data.OfficeAssetId + '&period=' + $data.Period}" class="btn btn-xs btn-warning">
+                                                        Details
+                                                    </a>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>

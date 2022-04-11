@@ -15,19 +15,19 @@ namespace DEL.Auth.DTO
         public string Period { get; set; }
         public long? OfficeAssetId { get; set; }
         public string OfficeAssetName { get; set; }
-        public IsComplete IsPondsCleanUp { get; set; } = 0;
+        public IsComplete IsPondsCleanUp { get; set; } = IsComplete.NA;
         public string IsPondCleanUpName { get; set; }
-        public IsComplete IsWastageCleanUp { get; set; } = 0;
+        public IsComplete IsWastageCleanUp { get; set; } = IsComplete.NA;
         public string IsWastageCleanUpName { get; set; }
-        public IsComplete IsMedicalCollegeCleanUp { get; set; } = 0;
+        public IsComplete IsMedicalCollegeCleanUp { get; set; } = IsComplete.NA;
         public string IsMedicalCollegeCleanUpName { get; set; }
-        public IsComplete IsOfficeAndHouseholdCleanUp { get; set; } = 0;
+        public IsComplete IsOfficeAndHouseholdCleanUp { get; set; } = IsComplete.NA;
         public string IsOfficeAndHouseholdCleanUpName { get; set; }
-        public IsComplete IsStillWaterCleanUp { get; set; } = 0;
+        public IsComplete IsStillWaterCleanUp { get; set; } = IsComplete.NA;
         public string IsStillWaterCleanUpName { get; set; }
         public IsComplete IsCuringWaterCleanUp { get; set; }
         public string IsCuringWaterCleanUpName { get; set; }
-        public IsComplete IsUnderConstructionBuildingCleanUp { get; set; } = 0;
+        public IsComplete IsUnderConstructionBuildingCleanUp { get; set; } = IsComplete.NA;
         public string IsUnderConstructionBuildingCleanUpName { get; set; }
         public DateTime? CreateDate { get; set; }
         public long? CreatedBy { get; set; }

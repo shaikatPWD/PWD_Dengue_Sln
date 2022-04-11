@@ -53,7 +53,7 @@ namespace DEL.Auth.Infrastructure
         public DbSet<Assets> Assets { get; set; }
         //public DbSet<WorkRecord> WorkRecord { get; set; }
         public DbSet<WorkRecordDetails> WorkRecordDetails { get; set; }
-        public DbSet<MonthlyMonitoringInfo> MonthlyMonitoringInfo { get; set; }
+        public DbSet<WorkActivity> WorkActivity { get; set; }
         #endregion
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

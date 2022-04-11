@@ -16,5 +16,6 @@ namespace DEL.Auth.Infrastructure
         public long HrOfficeId { get; set; }
         [ForeignKey("HrOfficeId")]
         public virtual HrOffice HrOffice { get; set; }
+        public ICollection<WorkActivity> Activities { get; set; }
     }
 }

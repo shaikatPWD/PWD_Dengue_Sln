@@ -14,7 +14,7 @@
             }
         });
         $("#jqGrid").jqGrid({
-            url: "Auth/OfficeAssets/GetOfficeAssets",
+            url: "/OfficeAssets/GetOfficeAssets",
             datatype: 'json',
             mtype: 'Get',
             colNames: ['Id', 'Building Name', 'Description', 'Note'],// 'Office', 'OfficeName'],

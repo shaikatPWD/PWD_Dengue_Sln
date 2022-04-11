@@ -183,7 +183,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -257,9 +261,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Diagnostics.DiagnosticSource">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
       <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
     </Reference>
@@ -282,6 +283,7 @@
     <Compile Include="Areas\Auth\Controllers\ApplicationController.cs" />
     <Compile Include="Areas\Auth\Controllers\DpmsHomeController.cs" />
     <Compile Include="Areas\Auth\Controllers\AssetsController.cs" />
+    <Compile Include="Areas\Auth\Controllers\ActivityController.cs" />
     <Compile Include="Areas\Auth\Controllers\MonthlyMonitoringController.cs" />
     <Compile Include="Areas\Auth\Controllers\WorkrecordController.cs" />
     <Compile Include="Areas\Auth\Controllers\OfficeAssetsController.cs" />
@@ -343,6 +345,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Auth\Scripts\Activity\ActivitiesEntry.js" />
+    <Content Include="Areas\Auth\Scripts\Activity\ActivitiesDetails.js" />
     <Content Include="Areas\Auth\Scripts\applicationCreate.js" />
     <Content Include="Areas\Auth\Scripts\Area.js" />
     <Content Include="Areas\Auth\Scripts\HrOffice.js" />
@@ -1102,6 +1106,8 @@
     <Content Include="Areas\Auth\Views\Workrecord\WorkrecordEntry.cshtml" />
     <Content Include="Areas\Auth\Views\Workrecord\WorkrecordDetailsEntry.cshtml" />
     <Content Include="Areas\Auth\Views\MonthlyMonitoring\MonthlyMonitoringInfoEntry.cshtml" />
+    <Content Include="Areas\Auth\Views\Activity\ActivitiesEntry.cshtml" />
+    <Content Include="Areas\Auth\Views\Activity\ActivitiesDetails.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrapValidator.min.js" />
     <Content Include="Scripts\CryptoJS\aes.js" />

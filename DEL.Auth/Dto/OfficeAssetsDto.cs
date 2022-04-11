@@ -16,6 +16,7 @@ namespace DEL.Auth.DTO
         public string Note { get; set; }
         public long HrOfficeId { get; set; } = 0;
         public string OfficeName { get; set; }
+        public List<WorkActivity> Activities { get; set; }
         public DateTime? CreateDate { get; set; }
         public long? CreatedBy { get; set; }
         public DateTime? EditDate { get; set; }
