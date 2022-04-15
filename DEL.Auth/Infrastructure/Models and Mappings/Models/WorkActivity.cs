@@ -14,13 +14,13 @@ namespace DEL.Auth.Infrastructure
         public DateTime Date { get; set; }
         public string Period { get; set; }
         public long? OfficeAssetId { get; set; }
-        public IsComplete IsPondsCleanUp { get; set; } = 0;
-        public IsComplete IsWastageCleanUp { get; set; } = 0;
-        public IsComplete IsMedicalCollegeCleanUp { get; set; } = 0;
-        public IsComplete IsOfficeAndHouseholdCleanUp { get; set; } = 0;
-        public IsComplete IsStillWaterCleanUp { get; set; } = 0;
-        public IsComplete IsCuringWaterCleanUp { get; set; } = 0;
-        public IsComplete IsUnderConstructionBuildingCleanUp { get; set; } = 0;        
+        public IsComplete IsPondsCleanUp { get; set; } = IsComplete.NA;
+        public IsComplete IsWastageCleanUp { get; set; } = IsComplete.NA;
+        public IsComplete IsMedicalCollegeCleanUp { get; set; } = IsComplete.NA;
+        public IsComplete IsOfficeAndHouseholdCleanUp { get; set; } = IsComplete.NA;
+        public IsComplete IsStillWaterCleanUp { get; set; } = IsComplete.NA;
+        public IsComplete IsCuringWaterCleanUp { get; set; } = IsComplete.NA;
+        public IsComplete IsUnderConstructionBuildingCleanUp { get; set; } = IsComplete.NA;
         [ForeignKey("OfficeAssetId")]
         public virtual OfficeAssets OfficeAssets { get; set; }
     }

@@ -280,6 +280,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
+    <Compile Include="Areas\Auth\Controllers\ActivityHomeController.cs" />
     <Compile Include="Areas\Auth\Controllers\ApplicationController.cs" />
     <Compile Include="Areas\Auth\Controllers\DpmsHomeController.cs" />
     <Compile Include="Areas\Auth\Controllers\AssetsController.cs" />
@@ -345,8 +346,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Auth\Scripts\Activity\ActivitiesDetailsEntry.js" />
     <Content Include="Areas\Auth\Scripts\Activity\ActivitiesEntry.js" />
     <Content Include="Areas\Auth\Scripts\Activity\ActivitiesDetails.js" />
+    <Content Include="Areas\Auth\Scripts\Activity\PeriodList.js" />
     <Content Include="Areas\Auth\Scripts\applicationCreate.js" />
     <Content Include="Areas\Auth\Scripts\Area.js" />
     <Content Include="Areas\Auth\Scripts\HrOffice.js" />
@@ -1108,6 +1111,8 @@
     <Content Include="Areas\Auth\Views\MonthlyMonitoring\MonthlyMonitoringInfoEntry.cshtml" />
     <Content Include="Areas\Auth\Views\Activity\ActivitiesEntry.cshtml" />
     <Content Include="Areas\Auth\Views\Activity\ActivitiesDetails.cshtml" />
+    <Content Include="Areas\Auth\Views\ActivityHome\PerodList.cshtml" />
+    <Content Include="Areas\Auth\Views\ActivityHome\ActivitiesDetailsEntry.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrapValidator.min.js" />
     <Content Include="Scripts\CryptoJS\aes.js" />

@@ -28,8 +28,8 @@ namespace WebUI.Controllers
         public ActionResult Index()
         {
             //return RedirectToAction("Index", "ClHome", new { area = "GoBangla" });
-            return RedirectToAction("Login", "Login", new { area = "Auth" });
-            //return RedirectToAction("Index", "DpmsHome", new { area = "Auth" });
+            //return RedirectToAction("Login", "Login", new { area = "Auth" });
+            return RedirectToAction("Index", "DpmsHome", new { area = "Auth" });
             //ViewBag.Title = "DEL- Solutions";
             //return View();
         }

@@ -13,116 +13,15 @@ namespace DEL.Auth.Facade
 {
     public class MonthlyMonitoringInfoFacade : BaseFacade
     {
-        //public ResponseDto SaveMonthlyMonitoringInfo(List<MonthlyMonitoringInfoDto> dto, long userId, long? officeId)
-        //{
-        //    var entity = new MonthlyMonitoringInfo();
-        //    var response = new ResponseDto();
-
-        //    //if (dto.Count > 0)
-        //    //{
-        //    //    foreach (var item in dto)
-        //    //    {
-        //    //        entity = GenService.GetById<MonthlyMonitoringInfo>((long)item.Id);
-        //    //        item.OfficeId = officeId;
-        //    //        item.OfficeAssetId = entity.OfficeAssetId;
-        //    //        item.
-        //    //    }
-        //    //}
-
-        //    //if (dto.Id != null && dto.Id > 0)
-        //    //{
-        //    //    entity = GenService.GetById<WorkRecordDetails>((long)dto.Id);
-        //    //    dto.OfficeId = officeId > 0 ? officeId : entity.OfficeId;
-        //    //    dto.OfAssetId = entity.AssetId;
-        //    //    dto.CreateDate = entity.CreateDate;
-        //    //    dto.CreatedBy = entity.CreatedBy;
-        //    //    if (dto.Status == null)
-        //    //        dto.Status = entity.Status;
-        //    //    using (var tran = new TransactionScope())
-        //    //    {
-        //    //        try
-        //    //        {
-        //    //            Mapper.Map(dto, entity);
-        //    //            entity.EditDate = DateTime.Now;
-        //    //            GenService.Save(entity);
-        //    //            response.Id = entity.Id;
-        //    //            GenService.SaveChanges();
-        //    //            tran.Complete();
-        //    //        }
-        //    //        catch (Exception ex)
-        //    //        {
-        //    //            tran.Dispose();
-        //    //            response.Message = "Workrecord updating failed";
-        //    //            return response;
-        //    //        }
-        //    //    }
-        //    //    response.Success = true;
-        //    //    response.Id = entity.Id;
-        //    //    response.Message = "Information updated successfully";
-        //    //}
-        //    //else
-        //    //{
-        //    if (dto.Count > 0)
-        //    {
-        //        entity = Mapper.Map<MonthlyMonitoringInfo>(dto);
-        //        foreach (var item in dto)
-        //        {
-        //            if (officeId > 0)
-        //                entity.OfficeId = officeId;
-        //            entity.Status = EntityStatus.Active;
-        //            entity.CreatedBy = userId;
-        //            entity.CreateDate = DateTime.Now;
-        //            using (var tran = new TransactionScope())
-        //            {
-        //                try
-        //                {
-        //                    GenService.Save(entity);
-        //                    //response.Id = entity.Id;
-        //                    GenService.SaveChanges();
-        //                    tran.Complete();
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                    tran.Dispose();
-        //                    //response.Message = "Workrecord saving failed";
-        //                    //return response;
-        //                }
-        //            }
-
-        //        }
-        //        response.Success = true;
-        //        //response.Id = entity.Id;
-        //        response.Message = "Workrecord saved successfully";
-        //    }
-        //    //}
-        //    return response;
-        //}
-        //public WorkRecordDetailsDto LoadWorkRecord(long id)
-        //{
-        //    var workRecord = new WorkRecordDetailsDto();
-        //    try
-        //    {
-        //        var info = GenService.GetById<WorkRecordDetails>(id);
-        //        if (info != null)
-        //            return Mapper.Map<WorkRecordDetailsDto>(info);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //return null;
-        //    }
-        //    return workRecord;
-        //}
-
         public List<WorkActivityDto> LoadMonthlyMonitorinInfoByOffice(long? officeId)//(List<long?> ApplicationId) long officeId
         {
             var offAsslist = GenService.GetAll<OfficeAssets>().Where(o => o.HrOfficeId == officeId).ToList();
             var data = new List<WorkActivityDto>();
             offAsslist.ToList().ForEach(o =>
             {
-                data.Add(new WorkActivityDto() 
-                { 
-                    OfficeAssetId = o.Id, 
+                data.Add(new WorkActivityDto()
+                {
+                    OfficeAssetId = o.Id,
                     OfficeAssetName = o.AssetName,
                     Period = DateTime.Now.ToString("MMMM dd")
                 });
@@ -130,12 +29,33 @@ namespace DEL.Auth.Facade
             return data;
         }
 
+        public List<WorkActivityDto> LoadPeriods(long? officeId)//(List<long?> ApplicationId) long officeId
+        {
+            var offAsslist = GenService.GetAll<OfficeAssets>().Where(o => o.HrOfficeId == officeId).ToList();
+            var currentPeriod = DateTime.Now.ToString("MMMM-yy");
+            var workActivitylist = GenService.GetAll<WorkActivity>().Where(w => w.Period == currentPeriod).ToList();
+            var shiftIds = offAsslist.Select(s => s.Id).ToList();
+            var data = new List<WorkActivityDto>();
+            var query = (from x in workActivitylist
+                         where shiftIds.Contains((long)x.OfficeAssetId) select x.OfficeAssetId);
+            var acCount = query.Select(c=>c.Value).Distinct().Count();
+
+            if (acCount != offAsslist.Count)
+            {
+                data.Add(new WorkActivityDto()
+                {
+                    Period = currentPeriod
+                });
+            }
+            return data;
+        }
+
         public ResponseDto SaveWorkActivityforInstallation(WorkActivityDto dto, long userId)
         {
             var entity = new WorkActivity();
-            var response = new ResponseDto();                                   
+            var response = new ResponseDto();
             entity = Mapper.Map<WorkActivity>(dto);
-            
+
             entity.OfficeAssetId = (long)dto.OfficeAssetId;
             entity.Status = EntityStatus.Active;
             entity.CreatedBy = userId;
@@ -143,7 +63,7 @@ namespace DEL.Auth.Facade
             using (var tran = new TransactionScope())
             {
                 try
-                {   
+                {
                     GenService.Save(entity);
                     response.Id = entity.Id;
                     GenService.SaveChanges();
@@ -163,54 +83,34 @@ namespace DEL.Auth.Facade
             return response;
         }
 
-        #region Needfull Codes
-        //var data = offAsslist.Select(x => new OfficeAssetsDto
-        //{
-        //    Id = x.Id,
-        //    AssetName = x.AssetName
-        //    AssetTypeFull = x.AssetTypeFull,
-        //    WorkRecordDetails = GetAssetsDetails(x.Id),
-        //    OrderId = x.OrderId
-        //}).ToList();
-
-        //var activityData = workActivities.Where(a => offAsslist.Select(i => i.Id).Contains((long)a.OfficeAssetId)).ToList();
-        //var data = new List<WorkActivityDto>();
-        ////var districts = GenService.GetAll<WorkActivity>().Where(w => w.OfficeId == officeId).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
-        //bool hasData = false;
-        //activityData.ForEach(o =>
-        //{
-        //    data.ForEach(a =>
-        //    {
-        //        if (a.Period == o.Period) { hasData = true; return; };
-        //    });
-        //    if (!hasData)
-        //    {
-        //        data.Add(new WorkActivityDto()
-        //        {
-        //            Id= o.Id,
-        //            OfficeAssetId = o.OfficeAssetId,
-        //            OfficeAssetName = offAsslist.First(x => x.Id == o.OfficeAssetId).AssetName,//o.OfficeAssetName,
-        //            Date = o.Date,
-        //            Period = o.Period,
-        //            IsPondsCleanUp = o.IsPondsCleanUp,
-        //            IsPondsCleanUpName = Enum.GetName(typeof(IsComplete), o.IsPondsCleanUp),
-        //            IsWastageCleanUp = o.IsWastageCleanUp,
-        //            IsWastageCleanUpName = Enum.GetName(typeof(IsComplete), o.IsPondsCleanUp),
-        //            IsMedicalCollegeCleanUp = o.IsMedicalCollegeCleanUp,
-        //            IsMedicalCollegeCleanUpName = Enum.GetName(typeof(IsComplete), o.IsPondsCleanUp),
-        //            IsOfficeAndHouseholdCleanUp = o.IsOfficeAndHouseholdCleanUp,
-        //            IsOfficeAndHouseholdCleanUpName = Enum.GetName(typeof(IsComplete), o.IsPondsCleanUp),
-        //            IsStillWaterCleanUp = o.IsStillWaterCleanUp,
-        //            IsStillWaterCleanUpName = Enum.GetName(typeof(IsComplete), o.IsPondsCleanUp),
-        //            IsCuringWaterCleanUp = o.IsCuringWaterCleanUp,
-        //            IsCuringWaterCleanUpName = Enum.GetName(typeof(IsComplete), o.IsPondsCleanUp),
-        //            IsUnderConstructionBuildingCleanUp = o.IsUnderConstructionBuildingCleanUp,
-        //            IsUnderConstructionBuildingCleanUpName = Enum.GetName(typeof(IsComplete), o.IsPondsCleanUp),
-        //        });
-        //    }
-        //});
-        //data.ToList().GroupBy(x => x.Period.ToString());
-        #endregion
+        public ResponseDto SaveWorkActivityDetails(List<OfficeAssetsDto> dto, long userId)
+        {
+            //var entity = new List<WorkActivity>();
+            var response = new ResponseDto();
+            //entity = Mapper.Map<List<WorkActivity>>(dto);
+            using (var tran = new TransactionScope())
+            {
+                var entity = Mapper.Map<List<WorkActivity>>(dto);
+                foreach (var item in entity)
+                {
+                    //var entity2 = Mapper.Map<WorkActivity>(item);
+                    //item.Id = 0;
+                    item.Period = DateTime.Now.ToString("MMMM-yy");
+                    item.OfficeAssetId = item.Id;
+                    item.Id = 0;
+                    item.CreateDate = DateTime.Now;
+                    item.CreatedBy = userId;
+                    item.Status = EntityStatus.Active;
+                    GenService.Save(item);                    
+                    
+                }
+                GenService.SaveChanges();
+                tran.Complete();
+            }            
+            response.Success = true;
+            response.Message = "Activity Details Saved Successfully..";
+            return response;
+        }        
 
         public List<WorkActivityDto> GetWorkActivityRecordsByInstallationPeriod(long officeAssetId, string period)//(List<long?> ApplicationId) long officeId
         {
@@ -221,7 +121,7 @@ namespace DEL.Auth.Facade
                 Id = x.Id,
                 OfficeAssetId = x.OfficeAssetId,
                 OfficeAssetName = x.OfficeAssets.AssetName,
-                Date = x.Date,    
+                Date = x.Date,
                 IsPondsCleanUp = x.IsPondsCleanUp,
                 IsPondsCleanUpName = Enum.GetName(typeof(IsComplete), x.IsPondsCleanUp),
                 IsWastageCleanUp = x.IsWastageCleanUp,
@@ -242,6 +142,39 @@ namespace DEL.Auth.Facade
         public OfficeAssetsDto GetOfficeAssetNamebyId(long assetId)//(List<long?> ApplicationId) long officeId
         {
             return Mapper.Map<OfficeAssetsDto>(GenService.GetById<OfficeAssets>(assetId));
+        }
+        public List<OfficeAssetsDto> GetWorkActivityRecordsByPeriod()//(List<long?> ApplicationId) long officeId
+        {
+            var offAsslist = GenService.GetAll<OfficeAssets>();
+            var data = new List<OfficeAssetsDto>();
+
+            var dateText = DateTime.Now.ToString("dd/MM/yyyy");
+            var name = Enum.GetName(typeof(IsComplete), 0);
+            //var name2 = Enum.GetName(typeof(IsComplete), 2);
+
+            data = offAsslist.Select(t => new OfficeAssetsDto()
+            {
+                Id = t.Id,
+                AssetName = t.AssetName,
+                Date = DateTime.Now,
+                DateText = dateText,
+                IsPondsCleanUp = IsComplete.NA,
+                IsPondsCleanUpName = name,
+                IsWastageCleanUp = IsComplete.NA,
+                IsWastageCleanUpName = name,
+                IsMedicalCollegeCleanUp = IsComplete.NA,
+                IsMedicalCollegeCleanUpName = name,
+                IsOfficeAndHouseholdCleanUp = IsComplete.NA,
+                IsOfficeAndHouseholdCleanUpName = name,
+                IsStillWaterCleanUp = IsComplete.NA,
+                IsStillWaterCleanUpName = name,
+                IsCuringWaterCleanUp = IsComplete.NA,
+                IsCuringWaterCleanUpName = name,
+                IsUnderConstructionBuildingCleanUp = IsComplete.NA,
+                IsUnderConstructionBuildingCleanUpName = name
+            }).ToList();
+
+            return data;
         }
     }
 }

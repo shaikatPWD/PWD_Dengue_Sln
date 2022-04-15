@@ -13,6 +13,7 @@ namespace DEL.Auth.Infrastructure
         public string AssetName { get; set; }
         public string Description { get; set; }
         public string Note { get; set; }
+        public string Period { get; set; }
         public long HrOfficeId { get; set; }
         [ForeignKey("HrOfficeId")]
         public virtual HrOffice HrOffice { get; set; }

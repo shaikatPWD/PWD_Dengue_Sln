@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace DEL.Auth.Infrastructure
 {
 
-    public enum IsShow { No = 0,Yes = 1}
-    public enum IsNA { No = 0,Yes = 1 }
-    public enum ComplainStatus { Pending=0, Inprogress=1, Completed=2}
-    public enum IsComplete { NA=0, NO=1, Yes=2 }
+    public enum IsShow { No = 0, Yes = 1 }
+    public enum IsNA { No = 0, Yes = 1 }
+    public enum ComplainStatus { Pending = 0, Inprogress = 1, Completed = 2 }
+    public enum IsComplete { NA = 0, NO = 1, Yes = 2 }
     public enum RoleEnum { Admin = 3, SuperUser = -2 }
     public enum LCType { None = 0, Irecoverable = 1 }
     public enum BankAccountType { None = 0, Savings = 1, Current = 2, STD }
@@ -23,7 +23,7 @@ namespace DEL.Auth.Infrastructure
     public enum StockTranType { Receive = 1, Return = 2, TranferIn = 3, Tranferout = 4 }
     public enum Gender { Male = 1, Female = 2 }
     public enum MaritalStatus { Married = 1, UnMarried = 2, Other }
-    public enum BloodGroup { O_Positive=1, O_Negative, A_Positive, A_Negative, AB_Positive, AB_Negetive, B_Positive, B_Negative }
+    public enum BloodGroup { O_Positive = 1, O_Negative, A_Positive, A_Negative, AB_Positive, AB_Negetive, B_Positive, B_Negative }
     public enum Religion { Islam = 1, Hindu = 2, Buddist, Christian, Other }
     public enum OfficeType { HO = 1, Regional, Area }
     public enum UnitType { Wing = 1, Dept, Section }
@@ -39,10 +39,10 @@ namespace DEL.Auth.Infrastructure
     /// </summary>
     public enum LocationLevel { Division = 1, District, Thana, Area }
     public enum LeaveApplicableTo { Male, Female, All }
-    public enum LeaveApplicationStatus { Draft, Applied, ApprovedByDept, ApprovedByHr, Halted, Rejected ,Forward}
+    public enum LeaveApplicationStatus { Draft, Applied, ApprovedByDept, ApprovedByHr, Halted, Rejected, Forward }
 
     public enum CurrentYear { True = 1, False = 0 }
-   
+
     public enum HolidayType
     {
         Public = 1,
@@ -51,7 +51,7 @@ namespace DEL.Auth.Infrastructure
     public enum WFTypes { LeaveApplication, LoanApplication, Appraisal, PaymentVoucher }
     public enum WFStatus { Pending, Executed, Postponed, Deadlocked }
     public enum WFActorType { Initiator, Middleman, Finisher }
-    public enum LeaveSupervisionType { Approved = 1, Cancelled, Modified,Forward,Applied }
+    public enum LeaveSupervisionType { Approved = 1, Cancelled, Modified, Forward, Applied }
 
     public enum AppraisalType
     {
@@ -69,15 +69,15 @@ namespace DEL.Auth.Infrastructure
         Finished = 4,
         Cancelled = 5
     }
-    public enum Month { January=1,February,March,April,May,June,July,August,September,October,November,December}
+    public enum Month { January = 1, February, March, April, May, June, July, August, September, October, November, December }
     public enum SalaryItemType
     {
         Basic, Allowance, PF, OverTime, Loan, SalaryAdvance
     }
-    public enum EmployeeHistoryEnum { transfer=1,promotion,resignation,join}
+    public enum EmployeeHistoryEnum { transfer = 1, promotion, resignation, join }
     public enum SalaryProcessStatus { Draft, Edited, Finalized }
-    public enum SalaryItemStatus { Active,Inactive}
-    public enum GradeStepSalaryStatus { Active,Inactive}
-    public enum SalaryItemContributionType { Add,Deduct,Other}
-    public enum EmployeeStatus { Active,Inactive}
+    public enum SalaryItemStatus { Active, Inactive }
+    public enum GradeStepSalaryStatus { Active, Inactive }
+    public enum SalaryItemContributionType { Add, Deduct, Other }
+    public enum EmployeeStatus { Active, Inactive }
 }

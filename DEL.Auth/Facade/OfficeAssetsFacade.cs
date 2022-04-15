@@ -38,6 +38,7 @@ namespace DEL.Auth.Facade
                 officeAssets.AssetName = officeAssetsDto.AssetName;
                 officeAssets.Description = officeAssetsDto.Description;
                 officeAssets.Note = officeAssetsDto.Note;
+                officeAssets.Period = DateTime.Now.ToString("MMMM-yy");
                 officeAssets.HrOfficeId = (long)officeid;//officeAssetsDto.HrOfficeId;
                 GenService.Save(officeAssets);
             }
@@ -48,6 +49,7 @@ namespace DEL.Auth.Facade
                     AssetName = officeAssetsDto.AssetName,
                     Description = officeAssetsDto.Description,
                     Note = officeAssetsDto.Note,
+                    Period = DateTime.Now.ToString("MMMM-yy"),
                     HrOfficeId = (long)officeid//(int)officeAssetsDto.HrOfficeId
                 });
             }

@@ -55,5 +55,11 @@ namespace WebUI.Areas.Auth.Controllers
             var ModuleList = _monthlyMonitoring.GetWorkActivityRecordsByInstallationPeriod(officeAssetId, period);
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
+
+        //public JsonResult LoadWorkActivityByPeriod(string period)
+        //{
+        //    var ModuleList = _monthlyMonitoring.GetWorkActivityRecordsByPeriod(period);
+        //    return Json(ModuleList, JsonRequestBehavior.AllowGet);
+        //}
     }
 }

@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "SolaimanLipi";
+  src: url("../font/SolaimanLipi.eot"); /* IE9 Compat Modes */
+  src: url("../font/SolaimanLipi.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../font/SolaimanLipi.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../font/SolaimanLipi.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("../font/SolaimanLipi.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+
+body{
+  font-family: "SolaimanLipi", sans-serif !important;
+  font-size: 14px !important;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.body{
+  padding-top: 55px;
+}
+
+ul li,
+li{
+  list-style-type: none;
+}
+
+a,
+a:active,
+a:hover{
+  text-decoration: none;
+}
