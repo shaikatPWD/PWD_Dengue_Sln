@@ -18,10 +18,21 @@ namespace WebUI.Areas.Auth.Controllers
         {
             return View();
         }
+
+        public ActionResult WorkrecordDetails ()
+        {
+            return View();
+        }
         public ActionResult WorkrecordDetailsEntry()
         {
             return View();
         }
+
+        public ActionResult WorkrecordListByDevission()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult SaveWorkRecord(WorkRecordDetailsDto dto)
         {
@@ -46,10 +57,22 @@ namespace WebUI.Areas.Auth.Controllers
             var ModuleList = _workRecord.GetAssetNamebyAssetId(assetId);
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
+        public JsonResult GetAllWorksOffices()
+        {
+            var ModuleList = _workRecord.GetAllWorksOffices();
+            return Json(ModuleList, JsonRequestBehavior.AllowGet);
+        }
         public JsonResult GetIsComplete()
         {
             var allJobType = _enumFacade.GetIscomplete();
             return Json(allJobType, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetAssets(long id)
+        {
+            var ModuleList = _workRecord.GetAssets(id);
+            return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
     }
 }

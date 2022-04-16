@@ -11,6 +11,7 @@ namespace DEL.Auth.DTO
 {    
     public class WorkActivityDto
     { 
+        public string OfficeName { get; set; }
         public long? Id { get; set; }
         [DataType(DataType.Date)]
         public DateTime Date { get; set; } = DateTime.Today;

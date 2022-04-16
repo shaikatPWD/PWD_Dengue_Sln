@@ -349,11 +349,14 @@
     <Content Include="Areas\Auth\Scripts\Activity\ActivitiesDetailsEntry.js" />
     <Content Include="Areas\Auth\Scripts\Activity\ActivitiesEntry.js" />
     <Content Include="Areas\Auth\Scripts\Activity\ActivitiesDetails.js" />
+    <Content Include="Areas\Auth\Scripts\Activity\AllPeriodList.js" />
+    <Content Include="Areas\Auth\Scripts\Activity\MonthlyReport.js" />
     <Content Include="Areas\Auth\Scripts\Activity\PeriodList.js" />
     <Content Include="Areas\Auth\Scripts\applicationCreate.js" />
     <Content Include="Areas\Auth\Scripts\Area.js" />
     <Content Include="Areas\Auth\Scripts\HrOffice.js" />
     <Content Include="Areas\Auth\Scripts\companyCreate.js" />
+    <Content Include="Areas\Auth\Scripts\Information\ComplainEntry.js" />
     <Content Include="Areas\Auth\Scripts\Information\ActionEntry.js" />
     <Content Include="Areas\Auth\Scripts\Information\InformationList.js" />
     <Content Include="Areas\Auth\Scripts\many2many.js" />
@@ -374,7 +377,9 @@
     <Content Include="Areas\Auth\Scripts\User\userDetails.js" />
     <Content Include="Areas\Auth\Scripts\User\UserList.js" />
     <Content Include="Areas\Auth\Scripts\validate.js" />
+    <Content Include="Areas\Auth\Scripts\WorkRecord\AllOffice.js" />
     <Content Include="Areas\Auth\Scripts\WorkRecord\WorkRecordDetailsEntry.js" />
+    <Content Include="Areas\Auth\Scripts\WorkRecord\WorkRecordDetails.js" />
     <Content Include="Areas\Auth\Scripts\WorkRecord\WorkRecordEntry.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\assets\avatars\avatar.png" />
@@ -1071,7 +1076,6 @@
     <Content Include="Areas\Auth\Views\Assignments\ManyToManyAssignment.cshtml" />
     <Content Include="Areas\Auth\Views\CompanyProfile\DayClosing.cshtml" />
     <Content Include="Areas\Auth\Views\CompanyProfile\Index.cshtml" />
-    <Content Include="Areas\Auth\Views\CreateForm\TestForm.cshtml" />
     <Content Include="Areas\Auth\Views\Menu\Index.cshtml" />
     <Content Include="Areas\Auth\Views\Module\Index.cshtml" />
     <Content Include="Areas\Auth\Views\Role\Index.cshtml" />
@@ -1113,6 +1117,10 @@
     <Content Include="Areas\Auth\Views\Activity\ActivitiesDetails.cshtml" />
     <Content Include="Areas\Auth\Views\ActivityHome\PerodList.cshtml" />
     <Content Include="Areas\Auth\Views\ActivityHome\ActivitiesDetailsEntry.cshtml" />
+    <Content Include="Areas\Auth\Views\ActivityHome\MonthlyReports.cshtml" />
+    <Content Include="Areas\Auth\Views\ActivityHome\MonthlyReportDetails.cshtml" />
+    <Content Include="Areas\Auth\Views\Workrecord\WorkrecordListByDevission.cshtml" />
+    <Content Include="Areas\Auth\Views\Workrecord\WorkrecordDetails.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrapValidator.min.js" />
     <Content Include="Scripts\CryptoJS\aes.js" />

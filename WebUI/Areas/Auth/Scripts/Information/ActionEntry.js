@@ -33,7 +33,7 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
-                    self.StatusList(data);                    
+                    self.StatusList(data);
                 },
                 error: function (error) {
                     alert(error.status + "<--and--> " + error.statusText);
@@ -50,7 +50,7 @@
                     dataType: "json",
                     success: function (data) {
                         //data.DefImage("/UploadImages/ComplainImages/noimage.png");
-                        console.log(data.Image3);
+                        //console.log(data.Image1);
                         self.Id(data.Id);
                         self.FullName(data.FullName);
                         self.Mobile(data.Mobile);
@@ -63,8 +63,7 @@
                         if (data.AreaID > 0) {
                             self.CombindArea(data.AreaName);
                         }
-                        else
-                        {
+                        else {
                             self.CombindArea(data.DistrictName);
                         }
                         self.Location(data.Location);
@@ -77,31 +76,31 @@
                             self.Image1(data.Image1);
                         }
                         else {
-                            self.Image1("/UploadImages/ComplainImages/noimage.png");
+                            self.Image1("/UploadImages/ComplainImages/noimage.jpg");
                         }
                         if (data.Image2 != null && data.Image2 != "") {
                             self.Image2(data.Image2);
                         }
                         else {
-                            self.Image2("/UploadImages/ComplainImages/noimage.png");
+                            self.Image2("/UploadImages/ComplainImages/noimage.jpg");
                         }
                         if (data.Image3 != null && data.Image3 != "") {
                             self.Image3(data.Image3);
                         }
                         else {
-                            self.Image3("/UploadImages/ComplainImages/noimage.png");
+                            self.Image3("/UploadImages/ComplainImages/noimage.jpg");
                         }
                         if (data.Image4 != null && data.Image4 != "") {
                             self.Image4(data.Image4);
                         }
                         else {
-                            self.Image4("/UploadImages/ComplainImages/noimage.png");
+                            self.Image4("/UploadImages/ComplainImages/noimage.jpg");
                         }
                         if (data.Image5 != null && data.Image5 != "") {
-                            self.Image5(data.Image4);
+                            self.Image5(data.Image5);
                         }
                         else {
-                            self.Image5("/UploadImages/ComplainImages/noimage.png");
+                            self.Image5("/UploadImages/ComplainImages/noimage.jpg");
                         }
                     },
                     error: function (error) {
@@ -113,7 +112,7 @@
                 self.Initializer();
             }
         }
-        
+
         self.Submit = function () {
 
             var submitJobCardData = {
@@ -165,7 +164,7 @@
             //};
         };
 
-        self.Initializer = function () {            
+        self.Initializer = function () {
             self.LoadInfoStatus();
         };
 
@@ -178,7 +177,7 @@
     };
 
     var infoVm = new IfoActionViewModel();
-    
+
     infoVm.Id(infoVm.queryString("id"));
     infoVm.LoadInformation();
 

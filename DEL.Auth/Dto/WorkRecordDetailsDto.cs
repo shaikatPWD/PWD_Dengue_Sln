@@ -12,6 +12,7 @@ namespace DEL.Auth.DTO
     {   
         public long? Id { get; set; }
         public long? OfficeId { get; set; }
+        public string OfficeName { get; set; }
         public long? AssetId { get; set; }
         public string AssetName { get; set; }
         public string AssetBuildingName { get; set; }

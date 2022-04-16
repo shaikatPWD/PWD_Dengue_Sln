@@ -37,8 +37,9 @@ namespace DEL.Auth.Facade
             var shiftIds = offAsslist.Select(s => s.Id).ToList();
             var data = new List<WorkActivityDto>();
             var query = (from x in workActivitylist
-                         where shiftIds.Contains((long)x.OfficeAssetId) select x.OfficeAssetId);
-            var acCount = query.Select(c=>c.Value).Distinct().Count();
+                         where shiftIds.Contains((long)x.OfficeAssetId)
+                         select x.OfficeAssetId);
+            var acCount = query.Select(c => c.Value).Distinct().Count();
 
             if (acCount != offAsslist.Count)
             {
@@ -48,6 +49,20 @@ namespace DEL.Auth.Facade
                 });
             }
             return data;
+        }
+
+        public List<WorkActivityDto> LoadAllPeriods(long? officeId)//(List<long?> ApplicationId) long officeId
+        {
+            var officeName = GenService.GetById<HrOffice>((long)officeId).Name;
+            var workActivitylist = GenService.GetAll<WorkActivity>();//.Where(w => w.Period == currentPeriod).ToList();
+            var data = new List<WorkActivityDto>();
+            data = workActivitylist.GroupBy(d => new {d.Period }).Select(x => new WorkActivityDto
+            {
+                OfficeName = officeName,
+                Period = x.Key.Period
+            }).ToList();//.GroupBy(x => x.Period);
+
+            return data;//(List<WorkActivityDto>)data.GroupBy(x => x.Period);
         }
 
         public ResponseDto SaveWorkActivityforInstallation(WorkActivityDto dto, long userId)
@@ -101,16 +116,16 @@ namespace DEL.Auth.Facade
                     item.CreateDate = DateTime.Now;
                     item.CreatedBy = userId;
                     item.Status = EntityStatus.Active;
-                    GenService.Save(item);                    
-                    
+                    GenService.Save(item);
+
                 }
                 GenService.SaveChanges();
                 tran.Complete();
-            }            
+            }
             response.Success = true;
             response.Message = "Activity Details Saved Successfully..";
             return response;
-        }        
+        }
 
         public List<WorkActivityDto> GetWorkActivityRecordsByInstallationPeriod(long officeAssetId, string period)//(List<long?> ApplicationId) long officeId
         {
@@ -174,6 +189,34 @@ namespace DEL.Auth.Facade
                 IsUnderConstructionBuildingCleanUpName = name
             }).ToList();
 
+            return data;
+        }
+
+        public List<WorkActivityDto> GetWorkActivityRecordsByPeriod(string period)//(List<long?> ApplicationId) long officeId
+        {
+            var districts = GenService.GetAll<WorkActivity>().Where(w => w.Period == period).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+
+            var data = districts.Select(x => new WorkActivityDto
+            {
+                Id = x.Id,
+                OfficeAssetId = x.OfficeAssetId,
+                OfficeAssetName = x.OfficeAssets.AssetName,
+                Date = x.Date,
+                IsPondsCleanUp = x.IsPondsCleanUp,
+                IsPondsCleanUpName = Enum.GetName(typeof(IsComplete), x.IsPondsCleanUp),
+                IsWastageCleanUp = x.IsWastageCleanUp,
+                IsWastageCleanUpName = Enum.GetName(typeof(IsComplete), x.IsWastageCleanUp),
+                IsMedicalCollegeCleanUp = x.IsMedicalCollegeCleanUp,
+                IsMedicalCollegeCleanUpName = Enum.GetName(typeof(IsComplete), x.IsMedicalCollegeCleanUp),
+                IsOfficeAndHouseholdCleanUp = x.IsOfficeAndHouseholdCleanUp,
+                IsOfficeAndHouseholdCleanUpName = Enum.GetName(typeof(IsComplete), x.IsOfficeAndHouseholdCleanUp),
+                IsStillWaterCleanUp = x.IsStillWaterCleanUp,
+                IsStillWaterCleanUpName = Enum.GetName(typeof(IsComplete), x.IsStillWaterCleanUp),
+                IsCuringWaterCleanUp = x.IsCuringWaterCleanUp,
+                IsCuringWaterCleanUpName = Enum.GetName(typeof(IsComplete), x.IsCuringWaterCleanUp),
+                IsUnderConstructionBuildingCleanUp = x.IsUnderConstructionBuildingCleanUp,
+                IsUnderConstructionBuildingCleanUpName = Enum.GetName(typeof(IsComplete), x.IsUnderConstructionBuildingCleanUp)
+            }).ToList();
             return data;
         }
     }

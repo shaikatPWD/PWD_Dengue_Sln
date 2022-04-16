@@ -36,6 +36,16 @@ namespace WebUI.Areas.Auth.Controllers
             return View();
         }
 
+        public ActionResult MonthlyReports()
+        {
+            return View();
+        }
+
+        public ActionResult MonthlyReportDetails()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult SaveWorkActivityDetails(List<OfficeAssetsDto> dto)
         {
@@ -66,9 +76,21 @@ namespace WebUI.Areas.Auth.Controllers
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult LoadAllPeriods()
+        {
+            var ModuleList = _monthlyMonitoring.LoadAllPeriods(SessionHelper.UserProfile.SelectedOfficeId);
+            return Json(ModuleList, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult GetWorkActivityRecordsByPeriod()
         {
             var ModuleList = _monthlyMonitoring.GetWorkActivityRecordsByPeriod();
+            return Json(ModuleList, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetWorkActivitiesByPeriod(string period)
+        {
+            var ModuleList = _monthlyMonitoring.GetWorkActivityRecordsByPeriod(period);
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
     }

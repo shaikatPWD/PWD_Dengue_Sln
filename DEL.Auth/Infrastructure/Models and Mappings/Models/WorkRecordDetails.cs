@@ -20,7 +20,6 @@ namespace DEL.Auth.Infrastructure
     [Table("WorkRecordDetails")]
     public class WorkRecordDetails : Entity
     {
-        //public long WorkRecordId { get; set; }
         public long? OfficeId { get; set; }
         public long? AssetId { get; set; }
         public string AssetBuildingName { get; set; }
@@ -33,7 +32,5 @@ namespace DEL.Auth.Infrastructure
         public virtual HrOffice HrOffice { get; set; }
         [ForeignKey("AssetId")]
         public virtual Assets Assets { get; set; }
-        //[ForeignKey("WorkRecordId")]
-        //public virtual WorkRecord WorkRecord { get; set; }
     }
 }

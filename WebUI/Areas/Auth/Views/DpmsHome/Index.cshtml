@@ -2,231 +2,381 @@
     ViewBag.Title = "Welcome";
     Layout = "~/Views/Shared/_LayoutClientPages.cshtml";
 }
+<script src="~/Areas/Auth/Scripts/Information/ComplainEntry.js"></script>
 
-
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-success shadow">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#">
-                    <img src="assets/image/favicon.png" alt="" height="40">&nbsp;&nbsp;ডেঙ্গু প্রতিরোধ ব্যাবস্থাপনা মনিটরিং
-                </a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">
-                          <i class="fas fa-home fa-lg me-2"></i>হোম
-                      </a>
-                    </li> -->
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">
-                            <i class="fas fa-home fa-lg me-2"></i>হোম
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">
-                            <i class="fas fa-clipboard-list fa-lg me-2"></i>নিবন্ধন
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">
-                            <i class="fas fa-chart-line fa-lg me-2"></i>রিপোর্ট
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/Auth/Login/Login">
-                            <i class="fas fa-sign-in-alt fa-lg me-2"></i>লগইন
-                        </a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-success shadow">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">
+                <img src="assets/image/favicon.png" alt="" height="40">&nbsp;&nbsp;ডেঙ্গু প্রতিরোধ ব্যাবস্থাপনা মনিটরিং
+            </a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">
+                      <i class="fas fa-home fa-lg me-2"></i>হোম
+                  </a>
+                </li> -->
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <i class="fas fa-home fa-lg me-2"></i>হোম
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <i class="fas fa-clipboard-list fa-lg me-2"></i>নিবন্ধন
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <i class="fas fa-chart-line fa-lg me-2"></i>রিপোর্ট
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/Auth/Login/Login">
+                        <i class="fas fa-sign-in-alt fa-lg me-2"></i>লগইন
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-5">
-                <div class="card mt-4 shadow-lg mb-3 rounded-0">
-                    <div class="card-body">
-                        <ol class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-start p-3">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">
-                                        <i class="fas fa-check-circle fa-lg me-2"></i>সফটওয়্যারটির পরিচিতি
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            সারা দেশব্যাপী ডেঙ্গুর প্রাদুর্ভাব রোধে গণপূর্ত অধিদপ্তরের আওতাধীন সরকারি অফিস ও আবাসিক ভবনসমুহের চারদিকে মশার প্রজননস্হল ধ্বংস করে পরিবেশগত ব্যবস্হাপনার মাধ্যমে মশা নিয়ন্ত্রণের লক্ষ্যে গৃহীত বিভিন্ন পদক্ষেপের মধ্যে এই সফটওয়্যরটি অন্যতম যার মাধ্যমে যেকোন সচেতন নাগরিক উক্ত অধিদপ্তরের অধিক্ষেত্রভূক্ত যেকোন সরকারি অফিস ও আবাসিক ভবনসমূহের চারপাশে মশার প্রজনন ধ্বংশের জন্য সেসব স্থানের ছবি আপলোড করে সংশ্লিষ্ট গণপূর্ত অধিদপ্তরের কর্মচারীকে তাৎক্ষনিকভাবে অবহিত করতে পারবেন এবং একই সাথে ডেঙ্গু বিস্তার রোধে যেসব ব্যবস্থা নেয়া প্রয়োজন সেগুলো তার পর্যবেক্ষণ সহকারে অভিযোগ আকারে প্রেরণ করতে পারবেন। তাঁর এই অভিযোগের প্রেক্ষিতে গণপূর্ত অধিদপ্তর কর্তৃক গৃহীত ব্যবস্হা উক্ত ডাটাবেজে সংরক্ষনের পাশাপাশি অভিযোগকারীকেও অবহিত করা হবে।
-                                        </li>
-                                    </ul>
+<div class="container" id="comPlain">
+    <div class="row">
+        <div class="col-12 col-md-5">
+            <div class="card mt-4 shadow-lg mb-3 rounded-0">
+                <div class="card-body">
+                    <ol class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-start p-3">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">
+                                    <i class="fas fa-check-circle fa-lg me-2"></i>সফটওয়্যারটির পরিচিতি
                                 </div>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-start p-3">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">
-                                        <i class="fas fa-check-circle fa-lg me-2"></i>কীভাবে তথ্য দিবেন
-                                    </div>
-                                    <ul>
-                                        <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>প্রথমত আপনি আপনার নাম এবং মোবাইল নম্বরটি লিখুন যা বাধ্যতামূলক তথ্য</li>
-                                        <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>দ্বিতীয়ত আপনি যদি ঢাকা মেট্রোপলিটনের ভিতরে হন তাহলে ”ঢাকা মেট্রোপলিটনের ভিতরে” রেডিও বাটনটি সিলেক্ট করে নিচের বক্স থেকে আপনার এলাকা  নির্বাচন করুন অথবা ঢাকা মেট্রোপলিটনের বাহিরে হলে "ঢাকা মেট্রোপলিটনের বাইরে" রেডিও বাটনটি সিলেক্ট করে নিচের বক্স থেকে আপনার জেলা নির্বাচন করুন</li>
-                                        <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>গণপূর্ত অধিদপ্তর কর্ত্ক রক্ষনাবেক্ষনকৃত এলাকা যেখানে ডেঙ্গু মশার লার্ভা অথবা ময়লা আর্বজনা দেখা যাচ্ছে সেই স্থানটির নাম লিখুন</li>
-                                        <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>স্থানটির বর্তমান অবস্থা সম্পর্কে লিখুন এবং উক্ত জায়গাটি পরিস্খারকরনে আপনার সুচিন্তিত মতামত লিখুন</li>
-                                        <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>স্থানটির কয়েকটি ছবি তুলে আপলোড করুন (সর্বোচ্চ ৫টি)</li>
-                                    </ul>
+                                <ul>
+                                    <li>
+                                        সারা দেশব্যাপী ডেঙ্গুর প্রাদুর্ভাব রোধে গণপূর্ত অধিদপ্তরের আওতাধীন সরকারি অফিস ও আবাসিক ভবনসমুহের চারদিকে মশার প্রজননস্হল ধ্বংস করে পরিবেশগত ব্যবস্হাপনার মাধ্যমে মশা নিয়ন্ত্রণের লক্ষ্যে গৃহীত বিভিন্ন পদক্ষেপের মধ্যে এই সফটওয়্যরটি অন্যতম যার মাধ্যমে যেকোন সচেতন নাগরিক উক্ত অধিদপ্তরের অধিক্ষেত্রভূক্ত যেকোন সরকারি অফিস ও আবাসিক ভবনসমূহের চারপাশে মশার প্রজনন ধ্বংশের জন্য সেসব স্থানের ছবি আপলোড করে সংশ্লিষ্ট গণপূর্ত অধিদপ্তরের কর্মচারীকে তাৎক্ষনিকভাবে অবহিত করতে পারবেন এবং একই সাথে ডেঙ্গু বিস্তার রোধে যেসব ব্যবস্থা নেয়া প্রয়োজন সেগুলো তার পর্যবেক্ষণ সহকারে অভিযোগ আকারে প্রেরণ করতে পারবেন। তাঁর এই অভিযোগের প্রেক্ষিতে গণপূর্ত অধিদপ্তর কর্তৃক গৃহীত ব্যবস্হা উক্ত ডাটাবেজে সংরক্ষনের পাশাপাশি অভিযোগকারীকেও অবহিত করা হবে।
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start p-3">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">
+                                    <i class="fas fa-check-circle fa-lg me-2"></i>কীভাবে তথ্য দিবেন
                                 </div>
-                            </li>
-                        </ol>
-                    </div>
+                                <ul>
+                                    <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>প্রথমত আপনি আপনার নাম এবং মোবাইল নম্বরটি লিখুন যা বাধ্যতামূলক তথ্য</li>
+                                    <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>দ্বিতীয়ত আপনি যদি ঢাকা মেট্রোপলিটনের ভিতরে হন তাহলে ”ঢাকা মেট্রোপলিটনের ভিতরে” রেডিও বাটনটি সিলেক্ট করে নিচের বক্স থেকে আপনার এলাকা  নির্বাচন করুন অথবা ঢাকা মেট্রোপলিটনের বাহিরে হলে "ঢাকা মেট্রোপলিটনের বাইরে" রেডিও বাটনটি সিলেক্ট করে নিচের বক্স থেকে আপনার জেলা নির্বাচন করুন</li>
+                                    <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>গণপূর্ত অধিদপ্তর কর্ত্ক রক্ষনাবেক্ষনকৃত এলাকা যেখানে ডেঙ্গু মশার লার্ভা অথবা ময়লা আর্বজনা দেখা যাচ্ছে সেই স্থানটির নাম লিখুন</li>
+                                    <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>স্থানটির বর্তমান অবস্থা সম্পর্কে লিখুন এবং উক্ত জায়গাটি পরিস্খারকরনে আপনার সুচিন্তিত মতামত লিখুন</li>
+                                    <li class="mt-2"><i class="far fa-arrow-alt-circle-right me-2"></i>স্থানটির কয়েকটি ছবি তুলে আপলোড করুন (সর্বোচ্চ ৫টি)</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
             </div>
-            <div class="col-12 col-md-7">
-                <div class="card mt-4 shadow-lg mb-3 rounded-0">
-                    <div class="card-header bg-dark text-light rounded-0">
-                        ইনফরমেশন ফর্ম
-                    </div>
-                    <div class="card-body">
-                        <form action="">
-                            <div class="row">
-                                <div class="col-12 col-md-8">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control rounded-0 border-info" id="floatingInput" placeholder="name@example.com">
-                                        <label for="floatingInput">নাম <span class="text-danger fw-bold">*</span></label>
+        </div>
+        <div class="col-12 col-md-7">
+            <div class="card mt-4 shadow-lg mb-3 rounded-0">
+                <div class="card-header bg-dark text-light rounded-0">
+                    ইনফরমেশন ফর্ম
+                </div>
+                <div class="card-body">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control rounded-0 border-info" id="floatingInput" placeholder="" name="FullName" data-bind="value:FullName">
+                                    <label for="floatingInput">নাম <span class="text-danger fw-bold">*</span></label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control rounded-0 border-info" id="floatingPassword" placeholder="Mobile" data-bind="value:Mobile">
+                                    <label for="floatingPassword">মোবাইল নাম্বার <span class="text-danger fw-bold">*</span></label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-12">
+                                <div class="mb-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="selectMetroArea" id="insideMetroArea" value="1" onchange="getMetroArea(1)" checked />
+                                        <label class="form-check-label" for="insideMetroArea">ঢাকা মেট্রোপলিটনের ভিতরে</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="selectMetroArea" id="outsideMetroArea" value="0" onchange="getMetroArea(0)">
+                                        <label class="form-check-label" for="outsideMetroArea">ঢাকা মেট্রোপলিটনের বাইরে</label>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-4">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control rounded-0 border-info" id="floatingPassword" placeholder="Password">
-                                        <label for="floatingPassword">মোবাইল নাম্বার <span class="text-danger fw-bold">*</span></label>
-                                    </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="form-floating mb-3" id="areaListWrapper">
+                                    <select class="form-control" id="form-field-select-1" data-bind="options:AreaList, optionsValue: 'Id',optionsText:'Name',optionsCaption:'এলাকা নির্বাচন করুন', value:AreaID "></select>
+
+                                    <label for="areaList">এলাকা</label>
                                 </div>
 
-                                <div class="col-12 col-md-12">
-                                    <div class="mb-3">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="selectMetroArea" id="insideMetroArea" value="1" onchange="getMetroArea(1)" checked>
-                                            <label class="form-check-label" for="insideMetroArea">ঢাকা মেট্রোপলিটনের ভিতরে</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="selectMetroArea" id="outsideMetroArea" value="2" onchange="getMetroArea(2)">
-                                            <label class="form-check-label" for="outsideMetroArea">ঢাকা মেট্রোপলিটনের বাইরে</label>
-                                        </div>
-                                    </div>
+                                <div class="form-floating mb-3" id="districtListWrapper">
+                                    <select class="form-control" id="form-field-select-1" data-bind="options:DistrictList, optionsValue: 'Id',optionsText:'Name',optionsCaption:'জেলা নির্বাচন করুন', value:DistrictID "></select>
+                                    <label for="districtList">জেলা</label>
                                 </div>
-                                <div class="col-12 col-md-12">
-                                    <div class="form-floating mb-3" id="areaListWrapper">
-                                        <select class="form-select rounded-0 border-info" id="areaList" aria-label="Floating label select example">
-                                            <option selected>এলাকা নির্বাচন করুন</option>
-                                            <option value="1">গুলশান সার্কেল</option>
-                                            <option value="2">ধানমন্ডি </option>
-                                            <option value="3">আজিমপুর</option>
-                                            <option value="4">মগবাজার</option>
-                                            <option value="5">জুরাইন </option>
-                                            <option value="6">শ্যামপুর </option>
-                                            <option value="7">সূত্রাপুর </option>
-                                            <option value="8">বাবুবাজার </option>
-                                            <option value="9">বংশাল </option>
-                                            <option value="10">গরান</option>
-                                            <option value="11">মাদারটেক </option>
-                                            <option value="12">সায়দাবাদ </option>
-                                            <option value="13">যাত্রাবাড়ী </option>
-                                            <option value="14">জিগাতলা</option>
-                                            <option value="15">হাজারীবাগ</option>
-                                            <option value="16">নান্দাইল</option>
-                                        </select>
-                                        <label for="areaList">এলাকা</label>
-                                    </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control rounded-0 border-info" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" data-bind="value:Location"></textarea>
+                                    <label for="floatingTextarea2">আপনি যে স্থানের ছবি তুলেছেন</label>
+                                </div>
+                            </div>
 
-                                    <div class="form-floating mb-3" id="districtListWrapper">
-                                        <select class="form-select rounded-0 border-info" id="districtList" aria-label="Floating label select example">
-                                            <option selected>জেলা নির্বাচন করুন</option>
-                                            <option value="1">ঢাকা</option>
-                                            <option value="1">বগুড়া</option>
-                                            <option value="1">চট্রগ্রাম</option>
-                                            <option value="1">সিলেট</option>
-                                            <option value="1">রংপুর</option>
-                                            <option value="1">বরিশাল</option>
-                                            <option value="1">রাজশাহী</option>
-                                        </select>
-                                        <label for="districtList">জেলা</label>
-                                    </div>
+                            <div class="col-12 col-md-12">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control rounded-0 border-info" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" data-bind="value:Remarks"></textarea>
+                                    <label for="floatingTextarea2">মন্তব্য</label>
                                 </div>
-                                <div class="col-12 col-md-12">
-                                    <div class="form-floating mb-3">
-                                        <textarea class="form-control rounded-0 border-info" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                        <label for="floatingTextarea2">আপনি যে স্থানের ছবি তুলেছেন</label>
-                                    </div>
+                            </div>
+
+                            <div class="col-12 col-md-12" id="imageUploadForm">
+                                <div class="mb-1">
+                                    <label class="form-label">ছবি নির্বাচন করুন</label>
+                                    <input type="file" id="Image1" class="form-control rounded-0 border-info formFileMultiple" name="Image1" onchange="getFileData(this, 'Image1')">
+                                </div>
+                                <div class="mb-1">
+                                    <input type="file" id="Image2" class="form-control rounded-0 border-info formFileMultiple" name="Image2" onchange="getFileData(this, 'Image2')">
+                                </div>
+                                <div class="mb-1">
+                                    <input type="file" id="Image3" class="form-control rounded-0 border-info formFileMultiple" name="Image3" onchange="getFileData(this, 'Image3')">
+                                </div>
+                                <div class="mb-1">
+                                    <input type="file" id="Image4" class="form-control rounded-0 border-info formFileMultiple" name="Image4" onchange="getFileData(this, 'Image4')">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="file" id="Image5" class="form-control rounded-0 border-info formFileMultiple" name="Image5" onchange="getFileData(this, 'Image5')">
                                 </div>
 
-                                <div class="col-12 col-md-12">
-                                    <div class="form-floating mb-3">
-                                        <textarea class="form-control rounded-0 border-info" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                        <label for="floatingTextarea2">মন্তব্য</label>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="card rounded-0 border-info mb-3">
+                                    <div class="card-header alert-info">
+                                        আপলোড করা ছবির প্রিভিউ
                                     </div>
-                                </div>
-
-                                <div class="col-12 col-md-12">
-                                    <div class="mb-3">
-                                        <label for="formFileMultiple" class="form-label">ছবি নির্বাচন করুন</label>
-                                        <input class="form-control rounded-0 border-info" type="file" id="formFileMultiple" multiple>
-                                        <input class="form-control rounded-0 border-info" type="file" id="formFileMultiple" multiple>
-                                        <input class="form-control rounded-0 border-info" type="file" id="formFileMultiple" multiple>
-                                        <input class="form-control rounded-0 border-info" type="file" id="formFileMultiple" multiple>
-                                        <input class="form-control rounded-0 border-info" type="file" id="formFileMultiple" multiple>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-12">
-                                    <div class="card rounded-0 border-info mb-3">
-                                        <div class="card-header alert-info">
-                                            আপলোড করা ছবির প্রিভিউ
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row no-gutters d-flex justify-content-center">
-                                                <div class="col">
-                                                    <p class="alert alert-warning mb-0">এখনো কোন ছবি আপলোড করা হয়নি</p>
-                                                </div>
+                                    <div class="card-body">
+                                        <div class="row no-gutters d-flex justify-content-center" id="preview">
+                                            <div class="col">
+                                                <p class="alert alert-warning mb-0">এখনো কোন ছবি আপলোড করা হয়নি</p>
                                             </div>
-                                            <!-- <div class="row no-gutters d-flex justify-content-center">
-                                                <div class="col">
-                                                    <img src="http://via.placeholder.com/180" alt="" class="img-fluid img-thumbnail">
-                                                </div>
-                                                <div class="col">
-                                                    <img src="http://via.placeholder.com/180" alt="" class="img-fluid img-thumbnail">
-                                                </div>
-                                                <div class="col">
-                                                    <img src="http://via.placeholder.com/180" alt="" class="img-fluid img-thumbnail">
-                                                </div>
-                                                <div class="col">
-                                                    <img src="http://via.placeholder.com/180" alt="" class="img-fluid img-thumbnail">
-                                                </div>
-                                                <div class="col">
-                                                    <img src="http://via.placeholder.com/180" alt="" class="img-fluid img-thumbnail">
-                                                </div>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="col-12 col-md-12">
-                                    <div class="card mt-4 shadow rounded-0">
-                                        <div class="card-body text-end">
-                                            <label class="position-absolute start-0 ms-3 mt-2"><span class="text-danger fw-bold">*</span> বাধ্যতামূলক তথ্য</label>
-                                            <button class="btn btn-success rounded-0">
-                                                সাবমিট করুন
-                                                <i class="fas fa-paper-plane ms-2"></i>
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-12 col-md-12">
+                                <div class="card mt-4 shadow rounded-0">
+                                    <div class="card-body text-end">
+                                        <label class="position-absolute start-0 ms-3 mt-2"><span class="text-danger fw-bold">*</span> বাধ্যতামূলক তথ্য</label>
+                                        <button class="btn btn-success rounded-0" data-togle="modal" data-target="#successModal" data-bind="click:Submit">
+                                            সাবমিট করুন
+                                            <i class="fas fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+    <div id="successModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Response</h4>
+                </div>
+                <div class="modal-body" align="center">
+                    <p id="successModalText"></p>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var img1, img2, img3, img4, img5;
+    var isDhk;
+    var area = document.getElementById('areaListWrapper');
+    var district = document.getElementById('districtListWrapper');
+    getMetroArea(1);
+    function getMetroArea(aid) {
+        if (aid == 1) {
+            area.style.display = 'block';
+            district.style.display = 'none';
+            isDhk = 1;
+        } else if (aid == 0) {
+            area.style.display = 'none';
+            district.style.display = 'block';
+            isDhk = 0;
+        }
+    }
+    var imageArray = [];
+    var realImageArray = [];
+    function populateImagePreview(image, idName) {
+        console.log('populateImagePreview', idName);
+        imageArray.push({ imageData: image, imageId: idName });
+        var imageWrapper = '';
+        for (var i = 0; i < imageArray.length; i++) {
+            imageWrapper += '<div class="col col-md-4"><div class="p-2 position-relative"><img id="img' + i + '" src="' + imageArray[i].imageData + '" width="100%" height="auto" /><button type="button" class="btn btn-sm btn-danger position-absolute end-0 top-0 rounded-circle" onclick="removeFromPreview(' + i + ',' + imageArray[i].imageId + ')"><i class="fas fa-times fa-sm"></i></button></div></div>';
+        }
+        $('#preview').html(imageWrapper);
+        console.log(imageArray);
+    }
+    function removeFromPreview(imageIndex, idName) {
+        console.log('removeFromPreview', idName.id);
+        imageArray.splice(imageIndex, 1);
+        document.getElementById(idName.id).value = null;
+        var imageWrapper = '';
+        for (var i = 0; i < imageArray.length; i++) {
+            imageWrapper += '<div class="col col-md-4"><div class="p-2 position-relative"><img src="' + imageArray[i].imageData + '" width="100%" height="auto" /><button type="button" class="btn btn-sm btn-danger position-absolute end-0 top-0 rounded-circle" onclick="removeFromPreview(' + i + ',' + imageArray[i].imageId + ')"><i class="fas fa-times fa-sm"></i></button></div></div>';
+        }
+        $('#preview').html(imageWrapper);
+        console.log(imageArray);
+        if (imageArray.length == 0) {
+            $('#preview').html('<div class="col"><p class="alert alert-warning mb-0">এখনো কোন ছবি আপলোড করা হয়নি</p></div>');
+        }
+    }
+    function setImageForDB(imageList) {
+        for (var i = 0; i < imageList.length; i++) {
+            const elementId = i + 1;
+            $('#Image' + elementId).val(imageList[i]);
+        }
+    }
+    function getFileData(ele, imageId) {
+        console.log(ele.files, imageId);
+        if (ele.files) {
+            var fileReader = new FileReader();
+            fileReader.onload = function (event) {
+                populateImagePreview(event.target.result, imageId);
+                
+            };
+            fileReader.readAsDataURL(ele.files[0]);
+        }
+    }
+</script>
+@*<script>
+        var img1, img2, img3, img4, img5;
+        function encodeImageFileAsURL() {
+
+            var filesSelected = document.getElementById("image1").files;
+            var srcData, newImage;
+
+            if (filesSelected.length > 0) {
+                var fileToLoad = filesSelected[0];
+                var fileReader = new FileReader();
+
+                fileReader.onload = function (fileLoadedEvent) {
+                    srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+                    newImage = document.createElement('img');
+                    newImage.setAttribute("id", "img1");
+                    newImage.src = srcData;
+
+                    document.getElementById("myImg").innerHTML = newImage.outerHTML;
+                    img1 = document.getElementById("img1").src;
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+        function encodeImageFileAsURL2() {
+
+            var filesSelected = document.getElementById("image2").files;
+            var srcData2, newImage2;
+            if (filesSelected.length > 0) {
+                var fileToLoad = filesSelected[0];
+                var fileReader = new FileReader();
+
+                fileReader.onload = function (fileLoadedEvent) {
+                    srcData2 = fileLoadedEvent.target.result;
+
+                    newImage2 = document.createElement('img');
+                    newImage2.setAttribute("id", "img2");
+                    newImage2.src = srcData2;
+
+                    document.getElementById("myImg2").innerHTML = newImage2.outerHTML;
+                    img2 = document.getElementById("img2").src;
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+        function encodeImageFileAsURL3() {
+
+            var filesSelected = document.getElementById("image2").files;
+            var srcData2, newImage2;
+            if (filesSelected.length > 0) {
+                var fileToLoad = filesSelected[0];
+                var fileReader = new FileReader();
+
+                fileReader.onload = function (fileLoadedEvent) {
+                    srcData2 = fileLoadedEvent.target.result;
+
+                    newImage2 = document.createElement('img');
+                    newImage2.setAttribute("id", "img2");
+                    newImage2.src = srcData2;
+
+                    document.getElementById("myImg2").innerHTML = newImage2.outerHTML;
+                    img2 = document.getElementById("img2").src;
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+        function encodeImageFileAsURL4() {
+
+            var filesSelected = document.getElementById("image2").files;
+            var srcData2, newImage2;
+            if (filesSelected.length > 0) {
+                var fileToLoad = filesSelected[0];
+                var fileReader = new FileReader();
+
+                fileReader.onload = function (fileLoadedEvent) {
+                    srcData2 = fileLoadedEvent.target.result;
+
+                    newImage2 = document.createElement('img');
+                    newImage2.setAttribute("id", "img2");
+                    newImage2.src = srcData2;
+
+                    document.getElementById("myImg2").innerHTML = newImage2.outerHTML;
+                    img2 = document.getElementById("img2").src;
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+        function encodeImageFileAsURL5() {
+
+            var filesSelected = document.getElementById("image2").files;
+            var srcData2, newImage2;
+            if (filesSelected.length > 0) {
+                var fileToLoad = filesSelected[0];
+                var fileReader = new FileReader();
+
+                fileReader.onload = function (fileLoadedEvent) {
+                    srcData2 = fileLoadedEvent.target.result;
+
+                    newImage2 = document.createElement('img');
+                    newImage2.setAttribute("id", "img2");
+                    newImage2.src = srcData2;
+
+                    document.getElementById("myImg2").innerHTML = newImage2.outerHTML;
+                    img2 = document.getElementById("img2").src;
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+    </script>*@

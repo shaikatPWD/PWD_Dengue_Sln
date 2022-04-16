@@ -95,48 +95,48 @@ namespace DEL.Auth.Facade
             //}
             //else
             //{                
-                string file1 = DateTime.Now.ToString("yyyyMMddHHmmssffffff") + "_Image_" + Convert.ToString(officeId) + "_" + Convert.ToString(dto.AssetId);
-                string file2 = DateTime.Now.ToString("yyyyMMddHHmmssffffff") + "_Image_" + Convert.ToString(officeId) + "_" + Convert.ToString(dto.AssetId);
-                dto.Image1 = ConvertImage(dto.Image1.Substring(23), file1);
-                dto.Image2 = ConvertImage(dto.Image2.Substring(23), file2);
-                entity = Mapper.Map<WorkRecordDetails>(dto);
-                if (officeId > 0)
-                    entity.OfficeId = officeId;
-                entity.AssetId = (long)dto.AssetId;
-                entity.Status = EntityStatus.Active;
-                entity.CreatedBy = userId;
-                entity.CreateDate = DateTime.Now;
-                using (var tran = new TransactionScope())
+            string file1 = DateTime.Now.ToString("yyyyMMddHHmmssfffffff") + "_Image_1_" + Convert.ToString(officeId) + "_" + Convert.ToString(dto.AssetId);
+            string file2 = DateTime.Now.ToString("yyyyMMddHHmmssfffffff") + "_Image_2_" + Convert.ToString(officeId) + "_" + Convert.ToString(dto.AssetId);
+            dto.Image1 = dto.Image1 != null ? ConvertImage(dto.Image1.Substring(23), file1) : null;
+            dto.Image2 = dto.Image2 != null ? ConvertImage(dto.Image2.Substring(23), file2) : null;
+            entity = Mapper.Map<WorkRecordDetails>(dto);
+            if (officeId > 0)
+                entity.OfficeId = officeId;
+            entity.AssetId = (long)dto.AssetId;
+            entity.Status = EntityStatus.Active;
+            entity.CreatedBy = userId;
+            entity.CreateDate = DateTime.Now;
+            using (var tran = new TransactionScope())
+            {
+                try
                 {
-                    try
-                    {
-                        #region comments
-                        //if (dto.WorkRecordDetails != null && dto.WorkRecordDetails.Count > 0)
-                        //{
-                        //    entity.WorkRecordDetails = Mapper.Map<List<WorkRecordDetails>>(dto.WorkRecordDetails);
-                        //    foreach (var item in entity.WorkRecordDetails)
-                        //    {
-                        //        item.CreateDate = DateTime.Now;
-                        //        item.CreatedBy = userId;
-                        //        item.Status = EntityStatus.Active;
-                        //    }
-                        //}
-                        #endregion
-                        GenService.Save(entity);
-                        response.Id = entity.Id;
-                        GenService.SaveChanges();
-                        tran.Complete();
-                    }
-                    catch (Exception ex)
-                    {
-                        tran.Dispose();
-                        response.Message = "Workrecord saving failed";
-                        return response;
-                    }
+                    #region comments
+                    //if (dto.WorkRecordDetails != null && dto.WorkRecordDetails.Count > 0)
+                    //{
+                    //    entity.WorkRecordDetails = Mapper.Map<List<WorkRecordDetails>>(dto.WorkRecordDetails);
+                    //    foreach (var item in entity.WorkRecordDetails)
+                    //    {
+                    //        item.CreateDate = DateTime.Now;
+                    //        item.CreatedBy = userId;
+                    //        item.Status = EntityStatus.Active;
+                    //    }
+                    //}
+                    #endregion
+                    GenService.Save(entity);
+                    response.Id = entity.Id;
+                    GenService.SaveChanges();
+                    tran.Complete();
                 }
-                response.Success = true;
-                response.Id = entity.Id;
-                response.Message = "Workrecord saved successfully";
+                catch (Exception ex)
+                {
+                    tran.Dispose();
+                    response.Message = "Workrecord saving failed";
+                    return response;
+                }
+            }
+            response.Success = true;
+            response.Id = entity.Id;
+            response.Message = "Workrecord saved successfully";
             //}
             return response;
         }
@@ -186,6 +186,51 @@ namespace DEL.Auth.Facade
         public AssetsDto GetAssetNamebyAssetId(long assetId)//(List<long?> ApplicationId) long officeId
         {
             return Mapper.Map<AssetsDto>(GenService.GetById<Assets>(assetId));
+        }
+
+        public List<HrOfficeDto> GetAllWorksOffices()//(List<long?> ApplicationId) long officeId
+        {
+            var districts = GenService.GetAll<HrOffice>();//.Where(w => w.DivisionId > 0 && w.Status == EntityStatus.Active).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+
+            var data = districts.Select(x => new HrOfficeDto
+            {
+                Id = x.Id,
+                Name = x.Name
+                
+            }).ToList();
+            return data;
+        }
+
+        public List<AssetsDto> GetAssets(long id)//(List<long?> ApplicationId) long officeId
+        {
+            var districts = GenService.GetAll<Assets>().ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+
+            var data = districts.Select(x => new AssetsDto
+            {
+                Id = x.Id,
+                AssetType = x.AssetType,
+                AssetTypeFull = x.AssetTypeFull,
+                WorkRecordDetails = GetAssetsDetails(x.Id, id),
+                OrderId = x.OrderId
+            }).ToList();
+            return data;
+        }
+
+        public List<WorkRecordDetailsDto> GetAssetsDetails(long asid, long offId)//(List<long?> ApplicationId) long officeId
+        {
+            var districts = GenService.GetAll<WorkRecordDetails>().Where(a => a.AssetId == asid && a.OfficeId == offId).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+
+            var data = districts.Select(x => new WorkRecordDetailsDto
+            {
+                Id = x.Id,
+                AssetId = asid,
+                AssetBuildingName = x.AssetBuildingName,
+                CompletionDate = x.CompletionDate,
+                Image1 = x.Image1,
+                Image2 = x.Image2
+
+            }).ToList();
+            return data;
         }
     }
 }

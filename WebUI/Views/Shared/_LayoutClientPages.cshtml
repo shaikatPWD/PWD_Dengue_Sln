@@ -48,25 +48,25 @@
         base_url = "index.html";
     </script>
     <!--   custom JavaScript -->
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="~/Content/mainassets/js/jquery.min.js"></script>
     <script src="~/Content/mainassets/js/fontawesome.min.js"></script>
     <script src="~/Content/mainassets/js/select2.min.js"></script>
 
-    <script>
-        var area = document.getElementById('areaListWrapper');
-        var district = document.getElementById('districtListWrapper');
-        getMetroArea(1);
-        function getMetroArea(aid) {
-            console.log(aid);
-            if (aid == 1) {
-                area.style.display = 'block';
-                district.style.display = 'none';
-            } else if (aid == 2) {
-                area.style.display = 'none';
-                district.style.display = 'block';
+    @*<script>
+            var area = document.getElementById('areaListWrapper');
+            var district = document.getElementById('districtListWrapper');
+            getMetroArea(1);
+            function getMetroArea(aid) {
+                console.log(aid);
+                if (aid == 1) {
+                    area.style.display = 'block';
+                    district.style.display = 'none';
+                } else if (aid == 2) {
+                    area.style.display = 'none';
+                    district.style.display = 'block';
+                }
             }
-        }
-    </script>
+        </script>*@
 </body>
 </html>
