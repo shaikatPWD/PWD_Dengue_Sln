@@ -181,7 +181,7 @@ namespace DEL.Auth.Facade
         }
         public List<AreaDto> GetAllAreas()
         {
-            var areas = GenService.GetAll<Area>().Where(a => a.Name != "N/A").Select(t => new AreaDto()
+            var areas = GenService.GetAll<Area>().Where(a => a.Name != "--Default--").Select(t => new AreaDto()
             {
                 Id = t.Id,
                 Name = t.BnName

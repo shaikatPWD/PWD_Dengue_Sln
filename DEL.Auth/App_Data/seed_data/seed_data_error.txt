@@ -1,30 +1,5 @@
 Error Occured while inserting seed data
-processing for: F:\03.Sheltechnologies\PWD\Dengue_App\PWD_Dengue_20220411\PWD_Dengue_20220410\PWD_Dengue\PWD_Dengue_Sln\WebUI\App_Data\..\..\DEL.Auth\App_Data\seed_data\0
-processing for: F:\03.Sheltechnologies\PWD\Dengue_App\PWD_Dengue_20220411\PWD_Dengue_20220410\PWD_Dengue\PWD_Dengue_Sln\WebUI\App_Data\..\..\DEL.Auth\App_Data\seed_data\0\seed_data.sql
+processing for: E:\Projects\PWD\PWD.Dengue\PWD_Dengue_Sln\WebUI\App_Data\..\..\DEL.Auth\App_Data\seed_data\0
+processing for: E:\Projects\PWD\PWD.Dengue\PWD_Dengue_Sln\WebUI\App_Data\..\..\DEL.Auth\App_Data\seed_data\0\seed_data.sql
 Failed!....
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Information_dbo.Area_AreaID". The conflict occurred in database "PWD.Auth", table "dbo.Area", column 'Id'.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
-The statement has been terminated.
+Invalid column name 'IsActive'.

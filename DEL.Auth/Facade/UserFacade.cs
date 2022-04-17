@@ -33,6 +33,7 @@ namespace DEL.Auth.Facade
                 {
                     user.UserName = userDto.UserName;
                     user.Password = userDto.Password;
+                    user.FullName = userDto.FullName;
                     user.EmployeeId = userDto.EmployeeId;
                     user.IsActive = true;
                 }
@@ -50,6 +51,7 @@ namespace DEL.Auth.Facade
                             if (emp != null && emp.Id > 0)
                             {
                                 emp.UserName = userDto.UserName;
+                                emp.FullName = userDto.FullName;
                                 emp.Password = userDto.Password;
                                 emp.EmployeeId = userDto.EmployeeId;
                                 emp.IsActive = true;
@@ -61,6 +63,7 @@ namespace DEL.Auth.Facade
                                 user = new User
                                 {
                                     UserName = userDto.UserName,
+                                    FullName = userDto.FullName,
                                     Password = userDto.Password,
                                     EmployeeId = userDto.EmployeeId,
                                     IsActive = true
@@ -81,6 +84,7 @@ namespace DEL.Auth.Facade
                             if (user != null && user.Id > 0)
                             {
                                 user.UserName = userDto.UserName;
+                                user.FullName = userDto.FullName;
                                 user.Password = userDto.Password;
                                 user.EmployeeId = userDto.EmployeeId;
                                 user.IsActive = true;
@@ -92,6 +96,7 @@ namespace DEL.Auth.Facade
                                 user = new User
                                 {
                                     UserName = userDto.UserName,
+                                    FullName = userDto.FullName,
                                     Password = userDto.Password,
                                     IsActive = true
                                 };
@@ -188,6 +193,7 @@ namespace DEL.Auth.Facade
             if (user != null)
             {
                 user.UserName = userinfo.UserName;
+                user.FullName = userinfo.FullName;
                 user.Password = userinfo.Password;
                 user.EmployeeId = userinfo.EmployeeId;
                 user.IsActive = true;
@@ -197,6 +203,7 @@ namespace DEL.Auth.Facade
                 GenService.Save(new User
                 {
                     UserName = userinfo.UserName,
+                    FullName = userinfo.FullName,
                     Password = userinfo.Password,
                     EmployeeId = userinfo.EmployeeId,
                     IsActive = true
@@ -303,6 +310,7 @@ namespace DEL.Auth.Facade
             {
                 userdto.Id = user.Id;
                 userdto.UserName = user.UserName;
+                userdto.FullName = user.FullName;
                 userdto.Password = user.Password;
                 userdto.EmployeeId = user.EmployeeId;
             }
@@ -317,6 +325,7 @@ namespace DEL.Auth.Facade
                         {
                             UserId = usr.Id,
                             UserName = usr.UserName,
+                            FullName = usr.FullName,
                             Password = usr.Password,
                             ConfirmPassword = usr.Password,
                             EmployeeId = usr.EmployeeId,

@@ -114,6 +114,7 @@ namespace DEL.Auth.Facade
             //userResourceDto.Tasks.AddRange(tasks);
             userResourceDto.Roles = Mapper.Map<List<RoleDto>>(roles);
             userResourceDto.UserName = user.UserName;
+            userResourceDto.FullName = user.FullName;
             //userResourceDto.
             return userResourceDto;
         }
@@ -142,10 +143,11 @@ namespace DEL.Auth.Facade
             userResourceDto.UserId = user.Id;
             userResourceDto.IsAdmin = user.Roles.Any(x => x.Id == (int)RoleEnum.Admin);
             userResourceDto.UserName = user.UserName;
+            userResourceDto.FullName = user.FullName;
 
             //var roleIds = user.Roles.Select(r => r.Id).ToList();
             //var roleMenus = GenService.GetAll<RoleMenu>().Where(r => roles.Select(er => er.Id).Contains(r.RoleId));//user.Menus; 
-            
+
             var menus = userResourceDto.IsAdmin ?
                 GenService.GetAll<Menu>().Where(i=>i.Status == EntityStatus.Active).OrderBy(r=>r.Sl).ToList() : 
                 GenService.GetAll<RoleMenu>()

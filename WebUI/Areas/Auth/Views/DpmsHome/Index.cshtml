@@ -2,6 +2,12 @@
     ViewBag.Title = "Welcome";
     Layout = "~/Views/Shared/_LayoutClientPages.cshtml";
 }
+<link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<script src="~/Scripts/moment.js"></script>
+<script src="~/Scripts/knockout-date-bindings.js"></script>
+<link href="~/Content/layout-modifications.css" rel="stylesheet" />
 <script src="~/Areas/Auth/Scripts/Information/ComplainEntry.js"></script>
 
 <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-success shadow">
@@ -11,7 +17,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand" href="#">
-                <img src="assets/image/favicon.png" alt="" height="40">&nbsp;&nbsp;ডেঙ্গু প্রতিরোধ ব্যাবস্থাপনা মনিটরিং
+                <img src="~/Content/mainassets/image/favicon.png" alt="" height="40">&nbsp;&nbsp;ডেঙ্গু প্রতিরোধ ব্যাবস্থাপনা মনিটরিং
             </a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <!-- <li class="nav-item">
@@ -92,13 +98,13 @@
                         <div class="row">
                             <div class="col-12 col-md-8">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control rounded-0 border-info" id="floatingInput" placeholder="" name="FullName" data-bind="value:FullName">
+                                    <input type="text" class="form-control rounded-0 border-info" id="floatingInput" required placeholder="" name="FullName" data-bind="value:FullName">
                                     <label for="floatingInput">নাম <span class="text-danger fw-bold">*</span></label>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control rounded-0 border-info" id="floatingPassword" placeholder="Mobile" data-bind="value:Mobile">
+                                    <input type="text" class="form-control rounded-0 border-info" id="floatingPassword" required placeholder="Mobile" data-bind="value:Mobile">
                                     <label for="floatingPassword">মোবাইল নাম্বার <span class="text-danger fw-bold">*</span></label>
                                 </div>
                             </div>
@@ -265,7 +271,7 @@
             var fileReader = new FileReader();
             fileReader.onload = function (event) {
                 populateImagePreview(event.target.result, imageId);
-                
+
             };
             fileReader.readAsDataURL(ele.files[0]);
         }

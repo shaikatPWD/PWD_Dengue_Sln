@@ -67,7 +67,7 @@ namespace WebUI.Areas.Auth.Controllers
             //var moduleSubModuleList = new MenuWebModel().GetModuleAndSubModules();
             //var moduleSubModuleList = new MenuWebModel().GetModuleAndSubModulesAndMenu();
             var moduleSubModuleList = new MenuWebModel().GetOnlyMenus();
-            var UserName = SessionHelper.UserProfile.UserName;
+            var UserName = SessionHelper.UserProfile.FullName;
             var UserId = SessionHelper.UserProfile.UserId;
             //var employeeId = _user.GetEmployeeIdByUserId(UserId);
             //var roleIdList = new List<long>();//_employee.GetEmpRoleIdList(empId);

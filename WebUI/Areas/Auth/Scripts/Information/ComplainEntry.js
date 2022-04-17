@@ -173,16 +173,18 @@
                 contentType: 'application/json',
                 data: ko.toJSON(submitJobCardData),
                 success: function (data) {
-                    $('#successModal').modal('show');
-                    $('#successModalText').text(data.Message);
-                    if (data.Id > 0) {
-                        //console.log(data.Id);
-                        self.LoadInformation();
-                        //$('#draftBtn').prop('disabled', true);
-                        //$('#forwardBtn').prop('disabled', true);
-                        //$('#cancelBtn').prop('disabled', true);
-                    }
-                    //self.Id(data.Id);
+                    console.log(data);
+                    alert("Complain Saved Successfully");
+                    //$('#successModal').modal('show');
+                    //$('#successModalText').text(data.Message);
+                    //if (data.Id > 0) {
+                    //    //console.log(data.Id);
+                    //    self.LoadInformation();
+                    //    //$('#draftBtn').prop('disabled', true);
+                    //    //$('#forwardBtn').prop('disabled', true);
+                    //    //$('#cancelBtn').prop('disabled', true);
+                    //}
+                    ////self.Id(data.Id);
                 },
                 error: function (error) {
                     alert(error.status + "<--and--> " + error.statusText);

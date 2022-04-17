@@ -20,8 +20,8 @@ namespace DEL.Auth.DTO
         public long? SelectedOfficeId { get; set; }
         //public List<ApplicationDto> Applications { get; set; }
         public long? SelectedApplicationId { get; set; }
-
         public string UserName { get; set; }
+        public string FullName { get; set; }
         public long? EmployeeId { get; set; }
         public long? EmpDegMappingId { get; set; }
         public string ApiKey { get; set; }

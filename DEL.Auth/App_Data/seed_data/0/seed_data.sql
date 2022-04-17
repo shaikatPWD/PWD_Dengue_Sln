@@ -457,112 +457,6 @@ SET IDENTITY_INSERT [dbo].[HrOffice] OFF
 --INSERT [dbo].[Area] ([Id], [Name], [BnName], [OrderID], [HrOfficeId], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (22, N'Segunbagicha', N'সেগুনবাগিচা', 1, 0, 1, CAST(N'2022-03-22T13:25:28.203' AS DateTime), NULL, NULL, NULL, 1)
 --SET IDENTITY_INSERT [dbo].[Area] OFF
 
-SET IDENTITY_INSERT [dbo].[Application] ON 
-
-INSERT [dbo].[Application] ([Id], [Name], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Dengue Monitoring', CAST(N'2016-10-26T00:00:00.000' AS DateTime), 1, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[Application] OFF
-
-SET IDENTITY_INSERT [dbo].[OfficeProfile] ON 
-
-INSERT [dbo].[OfficeProfile] ([Id], [Code], [Name], [RoutingNo], [Address], [Logo], [PhoneNo], [Email], [Fax], [ContactPerson], [SystemDate], [VoucherNo], [JvNo], [CDvNo], [BDvNo], [CCvNo], [BCvNo], [VoucherName], [BillNo], [ChallanNo], [InvoiceNo], [PreProdNo], [ProdNo], [RequisitionNo], [OrderNo], [EmployeeNo], [PurchaseDate], [SalesDate], [AccountsDate], [FiscalYear], [ParentId], [CompanyType], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'123', N'Go Bangladesh', NULL, NULL, NULL, NULL, NULL, NULL, NULL, CAST(N'2018-02-20T00:00:00.000' AS DateTime), NULL, N'157', N'8', N'8', N'00000000', N'00000000', NULL, N'00000000', N'00000000', N'56', N'00000000', N'00000000', NULL, NULL, 0, NULL, NULL, NULL, CAST(N'2017-11-07T00:00:00.000' AS DateTime), NULL, 1, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[OfficeProfile] OFF
-
-SET IDENTITY_INSERT [dbo].[User] ON 
-
-INSERT [dbo].[User] ([Id], [UserName], [Password], [EmployeeId], [IsActive], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status], [Application_Id], [HrOffice_Id], [OfficeProfile_Id]) VALUES (1, N'Admin', N'E10ADC3949BA59ABBE56E057F20F883E', 1, 1, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL)
-INSERT [dbo].[User] ([Id], [UserName], [Password], [EmployeeId], [IsActive], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status], [Application_Id], [HrOffice_Id], [OfficeProfile_Id]) VALUES (5, N'ee_mis1', N'E10ADC3949BA59ABBE56E057F20F883E', 2, 1, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL)
-SET IDENTITY_INSERT [dbo].[User] OFF
-
-SET IDENTITY_INSERT [dbo].[Module] ON 
-
-INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Auth', N'Auth', N'Authentication & Authorization Configuration', 1, NULL, 1, NULL, NULL, 1)
-INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Data Management', N'Data Management', N'Data Management', 2, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, N'PWD', N'PWD', N'PWD', 3, CAST(N'2019-01-16T17:15:05.727' AS DateTime), NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[Module] OFF
-
-SET IDENTITY_INSERT [dbo].[SubModule] ON 
-
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'MenuStructure', N'Menu Structure', N'Menu Structure', 1, 1, NULL, 1, NULL, NULL, 1)
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Authorization', N'Authorization', N'Authorization', 2, 1, NULL, 1, NULL, NULL, 1)
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, N'Many2Many Assignment', N'Many to Many Assignment', N'Many to Many Assignment', 1, 2, NULL, 1, NULL, NULL, 1)
-INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'PWD', N'PWD', N'PWD', 1, 3, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[SubModule] OFF
-
-SET IDENTITY_INSERT [dbo].[Menu] ON 
-
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Module', N'Module Maintenance', N'Module Maintenance', 1, N'/Auth/module/index', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'SubModule', N'Sub Module Maintenance', N'Sub Module Maintenance', 2, N'/Auth/submodule/index', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Menu', N'Menu Maintenance', N'Menu Maintenance', 3, N'/Auth/Menu/Index', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Role', N'Role Maintenance', N'Role Maintenance', 1, N'/Auth/Role/Index', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (9, N'Task', N'Task Maintenance', N'Task Maintenance', 2, N'/Auth/task/index', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (65, N'User Entry', N'User Entry', N'User Entry', 1, N'/Auth/User/UserEntry', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (66, N'Role Permissions', N'Role Permissions', N'Role Permissions', 2, N'/Auth/Role/RolePermissions', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (67, N'Proxy Role Permission', N'Proxy Role Permission', N'Proxy Role Permission', 5, N'/Auth/Role/ProxyRolePermissions', NULL, NULL, 2, CAST(N'2016-11-26T17:15:29.663' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (242, N'ManyToMany Assignment', N'ManyToMany Assignment', N'ManyToMany Assignment', 1, N'/Auth/Assignments/ManyToManyAssignment', NULL, NULL, 3, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (282, N'Dashboard', N'Dashboard', N'Dashboard', 1, N'/Auth/Information/Dashboard', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (284, N'District', N'District', N'District', 2, N'/Auth/District/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (285, N'Thana', N'Thana', N'Thana', 3, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, 0)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (288, N'Area', N'Area', N'Area', 4, N'/Auth/Area/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (289, N'Office Setup', N'Office Setup', N'Office Setup', 5, N'/Auth/HrOffice/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (290, N'Action Entry', N'Action Update', N'Action Update', 6, N'/Auth/Information/ActionEntry', NULL, NULL, 4, NULL, NULL, NULL, NULL, 0)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (295, N'Equipment/Resource', N'Equipment/Resource', N'Equipment/Resource', 7, N'/Auth/Resources/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (296, N'Building', N'Building', N'Building', 8, N'/Auth/OfficeAssets/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (297, N'Assets', N'Assets', N'Assets', 9, N'/Auth/Assets/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (299, N'Work Record Entry', N'Work Record Entry', N'Work Record Entry', 10, N'/Auth/Workrecord/WorkrecordEntry', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (300, N'Work Activity ', N'Work Activity', N'Work Activity', 11, N'/Auth/MonthlyMonitoring/MonthlyMonitoringInfoEntry', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[Menu] OFF
-
-SET IDENTITY_INSERT [dbo].[UserOfficeApplication] ON 
-
-INSERT [dbo].[UserOfficeApplication] ([Id], [UserId], [OfficeId], [ApplicationId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, 1, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[UserOfficeApplication] ([Id], [UserId], [OfficeId], [ApplicationId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, 5, 1, 1, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[UserOfficeApplication] OFF
-
-SET IDENTITY_INSERT [dbo].[Assets] ON 
-
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Pond CleanUp', N'গণপূর্ত অধিদপ্তরের আওতাধীন সকল পুকুর/জলাশয়/লেক/খাল কচুরীপানা মুক্ত ও পরিষ্কার পরিচ্ছন্ন করা হয়েছে।', 1, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Wastage CleanUp', N'গণপূর্ত অধিদপ্তরের আওতাধীন সকল স্থাপনার বর্জ অপসারণের বিষয়ে প্রয়োজনীয় ব্যবস্থা গ্রহণ করা হয়েছে।', 2, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'Medical College CleanUp', N'গণপূর্ত অধিদপ্তরের আওতায় সকল সরকারি হাসপাতালের ড্রেইন এবং তৎসংলগ্ন এলাকা পরিষ্কার পরিচ্ছন্ন রাখার ব্যবস্থা গ্রহণ করা হয়েছে।''', 3, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Office And Household CleanUp', N'সকল অফিস আদালত ও বাসা বাড়ির আঙ্গিনার ঝোঁপ-ঝাড় ও আগাছা মুক্ত রাখা, সংলগ্ন রাস্তা, ড্রেইন নিয়মিত পরিষ্কার করা হচ্ছে।', 4, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'Still Water CleanUp', N'জমানো পানির সকল উৎস যথাসম্ভব অপসারণ পূর্বক নিয়মিতভাবে জীবানু-নাশক ছিটানোর ব্যবস্থা ও পানিতে ভাসমান লার্ভা বিনষ্ট করা হচ্ছে।', 5, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Curing Water CleanUp', N'ভবনের ঢালাইয়ের কিউরিং কাজে জমানো পানিতে মশার লার্ভা ধ্বংসকারী ওষধ নিয়মিতভাবে ছিটানোর ব্যবস্থা গ্রহণ করা হয়েছে।', 6, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Under Construction Building CleanUp', N'সকল গণপূর্ত বিভাগের আওতাধীন নির্মাণ সাইটগুলোতে অপ্রয়োজনীয় আবদ্ধ পানি অপসারণ করা হয়েছে। ', 7, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[Assets] OFF
-
---SET IDENTITY_INSERT [dbo].[WorkRecordDetails] ON 
-
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, N'adfadf', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, 1, 2, N'adsfadsf', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, 1, 2, N'24234234', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, 1, 4, N'fghdfghdfgh', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, 1, 1, N'Shaikat', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-03-31T13:17:49.293' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10, 1, 8, N'Salman', CAST(N'2022-03-31T13:19:19.533' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-03-31T13:19:41.340' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (11, 1, 1, N'Mojidul', CAST(N'2022-03-31T14:42:35.980' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-03-31T14:42:47.953' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (12, 1, 1, N'Faruk', CAST(N'2022-04-03T12:12:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:15:23.213' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (13, 1, 1, N'Mojidul', CAST(N'2022-04-03T12:17:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:18:28.557' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (14, 1, 1, N'ahasan', CAST(N'2022-04-03T12:18:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:21:09.637' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (15, 1, 1, N'Mojidul', CAST(N'2022-04-03T12:57:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:58:16.497' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (17, 1, 1, N'Mojidul', CAST(N'2022-04-03T14:00:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T14:01:05.980' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (18, 1, 1, N'Mojidul', CAST(N'2022-04-03T14:00:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T14:01:08.330' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (19, 1, 2, N'hdfghd', CAST(N'2022-04-03T14:18:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T14:19:21.480' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (24, 1, 5, N'Shaikat', CAST(N'2022-04-05T12:55:00.000' AS DateTime), N'20220405125603064366Image_1_5', N'20220405125617543867Image_1_5', 0, 0, CAST(N'2022-04-05T12:56:22.203' AS DateTime), 1, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (25, 1, 4, N'Shaikat', CAST(N'2022-04-10T20:43:00.000' AS DateTime), N'20220410204905349940_Image_1_4', N'20220410204905349940_Image_1_4', 0, 0, CAST(N'2022-04-10T20:49:05.387' AS DateTime), 5, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (26, 1, 1, N'Salman', CAST(N'2022-04-10T20:49:00.000' AS DateTime), N'20220410205016917730_Image_1_1', N'20220410205016917730_Image_1_1', 0, 0, CAST(N'2022-04-10T20:50:16.923' AS DateTime), 5, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (27, 1, 2, N'Farid', CAST(N'2022-04-10T20:50:00.000' AS DateTime), N'20220410205056752707_Image_1_2', N'20220410205056752707_Image_1_2', 0, 0, CAST(N'2022-04-10T20:50:56.760' AS DateTime), 5, NULL, NULL, 1)
---INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (28, 1, 1, N'Shaikat', CAST(N'2022-04-10T20:54:00.000' AS DateTime), N'20220410205433182908_Image_1_1', N'20220410205433182908_Image_1_1', 0, 0, CAST(N'2022-04-10T20:54:33.187' AS DateTime), 5, NULL, NULL, 1)
---SET IDENTITY_INSERT [dbo].[WorkRecordDetails] OFF
-
-SET IDENTITY_INSERT [dbo].[Designation] ON 
-
-INSERT [dbo].[Designation] ([Id], [Name], [Details], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Admin', N'Administrator', NULL, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[Designation] OFF
-
-SET IDENTITY_INSERT [dbo].[Employee] ON 
-
-INSERT [dbo].[Employee] ([Id], [OfficeId], [EmployeeCode], [EmployeeName], [DesignationId], [PerPhone], [OfficePhone], [Email], [Address], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, N'desb668', N'Shaikat Barua', 2, N'14525487454', N'415256365214', N'admin@de.com', N'Motijheel', NULL, NULL, NULL, NULL, NULL, 1)
-INSERT [dbo].[Employee] ([Id], [OfficeId], [EmployeeCode], [EmployeeName], [DesignationId], [PerPhone], [OfficePhone], [Email], [Address], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, 1, N'desb669', N'Shaibal Barua', 2, N'13213132131', N'132132131323', N'dfsd@dfaf.com', N'fajlsdkfj', NULL, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[Employee] OFF
-
 --SET IDENTITY_INSERT [dbo].[District] ON 
 
 --INSERT [dbo].[District] ([Id], [Name], [BnName], [OrderID], [IsShow], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Borguna', N'বরগুনা', 1, 1, CAST(N'2022-03-21T14:15:01.267' AS DateTime), NULL, NULL, NULL, 1)
@@ -611,17 +505,68 @@ SET IDENTITY_INSERT [dbo].[Employee] OFF
 --INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (11, N'সৈকত', N'01670012704', NULL, 1, 0, NULL, N'sdfgsfdhs', N'sdhsdfhgsd', 2, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
 --INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (12, N'সালমান', N'01670012704', NULL, 0, 0, 5, N'sdfgsfdhs', N'sdhsdfhgsd', 1, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
 --INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (13, N'শিবলী', N'01670012704', NULL, 1, 7, NULL, N'sdfgsfdhs', N'sdhsdfhgsd', 0, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
+--INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (14, N'Shaikat', N'5634563546', NULL, 1, 5, NULL, N'635463546', N'56erdrtyerty', 0, NULL, NULL, NULL, NULL, NULL, 0, CAST(N'2022-04-16T01:46:42.857' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (15, N'Shaikat', N'5634563546', NULL, 1, 5, NULL, N'635463546', N'56erdrtyerty', 0, NULL, NULL, NULL, NULL, NULL, 0, CAST(N'2022-04-16T01:46:51.740' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (16, N'Shaikat', N'5634563546', NULL, 1, 5, NULL, N'635463546', N'56erdrtyerty', 0, NULL, NULL, NULL, NULL, NULL, 0, CAST(N'2022-04-16T01:47:48.837' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (18, N'jsfgs', N'35463456', NULL, 1, 6, NULL, N'fgjhdjdfg', N'sertwert', 0, N'202204160243387708311_Image_1', N'202204160243390745849_Image_2', NULL, NULL, NULL, 0, CAST(N'2022-04-16T02:43:52.497' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (19, N'Harun', N'23412341234', NULL, 1, 22, NULL, N'fadadsfasdf', N'asdfasdfasdf', 0, N'/UploadImages/ComplainImages/202204161000309762993_Image_1.jpg', N'/UploadImages/ComplainImages/202204161000309773027_Image_2.jpg', NULL, NULL, NULL, 0, CAST(N'2022-04-16T10:00:31.073' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20, N'Hasan', N'23412341', NULL, 0, 0, 2, N'fvgsdfgsdfg', N'dfghsghertyuytjifvbnhmcvbn ', 0, N'/UploadImages/ComplainImages/202204161014247695591_Image_1.jpg', N'/UploadImages/ComplainImages/202204161014247695591_Image_2.jpg', NULL, NULL, NULL, 0, CAST(N'2022-04-16T10:14:28.010' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[Information] ([Id], [FullName], [Mobile], [ComplainID], [DhakaInOut], [AreaID], [DistrictID], [Location], [Remarks], [ComplainStatus], [Image1], [Image2], [Image3], [Image4], [Image5], [OrderID], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (21, N'শতাব্দী লাল চন্দ', N'23412341234', NULL, 0, 0, 13, N'sdfattfghfgsdfg', N'fasdfasdgafghsdfh', 0, N'/UploadImages/ComplainImages/202204171012578621287_Image_1.jpg', NULL, NULL, NULL, NULL, 0, CAST(N'2022-04-17T10:12:57.893' AS DateTime), NULL, NULL, NULL, 1)
 --SET IDENTITY_INSERT [dbo].[Information] OFF
 
-SET IDENTITY_INSERT [dbo].[OwnOffice] ON 
+SET IDENTITY_INSERT [dbo].[Assets] ON 
 
-INSERT [dbo].[OwnOffice] ([Id], [Code], [Name], [RoutingNo], [Address], [PhoneNo], [Email], [Fax], [ContactPerson], [Logo], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'001', N'Data Edge Ltd.', N'001234567', N'Motijheel', N'01458987454', N'de@data-edge.com', N'41526352145', N'Balaram Aich', NULL, NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[OwnOffice] OFF
+INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Pond CleanUp', N'গণপূর্ত অধিদপ্তরের আওতাধীন সকল পুকুর/জলাশয়/লেক/খাল কচুরীপানা মুক্ত ও পরিষ্কার পরিচ্ছন্ন করা হয়েছে।', 1, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Wastage CleanUp', N'গণপূর্ত অধিদপ্তরের আওতাধীন সকল স্থাপনার বর্জ অপসারণের বিষয়ে প্রয়োজনীয় ব্যবস্থা গ্রহণ করা হয়েছে।', 2, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'Medical College CleanUp', N'গণপূর্ত অধিদপ্তরের আওতায় সকল সরকারি হাসপাতালের ড্রেইন এবং তৎসংলগ্ন এলাকা পরিষ্কার পরিচ্ছন্ন রাখার ব্যবস্থা গ্রহণ করা হয়েছে।''', 3, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Office And Household CleanUp', N'সকল অফিস আদালত ও বাসা বাড়ির আঙ্গিনার ঝোঁপ-ঝাড় ও আগাছা মুক্ত রাখা, সংলগ্ন রাস্তা, ড্রেইন নিয়মিত পরিষ্কার করা হচ্ছে।', 4, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'Still Water CleanUp', N'জমানো পানির সকল উৎস যথাসম্ভব অপসারণ পূর্বক নিয়মিতভাবে জীবানু-নাশক ছিটানোর ব্যবস্থা ও পানিতে ভাসমান লার্ভা বিনষ্ট করা হচ্ছে।', 5, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Curing Water CleanUp', N'ভবনের ঢালাইয়ের কিউরিং কাজে জমানো পানিতে মশার লার্ভা ধ্বংসকারী ওষধ নিয়মিতভাবে ছিটানোর ব্যবস্থা গ্রহণ করা হয়েছে।', 6, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[Assets] ([Id], [AssetType], [AssetTypeFull], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Under Construction Building CleanUp', N'সকল গণপূর্ত বিভাগের আওতাধীন নির্মাণ সাইটগুলোতে অপ্রয়োজনীয় আবদ্ধ পানি অপসারণ করা হয়েছে। ', 7, CAST(N'2022-03-27T17:10:19.770' AS DateTime), NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[Assets] OFF
 
-SET IDENTITY_INSERT [dbo].[OwnOfficeBranch] ON 
+--SET IDENTITY_INSERT [dbo].[WorkRecordDetails] ON 
 
-INSERT [dbo].[OwnOfficeBranch] ([Id], [OwnOfficeId], [BranchType], [Code], [Name], [RoutingNo], [Address], [PhoneNo], [Email], [Fax], [ContactPerson], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, N'0011', N'Motijheel', N'001234566', N'Motijheel', N'12541452563', N'hode@data-edge.com', N'45698745214', N'SB', NULL, NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[OwnOfficeBranch] OFF
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, N'adfadf', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, 1, 2, N'adsfadsf', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, 1, 2, N'24234234', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, 1, 4, N'fghdfghdfgh', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 1, 1, CAST(N'2022-03-31T13:15:42.450' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, 1, 1, N'Shaikat', CAST(N'2022-03-31T13:15:42.450' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-03-31T13:17:49.293' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10, 1, 8, N'Salman', CAST(N'2022-03-31T13:19:19.533' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-03-31T13:19:41.340' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (11, 1, 1, N'Mojidul', CAST(N'2022-03-31T14:42:35.980' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-03-31T14:42:47.953' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (12, 1, 1, N'Faruk', CAST(N'2022-04-03T12:12:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:15:23.213' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (13, 1, 1, N'Mojidul', CAST(N'2022-04-03T12:17:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:18:28.557' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (14, 1, 1, N'ahasan', CAST(N'2022-04-03T12:18:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:21:09.637' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (15, 1, 1, N'Mojidul', CAST(N'2022-04-03T12:57:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T12:58:16.497' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (17, 1, 1, N'Mojidul', CAST(N'2022-04-03T14:00:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T14:01:05.980' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (18, 1, 1, N'Mojidul', CAST(N'2022-04-03T14:00:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T14:01:08.330' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (19, 1, 2, N'hdfghd', CAST(N'2022-04-03T14:18:00.000' AS DateTime), NULL, NULL, 0, 0, CAST(N'2022-04-03T14:19:21.480' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (24, 1, 5, N'Shaikat', CAST(N'2022-04-05T12:55:00.000' AS DateTime), N'20220405125603064366Image_1_5', N'20220405125617543867Image_1_5', 0, 0, CAST(N'2022-04-05T12:56:22.203' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (25, 1, 4, N'Shaikat', CAST(N'2022-04-10T20:43:00.000' AS DateTime), N'20220410204905349940_Image_1_4', N'20220410204905349940_Image_1_4', 0, 0, CAST(N'2022-04-10T20:49:05.387' AS DateTime), 5, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (26, 1, 1, N'Salman', CAST(N'2022-04-10T20:49:00.000' AS DateTime), N'20220410205016917730_Image_1_1', N'20220410205016917730_Image_1_1', 0, 0, CAST(N'2022-04-10T20:50:16.923' AS DateTime), 5, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (27, 1, 2, N'Farid', CAST(N'2022-04-10T20:50:00.000' AS DateTime), N'20220410205056752707_Image_1_2', N'20220410205056752707_Image_1_2', 0, 0, CAST(N'2022-04-10T20:50:56.760' AS DateTime), 5, NULL, NULL, 1)
+--INSERT [dbo].[WorkRecordDetails] ([Id], [OfficeId], [AssetId], [AssetBuildingName], [CompletionDate], [Image1], [Image2], [IsComplete], [OrderId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (28, 1, 1, N'Shaikat', CAST(N'2022-04-10T20:54:00.000' AS DateTime), N'20220410205433182908_Image_1_1', N'20220410205433182908_Image_1_1', 0, 0, CAST(N'2022-04-10T20:54:33.187' AS DateTime), 5, NULL, NULL, 1)
+--SET IDENTITY_INSERT [dbo].[WorkRecordDetails] OFF
+
+SET IDENTITY_INSERT [dbo].[Designation] ON 
+
+INSERT [dbo].[Designation] ([Id], [Name], [Details], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Admin', N'Administrator', NULL, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[Designation] OFF
+
+SET IDENTITY_INSERT [dbo].[Employee] ON 
+
+INSERT [dbo].[Employee] ([Id], [OfficeId], [EmployeeCode], [EmployeeName], [DesignationId], [PerPhone], [OfficePhone], [Email], [Address], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, N'desb668', N'Shaikat Barua', 2, N'14525487454', N'415256365214', N'admin@de.com', N'Motijheel', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Employee] ([Id], [OfficeId], [EmployeeCode], [EmployeeName], [DesignationId], [PerPhone], [OfficePhone], [Email], [Address], [Remarks], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, 1, N'desb669', N'Shaibal Barua', 2, N'13213132131', N'132132131323', N'dfsd@dfaf.com', N'fajlsdkfj', NULL, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[Employee] OFF
+
+--SET IDENTITY_INSERT [dbo].[OfficeAssets] ON 
+
+--INSERT [dbo].[OfficeAssets] ([Id], [AssetName], [Description], [Note], [Period], [HrOfficeId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Motso Bhaban', N'Gov. Office', N'Motso Adhidoptor', N'April-22', 1, CAST(N'2022-04-12T12:09:19.267' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[OfficeAssets] ([Id], [AssetName], [Description], [Note], [Period], [HrOfficeId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Purta Bhaban', N'Gov. Office', N'Gono Purto Odhitoptor', N'April-22', 1, CAST(N'2022-04-13T11:43:42.620' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[OfficeAssets] ([Id], [AssetName], [Description], [Note], [Period], [HrOfficeId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, N'high court', N'court', N'court', N'April-22', 1, CAST(N'2022-04-15T13:14:15.500' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[OfficeAssets] ([Id], [AssetName], [Description], [Note], [Period], [HrOfficeId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'test', N'jgjh', N'hgfhg', N'April-22', 1, CAST(N'2022-04-15T14:58:07.677' AS DateTime), NULL, NULL, NULL, 1)
+--INSERT [dbo].[OfficeAssets] ([Id], [AssetName], [Description], [Note], [Period], [HrOfficeId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'test 2', N'sadlkfa', N'sdjfs', N'April-22', 1, CAST(N'2022-04-15T15:02:51.060' AS DateTime), NULL, NULL, NULL, 1)
+--SET IDENTITY_INSERT [dbo].[OfficeAssets] OFF
 
 --SET IDENTITY_INSERT [dbo].[Resources] ON 
 
@@ -657,6 +602,70 @@ SET IDENTITY_INSERT [dbo].[OwnOfficeBranch] OFF
 --INSERT [dbo].[Resources] ([Id], [ResourceName], [Quantity], [OrderID], [HrOfficeId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (51, N'Fogger machine', N'1', 1, 1, CAST(N'2022-04-11T20:15:12.573' AS DateTime), NULL, NULL, NULL, 1)
 --SET IDENTITY_INSERT [dbo].[Resources] OFF
 
+SET IDENTITY_INSERT [dbo].[Application] ON 
+
+INSERT [dbo].[Application] ([Id], [Name], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Dengue Monitoring', CAST(N'2016-10-26T00:00:00.000' AS DateTime), 1, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[Application] OFF
+
+SET IDENTITY_INSERT [dbo].[OfficeProfile] ON 
+
+INSERT [dbo].[OfficeProfile] ([Id], [Code], [Name], [RoutingNo], [Address], [Logo], [PhoneNo], [Email], [Fax], [ContactPerson], [SystemDate], [VoucherNo], [JvNo], [CDvNo], [BDvNo], [CCvNo], [BCvNo], [VoucherName], [BillNo], [ChallanNo], [InvoiceNo], [PreProdNo], [ProdNo], [RequisitionNo], [OrderNo], [EmployeeNo], [PurchaseDate], [SalesDate], [AccountsDate], [FiscalYear], [ParentId], [CompanyType], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'123', N'Go Bangladesh', NULL, NULL, NULL, NULL, NULL, NULL, NULL, CAST(N'2018-02-20T00:00:00.000' AS DateTime), NULL, N'157', N'8', N'8', N'00000000', N'00000000', NULL, N'00000000', N'00000000', N'56', N'00000000', N'00000000', NULL, NULL, 0, NULL, NULL, NULL, CAST(N'2017-11-07T00:00:00.000' AS DateTime), NULL, 1, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[OfficeProfile] OFF
+
+SET IDENTITY_INSERT [dbo].[User] ON 
+
+INSERT [dbo].[User] ([Id], [UserName], [Password], [EmployeeId], [IsActive], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status], [Application_Id], [HrOffice_Id], [OfficeProfile_Id]) VALUES (1, N'Admin', N'E10ADC3949BA59ABBE56E057F20F883E', 1, 1, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL)
+INSERT [dbo].[User] ([Id], [UserName], [Password], [EmployeeId], [IsActive], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status], [Application_Id], [HrOffice_Id], [OfficeProfile_Id]) VALUES (5, N'ee_mis1', N'E10ADC3949BA59ABBE56E057F20F883E', 2, 1, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL)
+SET IDENTITY_INSERT [dbo].[User] OFF
+
+SET IDENTITY_INSERT [dbo].[UserOfficeApplication] ON 
+
+INSERT [dbo].[UserOfficeApplication] ([Id], [UserId], [OfficeId], [ApplicationId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, 1, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[UserOfficeApplication] ([Id], [UserId], [OfficeId], [ApplicationId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, 5, 1, 1, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[UserOfficeApplication] OFF
+
+SET IDENTITY_INSERT [dbo].[Module] ON 
+
+INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Auth', N'Auth', N'Authentication & Authorization Configuration', 1, NULL, 1, NULL, NULL, 1)
+INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Data Management', N'Data Management', N'Data Management', 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Module] ([Id], [Name], [DisplayName], [Description], [Sl], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, N'PWD', N'PWD', N'PWD', 3, CAST(N'2019-01-16T17:15:05.727' AS DateTime), NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[Module] OFF
+
+SET IDENTITY_INSERT [dbo].[SubModule] ON 
+
+INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'MenuStructure', N'Menu Structure', N'Menu Structure', 1, 1, NULL, 1, NULL, NULL, 1)
+INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (2, N'Authorization', N'Authorization', N'Authorization', 2, 1, NULL, 1, NULL, NULL, 1)
+INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, N'Many2Many Assignment', N'Many to Many Assignment', N'Many to Many Assignment', 1, 2, NULL, 1, NULL, NULL, 1)
+INSERT [dbo].[SubModule] ([Id], [Name], [DisplayName], [Description], [Sl], [ModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, N'PWD', N'PWD', N'PWD', 1, 3, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[SubModule] OFF
+
+SET IDENTITY_INSERT [dbo].[Menu] ON 
+
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (5, N'Module', N'Module Maintenance', N'Module Maintenance', 1, N'/Auth/module/index', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (6, N'SubModule', N'Sub Module Maintenance', N'Sub Module Maintenance', 2, N'/Auth/submodule/index', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (7, N'Menu', N'Menu Maintenance', N'Menu Maintenance', 3, N'/Auth/Menu/Index', NULL, NULL, 1, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'Role', N'Role Maintenance', N'Role Maintenance', 1, N'/Auth/Role/Index', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (9, N'Task', N'Task Maintenance', N'Task Maintenance', 2, N'/Auth/task/index', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (65, N'User Entry', N'User Entry', N'User Entry', 1, N'/Auth/User/UserEntry', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (66, N'Role Permissions', N'Role Permissions', N'Role Permissions', 2, N'/Auth/Role/RolePermissions', NULL, NULL, 2, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (67, N'Proxy Role Permission', N'Proxy Role Permission', N'Proxy Role Permission', 5, N'/Auth/Role/ProxyRolePermissions', NULL, NULL, 2, CAST(N'2016-11-26T17:15:29.663' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (242, N'ManyToMany Assignment', N'ManyToMany Assignment', N'ManyToMany Assignment', 1, N'/Auth/Assignments/ManyToManyAssignment', NULL, NULL, 3, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (282, N'Dashboard', N'Dashboard', N'Dashboard', 1, N'/Auth/Information/Dashboard', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (284, N'District', N'District', N'District', 2, N'/Auth/District/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (285, N'Thana', N'Thana', N'Thana', 3, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, 0)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (288, N'Area', N'Area', N'Area', 4, N'/Auth/Area/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (289, N'Office Setup', N'Office Setup', N'Office Setup', 5, N'/Auth/HrOffice/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (290, N'Action Entry', N'Action Update', N'Action Update', 6, N'/Auth/Information/ActionEntry', NULL, NULL, 4, NULL, NULL, NULL, NULL, 0)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (295, N'Equipment/Resource', N'Equipment/Resource', N'Equipment/Resource', 7, N'/Auth/Resources/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (296, N'Building', N'Building', N'Building', 8, N'/Auth/OfficeAssets/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (297, N'Assets', N'Assets', N'Assets', 9, N'/Auth/Assets/Index', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (299, N'Work Record Entry', N'Work Record Entry', N'Work Record Entry', 10, N'/Auth/Workrecord/WorkrecordEntry', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (300, N'Work Activity ', N'Work Activity', N'Work Activity', 11, N'/Auth/MonthlyMonitoring/MonthlyMonitoringInfoEntry', NULL, NULL, 4, NULL, NULL, NULL, NULL, 0)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (304, N'Activity Periods', N'Activity Periods', N'Activity Periods', 12, N'/Auth/ActivityHome/PerodList', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (305, N'Monthly Reports', N'Monthly Reports', N'Monthly Reports', 13, N'/Auth/ActivityHome/MonthlyReports', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Menu] ([Id], [Name], [DisplayName], [Description], [Sl], [Url], [HeadingText], [NoteHtml], [SubModuleId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (307, N'All Devissions', N'All Devissions', N'All Devissions', 14, N'/Auth/Workrecord/WorkrecordListByDevission', NULL, NULL, 4, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[Menu] OFF
+
 SET IDENTITY_INSERT [dbo].[Role] ON 
 
 INSERT [dbo].[Role] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'Managerial', N'Has ability to change setup data', NULL, NULL, NULL, NULL, 1)
@@ -665,6 +674,9 @@ INSERT [dbo].[Role] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [Ed
 INSERT [dbo].[Role] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (8, N'General Employee', N'General employee', CAST(N'2017-02-12T16:58:37.560' AS DateTime), NULL, NULL, NULL, 1)
 INSERT [dbo].[Role] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (51, N'Report Viewer', N'Can see the reports', NULL, NULL, NULL, NULL, 1)
 SET IDENTITY_INSERT [dbo].[Role] OFF
+
+INSERT [dbo].[UserRole] ([UserId], [RoleId]) VALUES (5, 1)
+INSERT [dbo].[UserRole] ([UserId], [RoleId]) VALUES (1, 3)
 
 SET IDENTITY_INSERT [dbo].[RoleMenu] ON 
 
@@ -679,12 +691,29 @@ INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [E
 INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (9, 1, 296, CAST(N'2022-04-12T10:29:44.350' AS DateTime), NULL, CAST(N'2022-04-12T10:33:50.590' AS DateTime), 1, 0)
 INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10, 1, 299, CAST(N'2022-04-12T10:29:44.350' AS DateTime), NULL, CAST(N'2022-04-12T10:33:50.590' AS DateTime), 1, 0)
 INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (11, 1, 300, CAST(N'2022-04-12T10:29:44.353' AS DateTime), NULL, CAST(N'2022-04-12T10:33:50.590' AS DateTime), 1, 0)
-INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (12, 1, 282, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (13, 1, 295, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (14, 1, 296, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (15, 1, 299, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (12, 1, 282, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.617' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (13, 1, 295, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (14, 1, 296, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (15, 1, 299, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
 INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (16, 1, 300, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (17, 1, 282, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (18, 1, 295, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (19, 1, 296, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20, 1, 299, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (21, 1, 304, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenu] ([Id], [RoleId], [MenuId], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (22, 1, 305, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
 SET IDENTITY_INSERT [dbo].[RoleMenu] OFF
+
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 282)
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 284)
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 285)
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 288)
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 289)
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 290)
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 295)
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 296)
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 297)
+INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 299)
 
 SET IDENTITY_INSERT [dbo].[Task] ON 
 
@@ -774,7 +803,71 @@ INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [Ed
 INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20950, N'auth_activity_getofficeassetnamebyid', NULL, NULL, NULL, NULL, NULL, 1)
 INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20951, N'auth_activity_loadworkactivitybyinstallationidperiod', NULL, NULL, NULL, NULL, NULL, 1)
 INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20953, N'auth_activity_getiscomplete', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20954, N'auth_activityhome_perodlist', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20955, N'auth_activityhome_loadperiods', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20956, N'auth_activityhome_perodlist', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20957, N'auth_activityhome_activitiesdetails', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20959, N'auth_activityhome_activitiesdetailsentry', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20960, N'auth_activityhome_monthlyreports', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20961, N'auth_activityhome_monthlyreportdetails', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20962, N'auth_activityhome_saveworkactivitydetails', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20963, N'auth_activityhome_getiscomplete', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20964, N'auth_activityhome_getofficeassetnamebyid', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20966, N'auth_activityhome_loadallperiods', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20967, N'auth_activityhome_getworkactivityrecordsbyperiod', NULL, NULL, NULL, NULL, NULL, 1)
+INSERT [dbo].[Task] ([Id], [Name], [Description], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (20968, N'auth_activityhome_getworkactivitiesbyperiod', NULL, NULL, NULL, NULL, NULL, 1)
+
 SET IDENTITY_INSERT [dbo].[Task] OFF
+
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20915)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20918)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20919)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20920)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20921)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20922)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20923)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20924)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (296, 20925)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (296, 20926)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (296, 20927)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (296, 20928)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (295, 20929)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (295, 20930)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (295, 20931)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (295, 20932)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20933)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20934)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20935)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20936)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20937)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20938)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20940)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20941)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20943)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20945)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20946)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20947)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20949)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20950)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20951)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20953)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20954)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20955)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20956)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20957)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20959)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20960)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (305, 20960)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20961)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (305, 20961)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20962)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20963)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20964)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20966)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (305, 20966)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20967)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (304, 20968)
+INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (305, 20968)
 
 SET IDENTITY_INSERT [dbo].[RoleMenuTask] ON 
 
@@ -895,52 +988,52 @@ INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit]
 INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (122, 11, 20949, 1, 1, 1, 1, CAST(N'2022-04-12T10:29:44.357' AS DateTime), NULL, CAST(N'2022-04-12T10:33:50.590' AS DateTime), 1, 0)
 INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (123, 11, 20950, 1, 1, 1, 1, CAST(N'2022-04-12T10:29:44.357' AS DateTime), NULL, CAST(N'2022-04-12T10:33:50.590' AS DateTime), 1, 0)
 INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (124, 11, 20951, 1, 1, 1, 1, CAST(N'2022-04-12T10:29:44.357' AS DateTime), NULL, CAST(N'2022-04-12T10:33:50.590' AS DateTime), 1, 0)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (125, 12, 20915, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (126, 12, 20915, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (127, 12, 20918, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (128, 12, 20918, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (129, 12, 20919, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (130, 12, 20919, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (131, 12, 20920, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (132, 12, 20920, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (133, 12, 20921, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (134, 12, 20921, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (135, 12, 20922, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (136, 12, 20922, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (137, 12, 20923, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (138, 12, 20923, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (139, 12, 20924, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (140, 12, 20924, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (141, 13, 20929, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (142, 13, 20929, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (143, 13, 20930, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (144, 13, 20930, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (145, 13, 20931, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (146, 13, 20931, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (147, 13, 20932, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (148, 13, 20932, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (149, 14, 20925, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (150, 14, 20925, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (151, 14, 20926, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (152, 14, 20926, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (153, 14, 20927, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (154, 14, 20927, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (155, 14, 20928, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (156, 14, 20928, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (157, 15, 20933, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (158, 15, 20933, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (159, 15, 20934, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (160, 15, 20934, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (161, 15, 20935, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (162, 15, 20935, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (163, 15, 20936, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (164, 15, 20936, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (165, 15, 20937, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (166, 15, 20937, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (167, 15, 20938, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (168, 15, 20938, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (169, 15, 20940, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (170, 15, 20940, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (125, 12, 20915, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (126, 12, 20915, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (127, 12, 20918, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (128, 12, 20918, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (129, 12, 20919, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (130, 12, 20919, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (131, 12, 20920, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (132, 12, 20920, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (133, 12, 20921, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (134, 12, 20921, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (135, 12, 20922, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (136, 12, 20922, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (137, 12, 20923, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (138, 12, 20923, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (139, 12, 20924, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (140, 12, 20924, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.583' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (141, 13, 20929, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (142, 13, 20929, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (143, 13, 20930, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (144, 13, 20930, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (145, 13, 20931, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (146, 13, 20931, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (147, 13, 20932, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (148, 13, 20932, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (149, 14, 20925, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (150, 14, 20925, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (151, 14, 20926, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (152, 14, 20926, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (153, 14, 20927, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (154, 14, 20927, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (155, 14, 20928, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (156, 14, 20928, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (157, 15, 20933, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (158, 15, 20933, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (159, 15, 20934, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (160, 15, 20934, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (161, 15, 20935, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (162, 15, 20935, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (163, 15, 20936, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (164, 15, 20936, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (165, 15, 20937, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (166, 15, 20937, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (167, 15, 20938, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (168, 15, 20938, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (169, 15, 20940, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (170, 15, 20940, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, CAST(N'2022-04-17T12:06:02.620' AS DateTime), 1, 0)
 INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (171, 16, 20941, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
 INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (172, 16, 20941, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
 INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (173, 16, 20943, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
@@ -958,56 +1051,122 @@ INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit]
 INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (185, 16, 20951, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
 INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (186, 16, 20951, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
 INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (187, 16, 20953, 1, 1, 1, 1, CAST(N'2022-04-12T10:33:50.587' AS DateTime), NULL, NULL, NULL, 1)
-SET IDENTITY_INSERT [dbo].[RoleMenuTask] OFF
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (188, 17, 20915, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (189, 17, 20915, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (190, 17, 20918, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (191, 17, 20918, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (192, 17, 20919, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (193, 17, 20919, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (194, 17, 20920, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (195, 17, 20920, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (196, 17, 20921, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (197, 17, 20921, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (198, 17, 20922, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (199, 17, 20922, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (200, 17, 20923, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (201, 17, 20923, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (202, 17, 20924, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (203, 17, 20924, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.610' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (204, 18, 20929, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (205, 18, 20929, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (206, 18, 20930, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (207, 18, 20930, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
 
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 282)
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 284)
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 285)
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 288)
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 289)
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 290)
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 295)
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 296)
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 297)
-INSERT [dbo].[RoleMenu1] ([Role_Id], [Menu_Id]) VALUES (1, 299)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (208, 18, 20931, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (209, 18, 20931, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (210, 18, 20932, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (211, 18, 20932, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (212, 19, 20925, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (213, 19, 20925, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (214, 19, 20926, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (215, 19, 20926, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (216, 19, 20927, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (217, 19, 20927, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (218, 19, 20928, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (219, 19, 20928, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (220, 20, 20933, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (221, 20, 20933, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (222, 20, 20934, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (223, 20, 20934, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (224, 20, 20935, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (225, 20, 20935, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (226, 20, 20936, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (227, 20, 20936, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (228, 20, 20937, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (229, 20, 20937, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (230, 20, 20938, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (231, 20, 20938, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (232, 20, 20940, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (233, 20, 20940, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.613' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (234, 21, 20954, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (235, 21, 20955, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (236, 21, 20956, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (237, 21, 20957, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (238, 21, 20959, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (239, 21, 20960, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (240, 21, 20961, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (241, 21, 20962, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (242, 21, 20963, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (243, 21, 20964, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (244, 21, 20966, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (245, 21, 20967, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (246, 21, 20968, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (247, 21, 20954, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (248, 21, 20955, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (249, 21, 20956, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (250, 21, 20957, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (251, 21, 20959, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (252, 21, 20960, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (253, 21, 20961, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (254, 21, 20962, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (255, 21, 20963, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (256, 21, 20964, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (257, 21, 20966, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (258, 21, 20967, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (259, 21, 20968, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (260, 22, 20960, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (261, 22, 20961, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (262, 22, 20966, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (263, 22, 20968, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (264, 22, 20960, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (265, 22, 20961, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (266, 22, 20966, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+INSERT [dbo].[RoleMenuTask] ([Id], [RoleMenuId], [TaskId], [Read], [Add], [Edit], [Delete], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (267, 22, 20968, 1, 1, 1, 1, CAST(N'2022-04-17T12:06:02.617' AS DateTime), NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[RoleMenuTask] OFF
 
 INSERT [dbo].[ApplicationModule] ([ApplicationId], [ModuleId]) VALUES (1, 1)
 INSERT [dbo].[ApplicationModule] ([ApplicationId], [ModuleId]) VALUES (1, 2)
 INSERT [dbo].[ApplicationModule] ([ApplicationId], [ModuleId]) VALUES (1, 3)
 
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20915)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20918)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20919)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20920)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20921)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20922)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20923)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (282, 20924)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (296, 20925)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (296, 20926)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (296, 20927)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (296, 20928)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (295, 20929)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (295, 20930)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (295, 20931)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (295, 20932)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20933)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20934)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20935)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20936)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20937)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20938)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (299, 20940)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20941)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20943)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20945)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20946)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20947)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20949)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20950)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20951)
-INSERT [dbo].[MenuTask] ([MenuId], [TaskId]) VALUES (300, 20953)
+--SET IDENTITY_INSERT [dbo].[WorkActivity] ON 
 
-INSERT [dbo].[UserRole] ([UserId], [RoleId]) VALUES (5, 1)
-INSERT [dbo].[UserRole] ([UserId], [RoleId]) VALUES (1, 3)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (3, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 1, 0, 0, 2, 0, 0, 0, 0, CAST(N'2022-04-15T12:31:00.947' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (4, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 2, 0, 0, 2, 0, 0, 0, 0, CAST(N'2022-04-15T12:31:12.983' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10002, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 1, 1, 0, 1, 0, 2, 0, 1, CAST(N'2022-04-15T13:42:51.727' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10003, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 2, 1, 0, 0, 0, 0, 2, 1, CAST(N'2022-04-15T13:42:52.150' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10004, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 3, 2, 2, 0, 2, 2, 2, 1, CAST(N'2022-04-15T13:42:52.193' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10005, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 1, 0, 0, 0, 0, 0, 1, 1, CAST(N'2022-04-15T14:58:34.773' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10006, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 2, 0, 1, 0, 1, 2, 1, 1, CAST(N'2022-04-15T14:58:34.820' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10007, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 3, 0, 0, 0, 0, 0, 0, 0, CAST(N'2022-04-15T14:58:34.857' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10008, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 4, 0, 2, 0, 0, 0, 0, 0, CAST(N'2022-04-15T14:58:34.897' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10009, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 1, 0, 0, 0, 0, 0, 1, 1, CAST(N'2022-04-15T14:58:58.053' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10010, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 2, 0, 1, 0, 1, 2, 1, 1, CAST(N'2022-04-15T14:58:58.093' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10011, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 3, 0, 0, 0, 0, 0, 0, 0, CAST(N'2022-04-15T14:58:58.137' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10012, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 4, 0, 2, 0, 0, 0, 0, 0, CAST(N'2022-04-15T14:58:58.187' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10013, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 1, 0, 0, 0, 0, 0, 0, 0, CAST(N'2022-04-15T15:03:14.137' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10014, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 2, 0, 2, 2, 0, 0, 0, 0, CAST(N'2022-04-15T15:03:14.187' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10015, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 3, 0, 0, 0, 0, 0, 0, 0, CAST(N'2022-04-15T15:03:14.230' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10016, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 4, 0, 0, 2, 0, 0, 0, 0, CAST(N'2022-04-15T15:03:14.277' AS DateTime), 1, NULL, NULL, 1)
+--INSERT [dbo].[WorkActivity] ([Id], [Date], [Period], [OfficeAssetId], [IsPondsCleanUp], [IsWastageCleanUp], [IsMedicalCollegeCleanUp], [IsOfficeAndHouseholdCleanUp], [IsStillWaterCleanUp], [IsCuringWaterCleanUp], [IsUnderConstructionBuildingCleanUp], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (10017, CAST(N'2022-04-15T00:00:00.000' AS DateTime), N'April-22', 5, 0, 1, 1, 1, 0, 0, 0, CAST(N'2022-04-15T15:03:14.337' AS DateTime), 1, NULL, NULL, 1)
+--SET IDENTITY_INSERT [dbo].[WorkActivity] OFF
+
+SET IDENTITY_INSERT [dbo].[OwnOffice] ON 
+
+INSERT [dbo].[OwnOffice] ([Id], [Code], [Name], [RoutingNo], [Address], [PhoneNo], [Email], [Fax], [ContactPerson], [Logo], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, N'001', N'Data Edge Ltd.', N'001234567', N'Motijheel', N'01458987454', N'de@data-edge.com', N'41526352145', N'Balaram Aich', NULL, NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[OwnOffice] OFF
+
+SET IDENTITY_INSERT [dbo].[OwnOfficeBranch] ON 
+
+INSERT [dbo].[OwnOfficeBranch] ([Id], [OwnOfficeId], [BranchType], [Code], [Name], [RoutingNo], [Address], [PhoneNo], [Email], [Fax], [ContactPerson], [CreateDate], [CreatedBy], [EditDate], [EditedBy], [Status]) VALUES (1, 1, 1, N'0011', N'Motijheel', N'001234566', N'Motijheel', N'12541452563', N'hode@data-edge.com', N'45698745214', N'SB', NULL, NULL, NULL, NULL, 1)
+SET IDENTITY_INSERT [dbo].[OwnOfficeBranch] OFF
 

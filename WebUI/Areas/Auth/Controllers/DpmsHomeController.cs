@@ -25,7 +25,7 @@ namespace WebUI.Areas.Auth.Controllers
         public JsonResult SaveUpdateActions(InformationDto dto)
         {
             var result = _info.SaveFromClient(dto);
-            return Json(result, JsonRequestBehavior.DenyGet);
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetAllAreas()
         {
