@@ -36,7 +36,7 @@
                                         <tbody data-bind="foreach:OfficeList">
                                             <tr>
                                                 <td style="text-align:left;" hidden><input type="hidden" data-bind="value:Id" /></td>
-                                                <td style="text-align:left;" data-bind=" text:Name"></td>
+                                                <td style="text-align:left;" data-bind=" text:OfficeName"></td>
                                                 @*<td style="text-align:left;" data-bind=" text:moment(CompletionDate).format('DD/MM/YYYY')"></td>*@
                                                 <td>
                                                     <a data-bind="attr: {href: '@Url.Action("WorkrecordDetails", "Workrecord")?id=' + $data.Id}" class="btn btn-xs btn-warning">

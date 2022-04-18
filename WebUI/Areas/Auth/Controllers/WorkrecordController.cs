@@ -59,7 +59,7 @@ namespace WebUI.Areas.Auth.Controllers
         }
         public JsonResult GetAllWorksOffices()
         {
-            var ModuleList = _workRecord.GetAllWorksOffices();
+            var ModuleList = _workRecord.GetAllWorkDetOffices();//.GetAllWorksOffices();
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetIsComplete()

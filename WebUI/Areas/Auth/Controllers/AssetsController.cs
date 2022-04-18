@@ -28,7 +28,7 @@ namespace WebUI.Areas.Auth.Controllers
         [HttpGet]
         public JsonResult GetAssets()
         {
-            var ModuleList = _assets.GetAssets();
+            var ModuleList = _assets.GetAssets(SessionHelper.UserProfile.SelectedOfficeId);
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
 

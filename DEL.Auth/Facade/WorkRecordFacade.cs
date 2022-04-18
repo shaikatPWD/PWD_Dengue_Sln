@@ -190,13 +190,32 @@ namespace DEL.Auth.Facade
 
         public List<HrOfficeDto> GetAllWorksOffices()//(List<long?> ApplicationId) long officeId
         {
-            var districts = GenService.GetAll<HrOffice>();//.Where(w => w.DivisionId > 0 && w.Status == EntityStatus.Active).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+            var districts = GenService.GetAll<HrOffice>().Where(w => w.DivisionId > 0 && w.Status == EntityStatus.Active).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
 
             var data = districts.Select(x => new HrOfficeDto
             {
                 Id = x.Id,
                 Name = x.Name
                 
+            }).ToList();
+            return data;
+        }
+
+        public List<WorkRecordDetailsDto> GetAllWorkDetOffices()//(List<long?> ApplicationId) long officeId
+        {
+            var office = GenService.GetAll<HrOffice>();//.Where(w => w.DivisionId > 0 && w.Status == EntityStatus.Active).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+            var work = GenService.GetAll<WorkRecordDetails>();
+
+            var td = from s in work
+                     join r in office on s.OfficeId equals r.Id
+                     //where s.Entity_ID == getEntity
+                     select s;
+
+            var data = td.Select(x => new WorkRecordDetailsDto
+            {
+                Id = x.OfficeId,
+                OfficeName = x.HrOffice.Name
+
             }).ToList();
             return data;
         }

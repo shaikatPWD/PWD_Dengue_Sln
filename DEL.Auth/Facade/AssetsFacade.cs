@@ -16,7 +16,7 @@ namespace DEL.Auth.Facade
 {
     public class AssetsFacade : BaseFacade
     {
-        public List<AssetsDto> GetAssets()//(List<long?> ApplicationId) long officeId
+        public List<AssetsDto> GetAssets(long? officeId)//(List<long?> ApplicationId) long officeId
         {
             var districts = GenService.GetAll<Assets>().ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
 
@@ -25,15 +25,15 @@ namespace DEL.Auth.Facade
                 Id = x.Id,
                 AssetType = x.AssetType,
                 AssetTypeFull = x.AssetTypeFull,
-                WorkRecordDetails = GetAssetsDetails(x.Id),
+                WorkRecordDetails = GetAssetsDetails(x.Id, (long)officeId),
                 OrderId = x.OrderId
             }).ToList();
             return data;
         }
 
-        public List<WorkRecordDetailsDto> GetAssetsDetails(long asid)//(List<long?> ApplicationId) long officeId
+        public List<WorkRecordDetailsDto> GetAssetsDetails(long asid, long officeId)//(List<long?> ApplicationId) long officeId
         {
-            var districts = GenService.GetAll<WorkRecordDetails>().Where(a => a.AssetId == asid).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+            var districts = GenService.GetAll<WorkRecordDetails>().Where(a => a.AssetId == asid && a.OfficeId ==officeId).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
 
             var data = districts.Select(x => new WorkRecordDetailsDto
             {
