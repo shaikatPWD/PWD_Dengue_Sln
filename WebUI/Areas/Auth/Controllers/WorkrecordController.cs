@@ -33,6 +33,11 @@ namespace WebUI.Areas.Auth.Controllers
             return View();
         }
 
+        public ActionResult DengueReport()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult SaveWorkRecord(WorkRecordDetailsDto dto)
         {
@@ -60,6 +65,11 @@ namespace WebUI.Areas.Auth.Controllers
         public JsonResult GetAllWorksOffices()
         {
             var ModuleList = _workRecord.GetAllWorkDetOffices();//.GetAllWorksOffices();
+            return Json(ModuleList, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetAllWorkDetReport()
+        {
+            var ModuleList = _workRecord.GetAllWorkDetReport();//.GetAllWorksOffices();
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetIsComplete()

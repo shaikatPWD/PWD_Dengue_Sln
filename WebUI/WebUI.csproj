@@ -35,6 +35,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -183,19 +184,19 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -247,6 +248,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\WebActivatorEx.dll</HintPath>
@@ -378,6 +380,7 @@
     <Content Include="Areas\Auth\Scripts\User\UserList.js" />
     <Content Include="Areas\Auth\Scripts\validate.js" />
     <Content Include="Areas\Auth\Scripts\WorkRecord\AllOffice.js" />
+    <Content Include="Areas\Auth\Scripts\WorkRecord\DengueReport.js" />
     <Content Include="Areas\Auth\Scripts\WorkRecord\WorkRecordDetailsEntry.js" />
     <Content Include="Areas\Auth\Scripts\WorkRecord\WorkRecordDetails.js" />
     <Content Include="Areas\Auth\Scripts\WorkRecord\WorkRecordEntry.js" />
@@ -1121,6 +1124,7 @@
     <Content Include="Areas\Auth\Views\ActivityHome\MonthlyReportDetails.cshtml" />
     <Content Include="Areas\Auth\Views\Workrecord\WorkrecordListByDevission.cshtml" />
     <Content Include="Areas\Auth\Views\Workrecord\WorkrecordDetails.cshtml" />
+    <Content Include="Areas\Auth\Views\Workrecord\DengueReport.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrapValidator.min.js" />
     <Content Include="Scripts\CryptoJS\aes.js" />

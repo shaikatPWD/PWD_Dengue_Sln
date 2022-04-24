@@ -33,7 +33,11 @@ namespace DEL.Auth.Facade
 
         public List<WorkRecordDetailsDto> GetAssetsDetails(long asid, long officeId)//(List<long?> ApplicationId) long officeId
         {
-            var districts = GenService.GetAll<WorkRecordDetails>().Where(a => a.AssetId == asid && a.OfficeId ==officeId).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+            var districts = new List<WorkRecordDetails>();
+            if(officeId != 0)
+                districts = GenService.GetAll<WorkRecordDetails>().Where(a => a.AssetId == asid && a.OfficeId ==officeId).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+            else
+                districts = GenService.GetAll<WorkRecordDetails>().Where(a => a.AssetId == asid).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
 
             var data = districts.Select(x => new WorkRecordDetailsDto
             {

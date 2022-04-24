@@ -5,6 +5,18 @@
 <script src="~/Scripts/knockout-date-bindings.js"></script>
 <link href="~/Content/layout-modifications.css" rel="stylesheet" />
 <script src="~/Areas/Auth/Scripts/WorkRecord/AllOffice.js"></script>
+<style type="text/css">
+    .tdStyle {
+        font-size: 14px !important;
+        color: green !important;
+        text-align: left;
+    }
+
+    .thStyle {
+        font-size: 14px !important;
+        color: #1D5987 !important;
+    }
+</style>
 @{
     ViewBag.Title = "WorkrecordListByDevission";
     Layout = "~/Views/Shared/_LayoutContentPage.cshtml";
@@ -28,18 +40,18 @@
                                         <thead>
                                             <tr>
                                                 @*<th></th>*@
-                                                <th>Office Name</th>
-                                                @*<th>Completion Date</th>*@
-                                                <th>Details</th>
+                                                <th class="thStyle">Office Name</th>
+                                                <th class="thStyle">Completion Date</th>
+                                                <th class="thStyle">Details</th>
                                             </tr>
                                         </thead>
                                         <tbody data-bind="foreach:OfficeList">
                                             <tr>
-                                                <td style="text-align:left;" hidden><input type="hidden" data-bind="value:Id" /></td>
-                                                <td style="text-align:left;" data-bind=" text:OfficeName"></td>
-                                                @*<td style="text-align:left;" data-bind=" text:moment(CompletionDate).format('DD/MM/YYYY')"></td>*@
+                                                <td class="tdStyle" hidden><input type="hidden" data-bind="value:Id" /></td>
+                                                <td class="tdStyle" data-bind=" text:OfficeName"></td>
+                                                <td class="tdStyle" data-bind=" html:CompletionDatetxt"></td>
                                                 <td>
-                                                    <a data-bind="attr: {href: '@Url.Action("WorkrecordDetails", "Workrecord")?id=' + $data.Id}" class="btn btn-xs btn-warning">
+                                                    <a data-bind="attr: {href: '@Url.Action("WorkrecordDetails", "Workrecord")?id=' + $data.Id}" class="btn btn-danger btn-xlg">
                                                         Entry Activities
                                                     </a>
                                                 </td>

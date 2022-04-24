@@ -5,6 +5,18 @@
 <script src="~/Scripts/knockout-date-bindings.js"></script>
 <link href="~/Content/layout-modifications.css" rel="stylesheet" />
 <script src="~/Areas/Auth/Scripts/Activity/MonthlyReport.js"></script>
+<style type="text/css">
+    .tdStyle {
+        font-size: 14px !important;
+        color: green !important;
+        text-align: left;
+    }
+
+    .thStyle {
+        font-size: 14px !important;
+        color: #1D5987 !important;
+    }
+</style>
 @{
     ViewBag.Title = "MonthlyReportDetails";
     Layout = "~/Views/Shared/_LayoutContentPage.cshtml";
@@ -27,29 +39,29 @@
                                     <table class="table table-striped table-bordered table-hover dataTable no-footer" frame="box">
                                         <thead>
                                             <tr>
-                                                <td>Building Name</td>
-                                                <th>Date</th>
-                                                <th>পুকুর/জলাশয়/লেক/খাল কচুরীপানা মুক্ত ও পরিষ্কার করা</th>
-                                                <th>খোলা যায়গার নর্দমা, ডাস্টবিনের বর্জ্য অপসারণ</th>
-                                                <th>খোলা ড্রেইন পরিষ্কার করণ</th>
-                                                <th>ঝোপ-ঝাড় ও আগাছা পরিষ্কারকরণ</th>
-                                                <th>গাছপালা ঝোপঝাড়ে fogging করা</th>
-                                                <th>খোলা ড্রেইনে লার্ভা ধ্বংসকারী ওষধ নিয়মিতভাবে ছিটানো</th>
-                                                <th>আবদ্ধ পানি অপসারণ</th>
+                                                <th class="thStyle">Building Name</th>
+                                                <th class="thStyle">Date</th>
+                                                <th class="thStyle">পুকুর/জলাশয়/লেক/খাল কচুরীপানা মুক্ত ও পরিষ্কার করা</th>
+                                                <th class="thStyle">খোলা যায়গার নর্দমা, ডাস্টবিনের বর্জ্য অপসারণ</th>
+                                                <th class="thStyle">খোলা ড্রেইন পরিষ্কার করণ</th>
+                                                <th class="thStyle">ঝোপ-ঝাড় ও আগাছা পরিষ্কারকরণ</th>
+                                                <th class="thStyle">গাছপালা ঝোপঝাড়ে fogging করা</th>
+                                                <th class="thStyle">খোলা ড্রেইনে লার্ভা ধ্বংসকারী ওষধ নিয়মিতভাবে ছিটানো</th>
+                                                <th class="thStyle">আবদ্ধ পানি অপসারণ</th>
                                             </tr>
                                         </thead>
                                         <tbody data-bind="foreach:PeriodList">
                                             <tr>
-                                                <td style="text-align:left;" hidden><input type="hidden" data-bind="value:Id" /></td>
-                                                <td style="text-align:left;" data-bind=" text:OfficeAssetName"></td>
-                                                <td style="text-align:left;" data-bind=" text:moment(Date).format('DD/MM/YYYY')"></td>
-                                                <td style="text-align:left;" data-bind=" text:IsPondsCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind=" text:IsWastageCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind=" text:IsMedicalCollegeCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind=" text:IsOfficeAndHouseholdCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind=" text:IsStillWaterCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind=" text:IsCuringWaterCleanUpName"></td>
-                                                <td style="text-align:left;" data-bind=" text:IsUnderConstructionBuildingCleanUpName"></td>
+                                                <td class="tdStyle" hidden><input type="hidden" data-bind="value:Id" /></td>
+                                                <td class="tdStyle" data-bind=" text:OfficeAssetName"></td>
+                                                <td class="tdStyle" data-bind=" text:moment(Date).format('DD/MM/YYYY')"></td>
+                                                <td class="tdStyle" data-bind=" text:IsPondsCleanUpName"></td>
+                                                <td class="tdStyle" data-bind=" text:IsWastageCleanUpName"></td>
+                                                <td class="tdStyle" data-bind=" text:IsMedicalCollegeCleanUpName"></td>
+                                                <td class="tdStyle" data-bind=" text:IsOfficeAndHouseholdCleanUpName"></td>
+                                                <td class="tdStyle" data-bind=" text:IsStillWaterCleanUpName"></td>
+                                                <td class="tdStyle" data-bind=" text:IsCuringWaterCleanUpName"></td>
+                                                <td class="tdStyle" data-bind=" text:IsUnderConstructionBuildingCleanUpName"></td>
 
                                             </tr>
                                         </tbody>

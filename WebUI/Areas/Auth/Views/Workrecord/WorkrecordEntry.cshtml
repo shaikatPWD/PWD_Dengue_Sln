@@ -10,6 +10,26 @@
     ViewBag.Title = "WorkrecordEntry";
     Layout = "~/Views/Shared/_LayoutContentPage.cshtml";
 }
+<style type="text/css">
+    .tdStyle {
+        font-size: 13px !important;
+        color: green !important;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .thStyle1 {
+        font-size: 14px !important;
+        color: #1D5987 !important;
+        font-weight:bolder;
+    }
+
+    .thStyle2 {
+        font-size: 14px !important;
+        color: #1D5987 !important;
+    }
+
+</style>
 
 <div id="wrEntry">
     <section class="rm">
@@ -28,11 +48,11 @@
                                         <tbody data-bind="foreach:AssetList">
                                             <tr>
                                                 <td style="display:none"><input type="hidden" id="assId" data-bind="value:Id" /></td>
-                                                <td style="text-align:left;color:black;font-size:medium;font-weight:bolder">
+                                                <td style="text-align: left; color: black; font-size: medium; font-weight: bolder">
                                                     <span data-bind="text: AssetTypeFull"></span>
                                                 </td>
                                                 <td>
-                                                    <a data-bind="attr: {href: '@Url.Action("WorkrecordDetailsEntry", "Workrecord")?assetId=' + $data.Id}" class="btn btn-xs btn-warning">
+                                                    <a data-bind="attr: {href: '@Url.Action("WorkrecordDetailsEntry", "Workrecord")?assetId=' + $data.Id}" class="btn btn-xs btn-danger">
                                                         Add New
                                                     </a>
                                                 </td>
@@ -43,23 +63,23 @@
                                                     <table class="table table-striped table-bordered table-hover dataTable no-footer" frame="box">
                                                         <thead>
                                                             <tr>
-                                                                <th style="font-weight:bolder">Name of Structure</th>
-                                                                <th>Completion Date</th>
-                                                                <th>Image1</th>
-                                                                <th>Image2</th>
+                                                                <th class="thStyle1">Name of Structure</th>
+                                                                <th class="thStyle1">Completion Date</th>
+                                                                <th class="thStyle1">Image1</th>
+                                                                <th class="thStyle1">Image2</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody data-bind="foreach:WorkRecordDetails">
                                                             <tr>
                                                                 <td style="display:none"><input type="hidden" data-bind="value:Id" /></td>
-                                                                <td style="text-align:left;" data-bind="text: AssetBuildingName"></td>
-                                                                <td style="text-align:left;" data-bind="text: moment(CompletionDate).format('DD/MM/YYYY')"></td>
-                                                                <td style="text-align:left;">
+                                                                <td class="tdStyle" data-bind="text: AssetBuildingName"></td>
+                                                                <td class="tdStyle" data-bind="text: moment(CompletionDate).format('DD/MM/YYYY')"></td>
+                                                                <td class="tdStyle">
                                                                     <a data-bind="attr: {href:'/UploadImages/InfoImages/'+ Image1 +'.jpg'}">
                                                                         <span data-bind="text: Image1"></span>
                                                                     </a>
                                                                 </td>
-                                                                <td style="text-align:left;">
+                                                                <td class="tdStyle">
                                                                     <a data-bind="attr: {href:'/UploadImages/InfoImages/'+ Image2 +'.jpg'}">
                                                                         <span data-bind="text: Image2"></span>
                                                                     </a>

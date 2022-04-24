@@ -18,7 +18,7 @@
 
         var filesSelected = document.getElementById("image1").files;
         var srcData, newImage;
-        
+
         if (filesSelected.length > 0) {
             var fileToLoad = filesSelected[0];
             var fileReader = new FileReader();
@@ -45,14 +45,14 @@
             var fileReader = new FileReader();
 
             fileReader.onload = function (fileLoadedEvent) {
-                srcData2 = fileLoadedEvent.target.result; 
+                srcData2 = fileLoadedEvent.target.result;
 
                 newImage2 = document.createElement('img');
                 newImage2.setAttribute("id", "img2");
                 newImage2.src = srcData2;
 
                 document.getElementById("myImg2").innerHTML = newImage2.outerHTML;
-                img2 = document.getElementById("img2").src; 
+                img2 = document.getElementById("img2").src;
             }
             fileReader.readAsDataURL(fileToLoad);
         }
@@ -66,69 +66,79 @@
             Work Record Entry
             <small>
                 <i class="ace-icon fa fa-angle-double-right"></i>
-                Update work record for <span data-bind="text:AssetName"></span>
+                Update work records
             </small>
         </h1>
     </div><!-- /.page-header -->
 
     <div class="row">
-        <div class="col-xs-12">
-            <form class="form-horizontal" role="form">
-                <div class="space-4"></div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Name of Structure :</label>
-
-                    <div class="col-sm-9">
-                        <input type="text" data-bind="value:AssetBuildingName" id="assetBuildingName" name="assetBuildingName" class="col-xs-10 col-sm-5" />
-                    </div>
+        <div class="col-sm-12">
+            <div class="widget-box">
+                <div class="widget-header" style="color:blueviolet;">
+                    <h4 class="widget-title"><span style="font-weight:bold" data-bind="text:AssetName"></span></h4>
                 </div>
-                <div class="space-4"></div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Completion Date :</label>
 
-                    <div class="col-sm-9">
-                        <div class="input-group input-group-sm">
-                            <input type="text" class="form-control hasDatepicker" id="completeDate" data-bind="datepicker:CompletionDate, datepickerOptions: {format: 'DD/MM/YYYY HH:mm'}, valueUpdate:'keyup'">
-                            <span class="help-block" style="display: none;"></span>
-                            <div class="input-group-addon">
-                                <span class="ace-icon fa fa-calendar"></span>
+                <div class="widget-body">
+                    <div class="widget-main no-padding">
+                        <form class="form-horizontal" role="form">
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Name of Structure :</label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" data-bind="value:AssetBuildingName" id="assetBuildingName" name="assetBuildingName" class="col-xs-10 col-sm-5" />
+                                </div>
                             </div>
-                        </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Completion Date :</label>
+
+                                <div class="col-sm-9">
+                                    <div class="input-group col-xs-10 col-sm-5 ">
+                                        <input type="text" class="form-control date-picker" id="completeDate" data-bind="datepicker:CompletionDate, datepickerOptions: {format: 'DD/MM/YYYY HH:mm'}, valueUpdate:'keyup'">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar bigger-110"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
+
+                                <div class="col-sm-9">
+                                    <input type="file" id="image1" name="image1" class="col-xs-10 col-sm-5" onchange="encodeImageFileAsURL();" />
+                                    <div id="myImg" hidden></div>
+                                    <p id="b64_1" hidden></p>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 2 :</label>
+
+                                <div class="col-sm-9">
+                                    <input type="file" id="image2" name="image2" class="col-xs-10 col-sm-5" onchange="encodeImageFileAsURL2();" />
+                                    <div id="myImg2" hidden></div>
+                                    <p id="b64_2" hidden></p>
+                                </div>
+                            </div>
+
+                            <div class="space-6"></div>
+
+                            <div class="clearfix form-actions">
+                                <div class="col-md-offset-0 col-md-12">
+                                    <button type="submit" style="width:inherit; font-size:14px; font-weight:bold;" data-togle="modal" data-target="#successModal" data-bind="click:Submit" class="btn btn-success btn-lg">
+                                        <i class="ace-icon fa fa-check bigger-110"></i>
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="space-4"></div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 1 :</label>
-
-                    <div class="col-sm-9">
-                        <input type="file" id="image1" name="image1" class="col-xs-10 col-sm-5" onchange="encodeImageFileAsURL();" />
-                        <div id="myImg" hidden></div>
-                        <p id="b64_1" hidden></p>
-                    </div>
-                </div>
-                <div class="space-4"></div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Photo 2 :</label>
-
-                    <div class="col-sm-9">
-                        <input type="file" id="image2" name="image2" class="col-xs-10 col-sm-5" onchange="encodeImageFileAsURL2();"/>
-                        <div id="myImg2" hidden></div>
-                        <p id="b64_2" hidden></p>
-                    </div>
-                </div>
-
-                <div class="space-6"></div>
-
-                <div class="clearfix form-actions">
-                    <div class="col-md-offset-3 col-md-9">
-                        <button type="submit" data-togle="modal" data-target="#successModal" data-bind="click:Submit" class="btn btn-info">
-                            <i class="ace-icon fa fa-check bigger-110"></i>
-                            Submit
-                        </button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
+        
     </div>
     <div id="successModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-sm">

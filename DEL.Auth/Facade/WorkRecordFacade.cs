@@ -196,28 +196,124 @@ namespace DEL.Auth.Facade
             {
                 Id = x.Id,
                 Name = x.Name
-                
+
             }).ToList();
             return data;
         }
 
         public List<WorkRecordDetailsDto> GetAllWorkDetOffices()//(List<long?> ApplicationId) long officeId
         {
-            var office = GenService.GetAll<HrOffice>();//.Where(w => w.DivisionId > 0 && w.Status == EntityStatus.Active).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+            var office = GenService.GetAll<HrOffice>();
             var work = GenService.GetAll<WorkRecordDetails>();
 
             var td = from s in work
                      join r in office on s.OfficeId equals r.Id
-                     //where s.Entity_ID == getEntity
                      select s;
 
-            var data = td.Select(x => new WorkRecordDetailsDto
+            var data = td.GroupBy(d => new { d.OfficeId, d.HrOffice.Name }).ToList().Select(x => new WorkRecordDetailsDto
             {
-                Id = x.OfficeId,
-                OfficeName = x.HrOffice.Name
+                Id = x.Key.OfficeId,
+                OfficeName = x.Key.Name,
+                //CompletionDatetxt = string.Join("<br>\n", x.Select(i => i.CompletionDate))
+                CompletionDatetxt = GetOnlyDate((long)x.Key.OfficeId)//string.Join(" ", x.Select(i => i.CompletionDate))
+            });
+            return data.ToList();
+        }
 
+        public List<WorkRecordDetailsDto> GetAllWorkDetReport()//(List<long?> ApplicationId) long officeId
+        {
+            var office = GenService.GetAll<HrOffice>();
+            var work = GenService.GetAll<WorkRecordDetails>();
+
+            var td = from s in work
+                     join r in office on s.OfficeId equals r.Id
+                     select s;
+
+            var data = td.GroupBy(d => new { d.OfficeId, d.HrOffice.Name }).ToList().Select(x => new WorkRecordDetailsDto
+            {
+                Id = x.Key.OfficeId,
+                OfficeName = x.Key.Name,
+                IsPondsCleanUptxt = GetIsPondCompleteTxt((long)x.Key.OfficeId,1),
+                IsPondsCleanUpDatetxt = GetdateList((long)x.Key.OfficeId, 1),
+                IsWastageCleanUptxt = GetIsPondCompleteTxt((long)x.Key.OfficeId, 2),
+                IsWastageCleanUpDatetxt = GetdateList((long)x.Key.OfficeId, 2),
+                IsMedicalCollegeCleanUptxt = GetIsPondCompleteTxt((long)x.Key.OfficeId,3 ),
+                IsMedicalCollegeCleanUpDatetxt = GetdateList((long)x.Key.OfficeId, 3),
+                IsOfficeAndHouseholdCleanUptxt = GetIsPondCompleteTxt((long)x.Key.OfficeId, 4),
+                IsOfficeAndHouseholdCleanUpDatetxt = GetdateList((long)x.Key.OfficeId, 4),
+                IsStillWaterCleanUptxt = GetIsPondCompleteTxt((long)x.Key.OfficeId, 5),
+                IsStillWaterCleanUpDatetxt = GetdateList((long)x.Key.OfficeId, 5),
+                IsCuringWaterCleanUptxt = GetIsPondCompleteTxt((long)x.Key.OfficeId, 6),
+                IsCuringWaterCleanUpDatetxt = GetdateList((long)x.Key.OfficeId, 6),
+                IsUnderConstructionBuildingCleanUptxt = GetIsPondCompleteTxt((long)x.Key.OfficeId, 7),
+                IsUnderConstructionBuildingCleanUpDatetxt = GetdateList((long)x.Key.OfficeId, 7)
+            });
+            return data.ToList();
+        }
+
+        public string GetIsPondCompleteTxt(long officeId, long assetId)
+        {
+            var work = GenService.GetAll<WorkRecordDetails>().Where(w=> w.OfficeId == officeId && w.AssetId == assetId);
+
+            var isPondCompleteTxt = work.Select(i => i.CompletionDate).ToList().Count > 0 ? "Yes" : "";
+
+            return isPondCompleteTxt;
+        }
+
+        public string GetOnlyDate(long officeId)
+        {
+            var work = GenService.GetAll<WorkRecordDetails>().Where(o => o.OfficeId == officeId);
+            List<string> datesString = new List<string>();
+
+            foreach (var d in work)
+            {
+                string[] words = d.CompletionDate.ToString().Split(' ');
+                datesString.Add(words[0]);
+            }
+
+            //datesString.Add(work.Select(i => i.CompletionDate));
+            var dates = string.Join("<br>\n", datesString);
+
+            //var datestr = datesString.Replace(",", Environment.NewLine); //"\n".Join(dates);
+
+            return dates;
+        }
+
+        public string GetdateList(long officeId, long assetId)
+        {
+            var work = GenService.GetAll<WorkRecordDetails>().Where(o => o.OfficeId == officeId && o.AssetId == assetId);
+            List<string> datesString = new List<string>();
+
+            foreach (var d in work)
+            {
+                string[] words = d.CompletionDate.ToString().Split(' ');
+                datesString.Add(words[0]);
+            }
+
+            //datesString.Add(work.Select(i => i.CompletionDate));
+            var dates = string.Join("<br>\n", datesString);
+
+            //var datestr = datesString.Replace(",", Environment.NewLine); //"\n".Join(dates);
+
+            return dates;
+        }
+
+
+        public List<WorkRecordDetailsDto> DengueReport()//(List<long?> ApplicationId) long officeId
+        {
+            var office = GenService.GetAll<HrOffice>();
+            var work = GenService.GetAll<WorkRecordDetails>();
+
+            var td = from s in work
+                     join r in office on s.OfficeId equals r.Id
+                     select s;
+
+            var data = td.GroupBy(d => new { d.OfficeId, d.HrOffice.Name }).Select(x => new WorkRecordDetailsDto
+            {
+                Id = x.Key.OfficeId,
+                OfficeName = x.Key.Name
             }).ToList();
-            return data;
+            return data.ToList();
         }
 
         public List<AssetsDto> GetAssets(long id)//(List<long?> ApplicationId) long officeId

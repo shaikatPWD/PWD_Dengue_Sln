@@ -1,33 +1,11 @@
 ﻿
 $(document).ready(function () {
-    //function ActivityDetailsLine() {
-    //    var table = $('table');
-    //    var activity = [];
-
-    //    table.find('tr').each(function (i, el) {
-    //        // no thead
-    //        if (i != 0) {
-    //            var $tds = $(this).find('td');
-    //            var row = [];
-    //            $tds.each(function (i, el) {
-    //                row.push($(this).text());
-    //            });
-    //            activity.push(row);
-    //        }
-
-    //    });
-    //    return activity;
-    //}
-    //console.log(toJSON(ActivityDetailsLine()));
     var activityDetailsLine = function () {
         var self = this;
         self.Id = ko.observable();
         self.AssetName = ko.observable();
         self.Date = ko.observable(moment());
-        self.DateText = ko.observable('');
-        //self.Period = ko.observable();
-        //self.OfficeAssetId = ko.observable();
-        
+        self.DateText = ko.observable('');        
 
         self.IsPondsCleanUp = ko.observable('');// Blocked or Not used
         self.IsPondsCleanUpName = ko.observable('');
@@ -60,7 +38,7 @@ $(document).ready(function () {
         self.LoadIsPondsCleanUp = function () {
             return $.ajax({
                 type: "GET",
-                url: '/Auth/Activity/GetIsComplete',
+                url: '/Auth/ActivityHome/GetIsComplete',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
@@ -75,7 +53,7 @@ $(document).ready(function () {
         self.LoadIsWastageCleanUp = function () {
             return $.ajax({
                 type: "GET",
-                url: '/Auth/Activity/GetIsComplete',
+                url: '/Auth/ActivityHome/GetIsComplete',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
@@ -90,7 +68,7 @@ $(document).ready(function () {
         self.LoadIsMedicalCollegeCleanUp = function () {
             return $.ajax({
                 type: "GET",
-                url: '/Auth/Activity/GetIsComplete',
+                url: '/Auth/ActivityHome/GetIsComplete',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
@@ -105,7 +83,7 @@ $(document).ready(function () {
         self.LoadIsOfficeAndHouseholdCleanUp = function () {
             return $.ajax({
                 type: "GET",
-                url: '/Auth/Activity/GetIsComplete',
+                url: '/Auth/ActivityHome/GetIsComplete',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
@@ -120,7 +98,7 @@ $(document).ready(function () {
         self.LoadIsStillWaterCleanUp = function () {
             return $.ajax({
                 type: "GET",
-                url: '/Auth/Activity/GetIsComplete',
+                url: '/Auth/ActivityHome/GetIsComplete',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
@@ -135,7 +113,7 @@ $(document).ready(function () {
         self.LoadIsCuringWaterCleanUp = function () {
             return $.ajax({
                 type: "GET",
-                url: '/Auth/Activity/GetIsComplete',
+                url: '/Auth/ActivityHome/GetIsComplete',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
@@ -150,7 +128,7 @@ $(document).ready(function () {
         self.LoadIsUnderConstructionBuildingCleanUp = function () {
             return $.ajax({
                 type: "GET",
-                url: '/Auth/Activity/GetIsComplete',
+                url: '/Auth/ActivityHome/GetIsComplete',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
@@ -206,151 +184,9 @@ $(document).ready(function () {
     };
 
     var ActivitiesDetailsEntryViewModel = function () {
-        var self = this;
-        //self.Id = ko.observable();
-        //self.Date = ko.observable(moment());
-        //self.DateText = ko.observable('');
-        //self.Period = ko.observable();
-        //self.OfficeAssetId = ko.observable();
-        //self.OfficeAssetName = ko.observable();
+        var self = this;       
 
-        //self.AssetList = ko.observableArray([]);
-
-        //self.IsPondsCleanUp = ko.observable('');// Blocked or Not used
-        //self.IsPondsCleanUpName = ko.observable('');
-        //self.IsPondsCleanUpList = ko.observableArray([]);
-
-        //self.IsWastageCleanUp = ko.observable('');// Blocked or Not used
-        //self.IsWastageCleanUpName = ko.observable('');
-        //self.IsWastageCleanUpList = ko.observableArray([]);
-
-        //self.IsMedicalCollegeCleanUp = ko.observable('');// Blocked or Not used
-        //self.IsMedicalCollegeCleanUpName = ko.observable('');
-        //self.IsMedicalCollegeCleanUpList = ko.observableArray([]);
-
-        //self.IsOfficeAndHouseholdCleanUp = ko.observable('');// Blocked or Not used
-        //self.IsOfficeAndHouseholdCleanUpName = ko.observable('');
-        //self.IsOfficeAndHouseholdCleanUpList = ko.observableArray([]);
-
-        //self.IsStillWaterCleanUp = ko.observable('');// Blocked or Not used
-        //self.IsStillWaterCleanUpName = ko.observable('');
-        //self.IsStillWaterCleanUpList = ko.observableArray([]);
-
-        //self.IsCuringWaterCleanUp = ko.observable('');// Blocked or Not used
-        //self.IsCuringWaterCleanUpName = ko.observable('');
-        //self.IsCuringWaterCleanUpList = ko.observableArray([]);
-
-        //self.IsUnderConstructionBuildingCleanUp = ko.observable('');// Blocked or Not used
-        //self.IsUnderConstructionBuildingCleanUpName = ko.observable('');
-        //self.IsUnderConstructionBuildingCleanUpList = ko.observableArray([]);new ActivityDetailsLine()
-
-        self.ActivityDetails = ko.observableArray([]);
-        //self.ActivityDetailsEnData = ko.observableArray([new ActivityDetailsLine()]);
-
-        //self.LoadIsPondsCleanUp = function () {
-        //    return $.ajax({
-        //        type: "GET",
-        //        url: '/Auth/Activity/GetIsComplete',
-        //        contentType: "application/json; charset=utf-8",
-        //        dataType: "json",
-        //        success: function (data) {
-        //            self.IsPondsCleanUpList(data);
-        //        },
-        //        error: function (error) {
-        //            alert(error.status + "<--and--> " + error.statusText);
-        //        }
-        //    });
-        //}
-
-        //self.LoadIsWastageCleanUp = function () {
-        //    return $.ajax({
-        //        type: "GET",
-        //        url: '/Auth/Activity/GetIsComplete',
-        //        contentType: "application/json; charset=utf-8",
-        //        dataType: "json",
-        //        success: function (data) {
-        //            self.IsWastageCleanUpList(data);
-        //        },
-        //        error: function (error) {
-        //            alert(error.status + "<--and--> " + error.statusText);
-        //        }
-        //    });
-        //}
-
-        //self.LoadIsMedicalCollegeCleanUp = function () {
-        //    return $.ajax({
-        //        type: "GET",
-        //        url: '/Auth/Activity/GetIsComplete',
-        //        contentType: "application/json; charset=utf-8",
-        //        dataType: "json",
-        //        success: function (data) {
-        //            self.IsMedicalCollegeCleanUpList(data);
-        //        },
-        //        error: function (error) {
-        //            alert(error.status + "<--and--> " + error.statusText);
-        //        }
-        //    });
-        //}
-
-        //self.LoadIsOfficeAndHouseholdCleanUp = function () {
-        //    return $.ajax({
-        //        type: "GET",
-        //        url: '/Auth/Activity/GetIsComplete',
-        //        contentType: "application/json; charset=utf-8",
-        //        dataType: "json",
-        //        success: function (data) {
-        //            self.IsOfficeAndHouseholdCleanUpList(data);
-        //        },
-        //        error: function (error) {
-        //            alert(error.status + "<--and--> " + error.statusText);
-        //        }
-        //    });
-        //}
-
-        //self.LoadIsStillWaterCleanUp = function () {
-        //    return $.ajax({
-        //        type: "GET",
-        //        url: '/Auth/Activity/GetIsComplete',
-        //        contentType: "application/json; charset=utf-8",
-        //        dataType: "json",
-        //        success: function (data) {
-        //            self.IsStillWaterCleanUpList(data);
-        //        },
-        //        error: function (error) {
-        //            alert(error.status + "<--and--> " + error.statusText);
-        //        }
-        //    });
-        //}
-
-        //self.LoadIsCuringWaterCleanUp = function () {
-        //    return $.ajax({
-        //        type: "GET",
-        //        url: '/Auth/Activity/GetIsComplete',
-        //        contentType: "application/json; charset=utf-8",
-        //        dataType: "json",
-        //        success: function (data) {
-        //            self.IsCuringWaterCleanUpList(data);
-        //        },
-        //        error: function (error) {
-        //            alert(error.status + "<--and--> " + error.statusText);
-        //        }
-        //    });
-        //}
-
-        //self.LoadIsUnderConstructionBuildingCleanUp = function () {
-        //    return $.ajax({
-        //        type: "GET",
-        //        url: '/Auth/Activity/GetIsComplete',
-        //        contentType: "application/json; charset=utf-8",
-        //        dataType: "json",
-        //        success: function (data) {
-        //            self.IsUnderConstructionBuildingCleanUpList(data);
-        //        },
-        //        error: function (error) {
-        //            alert(error.status + "<--and--> " + error.statusText);
-        //        }
-        //    });
-        //}
+        self.ActivityDetails = ko.observableArray([]);        
 
         self.LoadActivitiesByPeriod = function () {
             return $.ajax({
@@ -368,8 +204,6 @@ $(document).ready(function () {
                             }
                         });
                     }
-
-                    //console.log(self.ActivityDetails);
                 },
                 error: function (error) {
                     alert(error.status + "<--and--> " + error.statusText);

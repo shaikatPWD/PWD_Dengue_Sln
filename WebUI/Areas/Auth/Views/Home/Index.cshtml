@@ -12,9 +12,24 @@
     }
 </style>
 <div id="sidebar" class="sidebar responsive">
-    <div class="sidebar-shortcuts" id="sidebar-shortcuts" style="background-color: #9585BF !important ">
+    <div class="sidebar-shortcuts" id="sidebar-shortcuts">
         <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-            <a class="navbar-brand" style="line-height:10px !important; color:#ffffff" href="home.php">Public Works Department (PWD)</a>
+            @*<a class="navbar-brand" style="line-height:10px !important; color:#ffffff" href="home.php">Public Works Department (PWD)</a>*@
+            <button class="btn btn-success">
+                <i class="ace-icon fa fa-signal"></i>
+            </button>
+
+            <button class="btn btn-info">
+                <i class="ace-icon fa fa-pencil"></i>
+            </button>
+
+            <button class="btn btn-warning">
+                <i class="ace-icon fa fa-users"></i>
+            </button>
+
+            <button class="btn btn-danger">
+                <i class="ace-icon fa fa-cogs"></i>
+            </button>
         </div>
 
         <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
@@ -41,32 +56,32 @@
     <ul class="nav nav-list" data-bind="foreach: moduleSubModuleList">
 
         @*<li class="">*@
-            @*<a href="#" class="dropdown-toggle">
+        @*<a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-tag"></i>
                 <span data-bind="text: $data.DisplayName"></span>
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>*@
 
-            @*<ul class="submenu" data-bind="foreach: $data.ChildMenus">
-                <li class="">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="menu-icon fa fa-plus"></i>
-                        <span data-bind="text:$data.DisplayName"></span>
-                        <b class="arrow fa fa-angle-down"></b>
-                    </a>
-                    <b class="arrow"></b>*@
-                    @*<ul class="submenu" data-bind="foreach: $data.ChildMenusM">*@
-                        <li class="" id="link">
-                            <a data-bind="attr: { href: $data.Url}" class="link1" target="myIf">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                <span data-bind="text:$data.DisplayName"></span>
-                            </a>
-                            <b class="arrow"></b>
-                        @*</li>
-                    </ul>*@
-                @*</li>
-            </ul>*@
+        @*<ul class="submenu" data-bind="foreach: $data.ChildMenus">
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-plus"></i>
+                    <span data-bind="text:$data.DisplayName"></span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>*@
+        @*<ul class="submenu" data-bind="foreach: $data.ChildMenusM">*@
+        <li class="" id="link">
+            <a data-bind="attr: { href: $data.Url}" class="link1" target="myIf">
+                <i class="menu-icon fa fa-caret-right"></i>
+                <span data-bind="text:$data.DisplayName"></span>
+            </a>
+            <b class="arrow"></b>
+            @*</li>
+                </ul>*@
+            @*</li>
+                </ul>*@
         </li>
     </ul><!-- /.nav-list -->
 
@@ -75,22 +90,10 @@
     </div>
 </div>
 
-@*<div class="main-content-inner main-container-inner-mod">
-        <div class="breadcrumbs" id="breadcrumbs"></div>
-        <div id="content" class="page-content">
-            <div id="welcomecontent">
-                @Html.Action("Welcome", "Home")
-            </div>
-        </div>
-    </div>*@
 <div class="main-content">
     <div class="breadcrumbs" id="breadcrumbs"><a href="/Auth/Information/Dashboard" class="item" target="myIf"><i class="ace-icon fa fa-folder-open"></i> Dashboard</a></div>
     <div id="content" class="page-content">
-        @*<div id="welcomecontent">
-                @Html.Action("Welcome", "Home")  class="page-content"
-            </div>*@
-        @*<iframe id="myIf" name="myIf" width="100%" frameborder="0" src="/Auth/Home/Welcome"></iframe>*@
-        <iframe id="myIf" name="myIf" width="100%" height="768px" src="/Auth/Information/Dashboard" frameborder="0"></iframe>
+        <iframe id="myIf" name="myIf" style="width:100%; height:881px" src="/Auth/Information/Dashboard" frameborder="0"></iframe>
     </div>
 </div>
 

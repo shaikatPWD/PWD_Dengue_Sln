@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "ActivitiesDetailsEntry";
     Layout = "~/Views/Shared/_LayoutContentPage.cshtml";
 }
@@ -11,13 +10,19 @@
 <script src="~/Scripts/knockout-date-bindings.js"></script>
 <link href="~/Content/layout-modifications.css" rel="stylesheet" />
 <script src="~/Areas/Auth/Scripts/Activity/ActivitiesDetailsEntry.js"></script>
+<style type="text/css">
+    .tdStyle {
+        font-size: 14px !important;
+        color: green !important;
+        text-align: left;
+    }
 
-<script type="text/javascript">
-
-    
-
-</script>
-
+    .thStyle {
+        font-size: 14px !important;
+        color: #1D5987 !important;
+        text-align: left;
+    }
+</style>
 <div id="activityDetails">
     <section class="rm">
         <div class="container-fluid ">
@@ -30,71 +35,65 @@
                                     Dengue Protection Monitoring System
                                 </div>
                                 <div id="dynamic-table_wrapper" class="dataTables_wrapper form-inline no-footer">
-
-
                                     <table class="table table-striped table-bordered table-hover dataTable no-footer" frame="box">
                                         <thead>
                                             <tr>
-                                                <th style="font-weight:bolder">Name of Structure</th>
-                                                <th>Date</th>
-                                                <th>পুকুর/জলাশয়/লেক/খাল কচুরীপানা মুক্ত ও পরিষ্কার করা</th>
-                                                <th>খোলা যায়গার নর্দমা, ডাস্টবিনের বর্জ্য অপসারণ</th>
-                                                <th>খোলা ড্রেইন পরিষ্কার করণ</th>
-                                                <th>ঝোপ-ঝাড় ও আগাছা পরিষ্কারকরণ</th>
-                                                <th>গাছপালা ঝোপঝাড়ে fogging করা</th>
-                                                <th>খোলা ড্রেইনে লার্ভা ধ্বংসকারী ওষধ নিয়মিতভাবে ছিটানো</th>
-                                                <th>আবদ্ধ পানি অপসারণ</th>
+                                                <th class="thStyle">Name of Structure</th>
+                                                <th class="thStyle">Date</th>
+                                                <th class="thStyle">পুকুর/জলাশয়/লেক/খাল কচুরীপানা মুক্ত ও পরিষ্কার করা</th>
+                                                <th class="thStyle">খোলা যায়গার নর্দমা, ডাস্টবিনের বর্জ্য অপসারণ</th>
+                                                <th class="thStyle">খোলা ড্রেইন পরিষ্কার করণ</th>
+                                                <th class="thStyle">ঝোপ-ঝাড় ও আগাছা পরিষ্কারকরণ</th>
+                                                <th class="thStyle">গাছপালা ঝোপঝাড়ে fogging করা</th>
+                                                <th class="thStyle">খোলা ড্রেইনে লার্ভা ধ্বংসকারী ওষধ নিয়মিতভাবে ছিটানো</th>
+                                                <th class="thStyle">আবদ্ধ পানি অপসারণ</th>
                                             </tr>
                                         </thead>
                                         <tbody data-bind="foreach:ActivityDetails">
                                             <tr>
                                                 <td style="display:none"><input type="hidden" data-bind="value:Id" /></td>
-                                                <td style="text-align:left;" data-bind="text:AssetName"></td>
-                                                <td style="text-align:left;">
-                                                    <input type="text" class="form-control date-picker" id="date" data-bind="datepicker:Date, datepickerOptions: {format: 'DD/MM/YYYY'}, valueUpdate:'keyup'">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-calendar bigger-110"></i>
-                                                    </span>
+                                                <td class="tdStyle" data-bind="text:AssetName"></td>
+                                                <td class="tdStyle">
+                                                    <div class="input-group col-xs-12">
+                                                        <input type="text" class="form-control date-picker tdStyle" id="date" data-bind="datepicker:Date, datepickerOptions: {format: 'DD/MM/YYYY'}, valueUpdate:'keyup'">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-calendar bigger-110"></i>
+                                                        </span>
+                                                    </div>
                                                 </td>
-                                                <td style="text-align:left;">
-                                                    <select class="form-control" id="form-field-select-1" data-bind="options:IsPondsCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsPondsCleanUp "></select>
+                                                <td class="tdStyle">
+                                                    <select class="form-control tdStyle" id="form-field-select-1" data-bind="options:IsPondsCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsPondsCleanUp "></select>
                                                 </td>
-                                                <td style="text-align:left;">
-                                                    <select class="form-control" id="form-field-select-1" data-bind="options:IsWastageCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsWastageCleanUp "></select>
+                                                <td class="tdStyle">
+                                                    <select class="form-control tdStyle" id="form-field-select-1" data-bind="options:IsWastageCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsWastageCleanUp "></select>
                                                 </td>
-                                                <td style="text-align:left;">
-                                                    <select class="form-control" id="form-field-select-1" data-bind="options:IsMedicalCollegeCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsMedicalCollegeCleanUp "></select>
+                                                <td class="tdStyle">
+                                                    <select class="form-control tdStyle" id="form-field-select-1" data-bind="options:IsMedicalCollegeCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsMedicalCollegeCleanUp "></select>
                                                 </td>
-                                                <td style="text-align:left;">
-                                                    <select class="form-control" id="form-field-select-1" data-bind="options:IsOfficeAndHouseholdCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsOfficeAndHouseholdCleanUp "></select>
+                                                <td class="tdStyle">
+                                                    <select class="form-control tdStyle" id="form-field-select-1" data-bind="options:IsOfficeAndHouseholdCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsOfficeAndHouseholdCleanUp "></select>
                                                 </td>
-                                                <td style="text-align:left;">
-                                                    <select class="form-control" id="form-field-select-1" data-bind="options:IsStillWaterCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsStillWaterCleanUp "></select>
+                                                <td class="tdStyle">
+                                                    <select class="form-control tdStyle" id="form-field-select-1" data-bind="options:IsStillWaterCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsStillWaterCleanUp "></select>
                                                 </td>
-                                                <td style="text-align:left;">
-                                                    <select class="form-control" id="form-field-select-1" data-bind="options:IsCuringWaterCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsCuringWaterCleanUp "></select>
+                                                <td class="tdStyle">
+                                                    <select class="form-control tdStyle" id="form-field-select-1" data-bind="options:IsCuringWaterCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsCuringWaterCleanUp "></select>
                                                 </td>
-                                                <td style="text-align:left;">
-                                                    <select class="form-control" id="form-field-select-1" data-bind="options:IsUnderConstructionBuildingCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsUnderConstructionBuildingCleanUp "></select>
+                                                <td class="tdStyle">
+                                                    <select class="form-control tdStyle" id="form-field-select-1" data-bind="options:IsUnderConstructionBuildingCleanUpList,optionsValue: 'Id',optionsText:'Name', value:IsUnderConstructionBuildingCleanUp "></select>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
-
-
-
-
-                                <div class="space-6"></div>
-
-                                <div class="clearfix form-actions">
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button type="submit" data-togle="modal" data-target="#successModal" data-bind="click:Submit" class="btn btn-info">
+                                </div>                                
+                                @*<div class="clearfix form-actions" style="margin-top:5px;padding:0;">*@
+                                    <div class="col-md-offset-0 col-md-12" style="margin-top:10px;padding:0;">
+                                        <button type="submit" style="width:inherit;" data-togle="modal" data-target="#successModal" data-bind="click:Submit" class="btn btn-success btn-lg">
                                             <i class="ace-icon fa fa-check bigger-110"></i>
                                             Save
                                         </button>
                                     </div>
-                                </div>
+                                @*</div>*@
                             </div>
                         </div>
                     </div>
