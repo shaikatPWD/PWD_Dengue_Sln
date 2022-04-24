@@ -56,7 +56,7 @@
                                         </thead>
                                         <tbody data-bind="foreach:OfficeList">
                                             <tr>
-                                                <td style="text-align:left;"><input type="hidden" data-bind="value:Id" /></td>
+                                                <td style="text-align:left;" data-bind="text: $index() + 1"><input type="hidden" data-bind="value:Id" /></td>
                                                 @*<td style="text-align:left;"><input type="hidden" data-bind="value:Id" /></td>
                                                     <td>
                                                         <table class="table table-striped table-bordered table-hover dataTable no-footer" frame="box">
