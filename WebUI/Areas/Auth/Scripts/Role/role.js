@@ -27,12 +27,15 @@
 
 
             ],
+            ondblClickRow: function (rowid) {
+                jQuery("#jqGrid").jqGrid('editGridRow', rowid);
+            },
             //ondblClickRow: function (rowid) {
             //    jQuery("#jqGrid").jqGrid('editGridRow', rowid);
+            ////},
+            //ondblClickRow: function (rowid) {
+            //    jQuery("#jqGrid").editGridRow({ height: auto, width: auto, reloadAfterSubmit: false });
             //},
-            ondblClickRow: function (rowid) {
-                jQuery("#jqGrid").editGridRow({ height: auto, width: auto, reloadAfterSubmit: false });
-            },
             loadonce: true,
             pager: jQuery('#jqGridPager'),
             altRows: true,
@@ -82,20 +85,20 @@
                 view: true,
                 viewicon: 'ace-icon fa fa-search-plus grey'
             },
-            {
-                edit: true,
-                editicon: 'ace-icon fa fa-pencil blue',
-                add: true,
-                addicon: 'ace-icon fa fa-plus-circle purple',
-                del: true,
-                delicon: 'ace-icon fa fa-trash-o red',
-                search: true,
-                searchicon: 'ace-icon fa fa-search orange',
-                refresh: true,
-                refreshicon: 'ace-icon fa fa-refresh green',
-                view: true,
-                viewicon: 'ace-icon fa fa-search-plus grey'
-            },
+            //{
+            //    edit: true,
+            //    editicon: 'ace-icon fa fa-pencil blue',
+            //    add: true,
+            //    addicon: 'ace-icon fa fa-plus-circle purple',
+            //    del: true,
+            //    delicon: 'ace-icon fa fa-trash-o red',
+            //    search: true,
+            //    searchicon: 'ace-icon fa fa-search orange',
+            //    refresh: true,
+            //    refreshicon: 'ace-icon fa fa-refresh green',
+            //    view: true,
+            //    viewicon: 'ace-icon fa fa-search-plus grey'
+            //},
             {
                 zIndex: 100,
                 url: '/Auth/Role/SaveRole',

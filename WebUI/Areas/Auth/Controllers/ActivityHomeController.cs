@@ -84,13 +84,13 @@ namespace WebUI.Areas.Auth.Controllers
 
         public JsonResult GetWorkActivityRecordsByPeriod()
         {
-            var ModuleList = _monthlyMonitoring.GetWorkActivityRecordsByPeriod();
+            var ModuleList = _monthlyMonitoring.GetWorkActivityRecordsByPeriod(SessionHelper.UserProfile.SelectedOfficeId);
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetWorkActivitiesByPeriod(string period)
         {
-            var ModuleList = _monthlyMonitoring.GetWorkActivityRecordsByPeriod(period);
+            var ModuleList = _monthlyMonitoring.GetWorkActivityRecordsByPeriod(period, SessionHelper.UserProfile.SelectedOfficeId);
             return Json(ModuleList, JsonRequestBehavior.AllowGet);
         }
     }

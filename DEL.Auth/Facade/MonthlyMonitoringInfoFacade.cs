@@ -56,7 +56,7 @@ namespace DEL.Auth.Facade
             var officeName = GenService.GetById<HrOffice>((long)officeId).Name;
             var workActivitylist = GenService.GetAll<WorkActivity>();//.Where(w => w.Period == currentPeriod).ToList();
             var data = new List<WorkActivityDto>();
-            data = workActivitylist.GroupBy(d => new {d.Period }).Select(x => new WorkActivityDto
+            data = workActivitylist.GroupBy(d => new { d.Period }).Select(x => new WorkActivityDto
             {
                 OfficeName = officeName,
                 Period = x.Key.Period
@@ -158,9 +158,9 @@ namespace DEL.Auth.Facade
         {
             return Mapper.Map<OfficeAssetsDto>(GenService.GetById<OfficeAssets>(assetId));
         }
-        public List<OfficeAssetsDto> GetWorkActivityRecordsByPeriod()//(List<long?> ApplicationId) long officeId
+        public List<OfficeAssetsDto> GetWorkActivityRecordsByPeriod(long? officeId)//(List<long?> ApplicationId) long officeId
         {
-            var offAsslist = GenService.GetAll<OfficeAssets>();
+            var offAsslist = GenService.GetAll<OfficeAssets>().Where(o => o.HrOfficeId == officeId);
             var data = new List<OfficeAssetsDto>();
 
             var dateText = DateTime.Now.ToString("dd/MM/yyyy");
@@ -192,11 +192,21 @@ namespace DEL.Auth.Facade
             return data;
         }
 
-        public List<WorkActivityDto> GetWorkActivityRecordsByPeriod(string period)//(List<long?> ApplicationId) long officeId
+        public List<WorkActivityDto> GetWorkActivityRecordsByPeriod(string period, long? officeId)//(List<long?> ApplicationId) long officeId
         {
-            var districts = GenService.GetAll<WorkActivity>().Where(w => w.Period == period).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+            var offAsslist = GenService.GetAll<OfficeAssets>().Where(o => o.HrOfficeId == officeId).ToList();
+            var currentPeriod = DateTime.Now.ToString("MMMM-yy");
+            var workActivitylist = GenService.GetAll<WorkActivity>().Where(w => w.Period == currentPeriod).ToList();
+            var shiftIds = offAsslist.Select(s => s.Id).ToList();
+            //var data = new List<WorkActivityDto>();
+            var query = (from x in workActivitylist
+                         where shiftIds.Contains((long)x.OfficeAssetId)
+                         select x);
+            //var acCount = query.Select(c => c.Value).Distinct().Count();
 
-            var data = districts.Select(x => new WorkActivityDto
+            //var districts = GenService.GetAll<WorkActivity>().Where(w => w.Period == period).ToList(); //.Where(o=>o.HrOfficeId == officeId).ToList();
+
+            var data = query.Select(x => new WorkActivityDto
             {
                 Id = x.Id,
                 OfficeAssetId = x.OfficeAssetId,
