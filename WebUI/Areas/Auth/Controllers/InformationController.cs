@@ -21,7 +21,7 @@ namespace WebUI.Areas.Auth.Controllers
         {
             ViewBag.SearchString = searchString;
             ViewBag.CurrentSort = sortOrder;
-            var model = _Information.InofrmationList(10, page, searchString, SessionHelper.UserProfile.UserId);
+            var model = _Information.InofrmationList(10, page, searchString, SessionHelper.UserProfile.SelectedOfficeId);
             return View(model);
         }                
         [HttpPost]
@@ -33,17 +33,17 @@ namespace WebUI.Areas.Auth.Controllers
         [HttpGet]
         public JsonResult GetPendingObs()
         {
-            var pendingObs = _Information.GetPendingObs();
+            var pendingObs = _Information.GetPendingObs(SessionHelper.UserProfile.SelectedOfficeId);
             return Json(pendingObs, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetInProgressObs()
         {
-            var pendingObs = _Information.GetInProgressObs();
+            var pendingObs = _Information.GetInProgressObs(SessionHelper.UserProfile.SelectedOfficeId);
             return Json(pendingObs, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetCompletedObs()
         {
-            var pendingObs = _Information.GetCompletedObs();
+            var pendingObs = _Information.GetCompletedObs(SessionHelper.UserProfile.SelectedOfficeId);
             return Json(pendingObs, JsonRequestBehavior.AllowGet);
         }
         public JsonResult LoadInformation(long id)

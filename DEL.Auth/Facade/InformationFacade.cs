@@ -27,25 +27,47 @@ namespace DEL.Auth.Facade
             return data;
         }
 
-        public long GetPendingObs()
+        public long GetPendingObs(long? officeId)
         {
             long result = 0;
-            var pendingObs = GenService.GetAll<Information>().Where(p => p.ComplainStatus == ComplainStatus.Pending);
-            result = pendingObs.Count();
+            var area = GenService.GetAll<Area>();//.Where(a => a.HrOfficeId == officeId);
+            var infoList = GenService.GetAll<Information>().Where(s => s.ComplainStatus == ComplainStatus.Pending && s.Status == EntityStatus.Active);
+
+            var info = (from complain in infoList
+                        join ar in area on complain.AreaID equals ar.Id
+                        where ar.HrOfficeId == officeId //shiftIds.Contains((long)x.OfficeAssetId)
+                        select complain);
+            
+            //var pendingObs = GenService.GetAll<Information>().Where(p => p.ComplainStatus == ComplainStatus.Pending);
+            result = info.Count();
             return result;
         }
-        public long GetInProgressObs()
+        public long GetInProgressObs(long? officeId)
         {
             long result = 0;
-            var inprogObs = GenService.GetAll<Information>().Where(p => p.ComplainStatus == ComplainStatus.Inprogress);
-            result = inprogObs.Count();
+            var area = GenService.GetAll<Area>();//.Where(a => a.HrOfficeId == officeId);
+            var infoList = GenService.GetAll<Information>().Where(s => s.ComplainStatus == ComplainStatus.Inprogress && s.Status == EntityStatus.Active);
+
+            var info = (from complain in infoList
+                        join ar in area on complain.AreaID equals ar.Id
+                        where ar.HrOfficeId == officeId //shiftIds.Contains((long)x.OfficeAssetId)
+                        select complain);
+            //var inprogObs = GenService.GetAll<Information>().Where(p => p.ComplainStatus == ComplainStatus.Inprogress);
+            result = info.Count();
             return result;
         }
-        public long GetCompletedObs()
+        public long GetCompletedObs(long? officeId)
         {
             long result = 0;
-            var completeObs = GenService.GetAll<Information>().Where(p => p.ComplainStatus == ComplainStatus.Completed);
-            result = completeObs.Count();
+            var area = GenService.GetAll<Area>();//.Where(a => a.HrOfficeId == officeId);
+            var infoList = GenService.GetAll<Information>().Where(s => s.ComplainStatus == ComplainStatus.Completed && s.Status == EntityStatus.Active);
+
+            var info = (from complain in infoList
+                        join ar in area on complain.AreaID equals ar.Id
+                        where ar.HrOfficeId == officeId //shiftIds.Contains((long)x.OfficeAssetId)
+                        select complain);
+            //var completeObs = GenService.GetAll<Information>().Where(p => p.ComplainStatus == ComplainStatus.Completed);
+            result = info.Count();
             return result;
         }
         public ResponseDto SaveUpdateActions(InformationDto informationDto, long userId)
@@ -199,9 +221,17 @@ namespace DEL.Auth.Facade
             return districts.OrderBy(o => o.OrderID).ToList();
         }
 
-        public IPagedList<InformationDto> InofrmationList(int pageSize, int pageCount, string searchString, long UserId)
+        public IPagedList<InformationDto> InofrmationList(int pageSize, int pageCount, string searchString, long? officeId)
         {
-            var allApp = GenService.GetAll<Information>().Where(s => s.Status == EntityStatus.Active).Select(s => new InformationDto
+            var area = GenService.GetAll<Area>().Where(a=>a.HrOfficeId == officeId);
+            var infoList = GenService.GetAll<Information>().Where(s => s.Status == EntityStatus.Active);
+
+            var info = (from complain in infoList
+                        join ar in area on complain.AreaID equals ar.Id
+                        where ar.HrOfficeId == officeId //shiftIds.Contains((long)x.OfficeAssetId)
+                        select complain);
+
+            var allApp = info.Select(s => new InformationDto
             {
                 Id = s.Id,
                 FullName = s.FullName,
